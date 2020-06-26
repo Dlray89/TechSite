@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Button, Typography } from "@material-ui/core"
+import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Divider, TextField } from "@material-ui/core"
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
@@ -16,14 +16,36 @@ const useStyles = makeStyles((theme) => ({
         height: ' 80vh',
         margin: ' 0 auto',
         boxSizing: 'border-box'
-
-
     },
     introText: {
         border: 'solid 2px purple',
         width: '15%',
 
 
+    },
+    intro: {
+        border: 'solid 2px red',
+        height: '40vh',
+        boxSizing: 'border-box',
+        display: 'flex'
+    },
+    skills: {
+        border: 'solid 2px yellow',
+        width: '50%'
+    },
+    about: {
+        border: 'solid 2px red',
+        width: '50%'
+    },
+    introTwo: {
+        border: 'solid 2px blue',
+        height: '40vh',
+        boxSizing: 'border-box',
+        display: 'flex'
+    },
+    experience: {
+        border: 'solid 2px blue',
+        width: '100%'
     },
 
     Nav: {
@@ -59,6 +81,20 @@ const useStyles = makeStyles((theme) => ({
     },
     socialmedia: {
         border: 'solid  2px red'
+    },
+    modalText: {
+        display: 'flex',
+        justifyContent:'space-evenly'
+    },
+    info: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        width: '40%'
+    },
+    inputContainer: {
+        textAlign: 'center',
+        width: '45%'
     }
 
 }))
@@ -67,6 +103,16 @@ const useStyles = makeStyles((theme) => ({
 
 const Welcome = () => {
     const classes = useStyles()
+    const [open, setOpen] = React.useState(false)
+
+    const handleOpen = () => {
+        setOpen(true)
+
+    }
+
+    const handleClose = () => {
+        setOpen(false)
+    }
 
     return (
         <div className={classes.mainContiner}>
@@ -78,8 +124,36 @@ const Welcome = () => {
 
                 <div className={classes.navContainer}>
                     <Link className={classes.navLinks}><Button>Home </Button></Link>
-                    <Link className={classes.navLinks}><Button>Projects</Button></Link>
-                    <Link className={classes.navLinks}><Button>Contact</Button></Link>
+                    <Link to='/projects' className={classes.navLinks}><Button>Projects</Button></Link>
+                    <Link className={classes.navLinks} onClick={handleOpen}><Button>Contact</Button></Link>
+
+                    <Dialog open={open} onClose={handleClose}>
+                        <DialogTitle>
+                            Lets Chat!
+                        </DialogTitle>
+                        <DialogContent>
+                            <DialogContentText className={classes.modalText}>
+                                <div className={classes.info}>
+                                    <p>Phone: 614.681.0179</p>
+                                    <p>Email: dlrayjr89@gmail.com</p>
+                                    <p>Location: Atlanta, GA</p>
+                                    
+                                    
+                                </div>
+                                <Divider   />
+                                <div className={classes.inputContainer}>
+                                    <TextField variant="outlined" type='text' label='Full Name'   />
+                                    <TextField variant="outlined" type='text' label='Phone Number'   />
+                                    <TextField variant="outlined" type='text' label='Email Address'   />
+                                </div>
+
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose}>Send</Button>
+                            <Button onClick={handleClose}>Cancel</Button>
+                        </DialogActions>
+                    </Dialog>
                 </div>
 
 
@@ -88,7 +162,21 @@ const Welcome = () => {
             </div>
 
             <div className={classes.introBox}>
-                Welcome
+                <div className={classes.intro}>
+                    <div className={classes.about}>
+                        About me
+                    </div>
+
+                    <div className={classes.skills}>
+                        Skills
+                    </div>
+
+                </div>
+                <div className={classes.introTwo}>
+                    <div className={classes.experience}>Experience</div>
+                </div>
+
+
             </div>
 
             <div className={classes.bottomNav}>
