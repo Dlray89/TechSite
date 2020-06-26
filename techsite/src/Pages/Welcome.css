@@ -1,0 +1,30 @@
+.aboutpic {
+    background-image: url('../images/introPic1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 105%;
+    color: white;
+    width: 100%;
+}
+
+.abouttext {
+    border: solid 2px blue;
+    width: 100%;
+    font-size: 14px;
+    padding: 1%;
+    text-align: center
+}
+
+.FE {
+    width: 50%;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+
+
+.BE {
+    width: 50%;
+    overflow-y: scroll;
+    text-align: center;
+}

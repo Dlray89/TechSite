@@ -1,55 +1,48 @@
 import React from 'react'
-import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Divider, TextField } from "@material-ui/core"
+import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Divider, TextField, List, ListItem, ListItemText, Typography } from "@material-ui/core"
 import { Link } from 'react-router-dom'
+import './Welcome.css'
 
 const useStyles = makeStyles((theme) => ({
     mainContiner: {
-        border: 'solid 2px red',
         padding: '1%',
         height: '100vh',
         boxSizing: 'border-box',
 
     },
     introBox: {
-        border: 'solid 2px green',
+        border: 'solid 2px black',
         width: '90%',
         height: ' 80vh',
         margin: ' 0 auto',
         boxSizing: 'border-box'
     },
     introText: {
-        border: 'solid 2px purple',
         width: '15%',
-
-
     },
     intro: {
-        border: 'solid 2px red',
         height: '40vh',
         boxSizing: 'border-box',
         display: 'flex'
     },
     skills: {
-        border: 'solid 2px yellow',
-        width: '50%'
+        width: '50%',
+        display: 'flex'
     },
     about: {
-        border: 'solid 2px red',
-        width: '50%'
+        width: '50%',
+        display: 'flex'
     },
     introTwo: {
-        border: 'solid 2px blue',
         height: '40vh',
         boxSizing: 'border-box',
         display: 'flex'
     },
     experience: {
-        border: 'solid 2px blue',
         width: '100%'
     },
 
     Nav: {
-        border: 'solid 2px blue',
         width: '90%',
         margin: '0 auto',
         boxSizing: 'border-box',
@@ -58,7 +51,6 @@ const useStyles = makeStyles((theme) => ({
 
     },
     bottomNav: {
-        border: 'solid 2px blue',
         width: '90%',
         margin: ' 0 auto',
         boxSizing: 'border-box',
@@ -66,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between'
     },
     navContainer: {
-        border: 'solid 2px red',
         width: '30%',
         boxSizing: 'border-box',
         display: 'flex'
@@ -74,13 +65,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
     navLinks: {
-        border: 'solid 2px yellow',
         width: '40%',
         boxSizing: 'border-box',
 
     },
     socialmedia: {
-        border: 'solid  2px red'
     },
     modalText: {
         display: 'flex',
@@ -95,6 +84,9 @@ const useStyles = makeStyles((theme) => ({
     inputContainer: {
         textAlign: 'center',
         width: '45%'
+    },
+    divider: {
+        background: 'black'
     }
 
 }))
@@ -164,16 +156,97 @@ const Welcome = () => {
             <div className={classes.introBox}>
                 <div className={classes.intro}>
                     <div className={classes.about}>
-                        About me
+                        <div className='aboutpic'>
+                            <p>Hi im dave</p>
+                        </div>
+
+                        
                     </div>
+                    <Divider className={classes.divider} orientation='vertical'  />
+
 
                     <div className={classes.skills}>
-                        Skills
+                        <div className="FE">
+                            <List className='FEskills'>
+                                <Typography>Front End Skills</Typography>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText>Javascript/React</ListItemText>
+                                </ListItem>
+                                <Divider />
+                               
+                                <ListItem button>
+                                    <ListItemText> HTML/CSS/LESS</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> Redux/Context-API</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> Python</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> GrpahQL/Apollo-Client</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> AJAX/HTTP REQUEST</ListItemText>
+                                </ListItem>
+                                <Divider />
+                            </List>
+                            </div>
+
+                            <Divider className={classes.divider}  />
+                        <div className='BE'>
+                            <List className='BEskills'>
+                                <Typography>Back End Skills</Typography>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText>Node.js/Express.js</ListItemText>
+                                </ListItem>
+                                <Divider />
+                               
+                                <ListItem button>
+                                    <ListItemText> SQLITE/POSTGRES</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> GraphQL</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> Prisma</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> Apollo</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> Hashing/JWT</ListItemText>
+                                </ListItem>
+                                <Divider />
+                            </List>
+                        
+                        </div>
                     </div>
 
                 </div>
+
+                <Divider className={classes.divider}   />
+                
                 <div className={classes.introTwo}>
-                    <div className={classes.experience}>Experience</div>
+                    <div className={classes.experience}>
+                        <div>
+                            About me
+                        </div>
+
+                        <div>
+                            experience
+                        </div>
+                    </div>
                 </div>
 
 
