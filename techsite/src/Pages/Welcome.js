@@ -8,17 +8,22 @@ const useStyles = makeStyles((theme) => ({
         padding: '1%',
         height: '100vh',
         boxSizing: 'border-box',
+        background: '#3a6073'
 
     },
     introBox: {
         border: 'solid 2px black',
         width: '90%',
-        height: ' 80vh',
+        height: ' 80.8vh',
         margin: ' 0 auto',
         boxSizing: 'border-box'
     },
     introText: {
-        width: '15%',
+        width: '20%',
+        color: 'white'
+    },
+    introTextLink: {
+        textDecoration: 'none'
     },
     intro: {
         height: '40vh',
@@ -30,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex'
     },
     about: {
-        width: '50%',
+        width: '100%',
         display: 'flex'
     },
     introTwo: {
@@ -39,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex'
     },
     experience: {
-        width: '100%'
+        width: '100%',
+        display: 'flex'
     },
 
     Nav: {
@@ -67,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
     navLinks: {
         width: '40%',
         boxSizing: 'border-box',
+        textDecoration: 'none'
 
     },
     socialmedia: {
@@ -87,6 +94,12 @@ const useStyles = makeStyles((theme) => ({
     },
     divider: {
         background: 'black'
+    },
+    buttons: {
+        color: 'white'
+    },
+    bottomLinks: {
+        textDecoration: 'none'
     }
 
 }))
@@ -111,13 +124,13 @@ const Welcome = () => {
             <div className={classes.Nav}>
 
                 <div className={classes.introText}>
-                    <Link><Button>David L. Ray Jr</Button></Link>
+                    <Link className={classes.introTextLink}><Button className={classes.buttons}>Full Stack developer</Button></Link>
                 </div>
 
                 <div className={classes.navContainer}>
-                    <Link className={classes.navLinks}><Button>Home </Button></Link>
-                    <Link to='/projects' className={classes.navLinks}><Button>Projects</Button></Link>
-                    <Link className={classes.navLinks} onClick={handleOpen}><Button>Contact</Button></Link>
+                    <Link className={classes.navLinks}><Button className={classes.buttons}>Home </Button></Link>
+                    <Link to='/projects' className={classes.navLinks}><Button className={classes.buttons}>Projects</Button></Link>
+                    <Link className={classes.navLinks} onClick={handleOpen}><Button className={classes.buttons}>Contact</Button></Link>
 
                     <Dialog open={open} onClose={handleClose}>
                         <DialogTitle>
@@ -156,82 +169,16 @@ const Welcome = () => {
             <div className={classes.introBox}>
                 <div className={classes.intro}>
                     <div className={classes.about}>
-                        <div className='aboutpic'>
-                            <p>Hi im dave</p>
+                        <div className='tilt-in-fwd-tr'>
+                            <p className='slide-in-tr'>HI IM DAVE</p>
                         </div>
 
                         
                     </div>
-                    <Divider className={classes.divider} orientation='vertical'  />
+                    
 
 
-                    <div className={classes.skills}>
-                        <div className="FE">
-                            <List className='FEskills'>
-                                <Typography>Front End Skills</Typography>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText>Javascript/React</ListItemText>
-                                </ListItem>
-                                <Divider />
-                               
-                                <ListItem button>
-                                    <ListItemText> HTML/CSS/LESS</ListItemText>
-                                </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> Redux/Context-API</ListItemText>
-                                </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> Python</ListItemText>
-                                </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> GrpahQL/Apollo-Client</ListItemText>
-                                </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> AJAX/HTTP REQUEST</ListItemText>
-                                </ListItem>
-                                <Divider />
-                            </List>
-                            </div>
-
-                            <Divider className={classes.divider}  />
-                        <div className='BE'>
-                            <List className='BEskills'>
-                                <Typography>Back End Skills</Typography>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText>Node.js/Express.js</ListItemText>
-                                </ListItem>
-                                <Divider />
-                               
-                                <ListItem button>
-                                    <ListItemText> SQLITE/POSTGRES</ListItemText>
-                                </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> GraphQL</ListItemText>
-                                </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> Prisma</ListItemText>
-                                </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> Apollo</ListItemText>
-                                </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> Hashing/JWT</ListItemText>
-                                </ListItem>
-                                <Divider />
-                            </List>
-                        
-                        </div>
-                    </div>
+                    
 
                 </div>
 
@@ -239,12 +186,65 @@ const Welcome = () => {
                 
                 <div className={classes.introTwo}>
                     <div className={classes.experience}>
-                        <div>
-                            About me
+
+                        <div className="FE">
+                            <List className='FEskills'>
+                                <Typography>Front End Skills</Typography>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText>Javascript - React - Python</ListItemText>
+                                </ListItem>
+                                <Divider />
+                               
+                                <ListItem button>
+                                    <ListItemText> HTML - CSS - LESS</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> Redux - Context-API</ListItemText>
+                                </ListItem>
+                                <Divider />
+                               
+                                <ListItem button>
+                                    <ListItemText> GrpahQL - Apollo-Client - Prisma</ListItemText>
+                                </ListItem>
+                                <Divider />
+                               
+                            </List>
+                            </div>
+
+                        <div className='about'>
+                            <p className='text-flicker-in-glow'>About me</p>
+                            <p>
+                                My name is David L. Ray Jr and I am a software developer. I develop beautiful and dynamic applications for users so they can enhance their day to day life. I am BOLD with a curiosity like no other when it comes to life and looking for solutions to help the world or person reach their potential in life. I let my creativity take over and that's what leads my vision for success along with having a lot of zest to getting the job done. 
+                            </p>
                         </div>
 
-                        <div>
-                            experience
+                         <div className='BE'>
+                            <List className='BEskills'>
+                                <Typography>Back End Skills</Typography>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText>Node.js - Express.js - Bcrypt - Hashing</ListItemText>
+                                </ListItem>
+                                <Divider />
+                               
+                                <ListItem button>
+                                    <ListItemText> Sqlite - Postgres</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> GraphQL</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem button>
+                                    <ListItemText> Prisma - Apollo</ListItemText>
+                                </ListItem>
+                                <Divider />
+                            
+                                
+                            </List>
+                        
                         </div>
                     </div>
                 </div>
@@ -255,13 +255,13 @@ const Welcome = () => {
             <div className={classes.bottomNav}>
 
                 <div className={classes.copyright}>
-                    <Link><Button>Copyright</Button></Link>
+                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>&copy; Dapthedev</Button></Link>
                 </div>
 
                 <div className={classes.socialmedia}>
-                    <Link><Button>LinkedIn</Button>
+                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>LinkedIn</Button>
                     </Link>
-                    <Link><Button>GitHub</Button></Link>
+                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>GitHub</Button></Link>
                 </div>
 
             </div>
