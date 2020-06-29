@@ -290,7 +290,7 @@ const Welcome = () => {
                                 <Divider />
 
                                 <ListItem button>
-                                    <ListItemText> GrpahQL - Apollo-Client - Prisma</ListItemText>
+                                    <ListItemText> GraphQL - Apollo-Client - Prisma</ListItemText>
                                 </ListItem>
                                 <Divider />
 
