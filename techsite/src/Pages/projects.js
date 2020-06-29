@@ -10,12 +10,21 @@ const useStyles = makeStyles((theme) => ({
     mainContainer: {
         boxSizing: 'border-box',
         background: '#3a6073',
-        padding: '1%'
+        padding: '1%',
+        [theme.breakpoints.down('sm')]:{
+            height: '240vh'
+        }
     },
     projectContainer: {
         border: 'solid 2px black',
         width: '90%',
-        margin: '0 auto'
+        margin: '0 auto',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            margin: '0 auto',
+            height: '211.3vh'
+            
+        }
     },
 
     P1: {
@@ -24,7 +33,10 @@ const useStyles = makeStyles((theme) => ({
         height: '35vh',
         background: 'black',
         border: 'solid 1px black',
-        textAlign: 'center'
+        textAlign: 'center',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+        }
     },
     P2: {
         width: '30%'
@@ -33,7 +45,14 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         width: '80%',
         height: '35vh',
-        background: 'linear-gradient(to right, #16222a, #3a6073)'
+        background: 'linear-gradient(to right, #16222a, #3a6073)',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            margin: '0 auto',
+            fontSizing:'1px'
+            
+            
+        }
     },
     title: {
         color: 'white',
@@ -41,7 +60,12 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: 'none',
         width: '90%',
         margin: '0 auto',
-        background: 'linear-gradient(to bottom, #16222a, #3a6073)'
+        background: 'linear-gradient(to bottom, #16222a, #3a6073)',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            margin: '0 auto'
+            
+        }
     },
     modalText: {
         display: 'flex',
@@ -69,6 +93,9 @@ const useStyles = makeStyles((theme) => ({
     },
     sautiImg: {
         width: '100%',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+        }
 
     },
     Links: {
@@ -76,6 +103,16 @@ const useStyles = makeStyles((theme) => ({
     },
     buttons: {
         color: 'white'
+    },
+    text: {
+        [theme.breakpoints.down('sm')]: {
+            fontSizing: '10px',
+            padding: '2%',
+        }
+    },
+    buttonsCont: {
+        [theme.breakpoints.down('sm')]: {
+        }
     }
 }))
 
@@ -142,14 +179,14 @@ const Projects = () => {
                     <div className={classes.P1}>
                         <p>Sauti</p>
                         <p className={classes.sauti}>
-                            <img className={classes.sautiImg} src={Sauti} />
+                            <img alt='sauit page'className={classes.sautiImg} src={Sauti} />
                         </p>
                     </div>
                     <Divider className={classes.Divider} orientation='vertical' />
 
                     <div className={classes.btnContainer}>
 
-                        <p>
+                        <p className={classes.text}>
                             Tech Stack: HTML - LESS <br />
                             <br />
                         Sauti is a Mobile-based trade and market
@@ -158,9 +195,9 @@ const Projects = () => {
                         to trade legally and safely across borders.
                     </p>
 
-                        <div>
-                            <a  className={classes.Links} href='https://dlray89.github.io/SautiAfrica/'><Button className={classes.buttons}>Website</Button></a>
-                        <a className={classes.Links} href='https://github.com/Dlray89/SautiAfrica'><Button className={classes.buttons}>Code Source</Button></a>
+                        <div className={classes.buttonsCont}>
+                            <a  className={classes.Links} href='https://dlray89.github.io/SautiAfrica/'><Button className={classes.buttons} variant='outlined'>Website</Button></a>
+                        <a className={classes.Links} href='https://github.com/Dlray89/SautiAfrica'><Button variant='outlined'className={classes.buttons}>Code Source</Button></a>
                         </div>
                         
                     </div>
@@ -168,25 +205,29 @@ const Projects = () => {
                 </div>
                 <Divider className={classes.Divider} />
 
-                <div className='row '>
+                <div className='row2 '>
 
                     <div className={classes.btnContainer}>
 
-                        <p>
+                        <p  className={classes.text}>
                             Tech Stack: React - Material-UI - Javascript <br /> <br />
 
                             This project is a fan site of the most popular show Rick and Morty. <br /> You can see all avaliable characters and videos.
 
                     </p>
-                        <Button>Website</Button>
-                        <Button>Code Source</Button>
+                    <div className={classes.buttonsCont}>
+                        <a href='https://rickand-morty-fanpage.now.sh/' className={classes.Links}> <Button variant='outlined'className={classes.buttons}>Website</Button></a>
+                        <a href='https://github.com/Dlray89/RickandMortyFanpage' className={classes.Links}><Button variant='outlined'  className={classes.buttons}>Code Source</Button></a>
+                        </div>
+                        
+                        
                     </div>
 
 
                     <div className={classes.P1}>
                         <p>Rick and Morty Fan Site</p>
                         <p>
-                            <img className={classes.sautiImg} src={RickandMorty}   />
+                            <img alt='pic for rick and morty' className={classes.sautiImg} src={RickandMorty}   />
                         </p>
                     </div>
 
@@ -199,20 +240,24 @@ const Projects = () => {
                     <div className={classes.P1}>
                         <p>Conway Game of life</p>
                         <p>
-                            <img className={classes.sautiImg} src={Conway}  />
+                            <img alt='conway pic' className={classes.sautiImg} src={Conway}  />
                         </p>
                     </div>
 
                     <div className={classes.btnContainer}>
 
-                        <p>
+                        <p  className={classes.text}>
                             Tech Stack: Javascript - React - Material-UI - CSS  <br  />
                               <br  /> 
 
-                              The Game of Life (an example of a cellular automaton) is played on an infinite two-dimensional rectangular <br />grid of cells. Each cell can be either alive or dead.  The status of each  cell changes each turn of the game  <br />depending on the statuses of that cell's 8 neighbors. Neighbors of a cell are  cells that touch <br /> that cell, either horizontal, vertical, or diagonal from that cell. 
+                              The Game of Life (an example of a cellular automaton) is played on an infinite two-dimensional rectangular <br />grid of cells. 
                     </p>
-                        <Button>Website</Button>
-                        <Button>Code Source</Button>
+                    <div className={classes.buttonsCont}>
+                        <a href='https://the-conway-game-of-life.vercel.app/' className={classes.Links}><Button variant='outlined'className={classes.buttons}>Website</Button></a>
+                        <a href='https://github.com/Dlray89/The-Conway_game-of_life' className={classes.Links}><Button variant='outlined' className={classes.buttons}>Code Source</Button></a>
+                        </div>
+                        
+                        
                     </div>
 
 
