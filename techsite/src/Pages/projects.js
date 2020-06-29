@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
         padding: '1%',
         [theme.breakpoints.down('sm')]:{
             height: '240vh'
+        },
+        [theme.breakpoints.down('sm')]:{
+            height: '240vh'
         }
     },
     projectContainer: {
