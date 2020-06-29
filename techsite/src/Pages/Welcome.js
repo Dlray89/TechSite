@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
         height: '190vh',
         boxSizing: 'border-box',
-        border: 'solid 2px yellow'
         }
 
 

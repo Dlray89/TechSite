@@ -17,7 +17,25 @@
     }
 }
 
+@media (max-width: 384px){
+    .row2{
+        display: flex;
+        flex-direction: column-reverse;
+        
+        
+    }
+}
+
 @media (max-width: 375px){
+    .row{
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+}
+
+@media (max-width: 384px){
     .row{
         display: flex;
         flex-direction: column;
