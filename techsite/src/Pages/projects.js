@@ -70,21 +70,9 @@ const useStyles = makeStyles((theme) => ({
             
         }
     },
-    modalText: {
-        display: 'flex',
-        justifyContent: 'space-evenly'
-
-    },
-    info: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        width: '40%'
-    },
-    inputContainer: {
-        textAlign: 'center',
-        width: '45%'
-    },
+    
+    
+    
     Divider: {
         background: 'black'
     },
@@ -108,15 +96,62 @@ const useStyles = makeStyles((theme) => ({
         color: 'white'
     },
     text: {
-        [theme.breakpoints.down('sm')]: {
-            fontSizing: '10px',
-            padding: '2%',
-        }
-    },
+    [theme.breakpoints.down('sm')]: {
+        fontSizing: '12px',
+            width: '90%',
+                textAlign: 'center',
+                    margin: '0 auto'
+    }
+},
     buttonsCont: {
         [theme.breakpoints.down('sm')]: {
         }
+    },
+    modalText: {
+    display: 'flex',
+        justifyContent: 'space-evenly',
+            [theme.breakpoints.down('sm')]: {
+        width: '100%',
+            flexDirection: 'column',
+                margin: '0 auto'
     }
+},
+info: {
+    display: 'flex',
+        flexDirection: 'column',
+            justifyContent: 'space-evenly',
+                width: '40%',
+                    [theme.breakpoints.down('sm')]: {
+        width: '90%',
+            margin: '0 auto'
+    }
+},
+inputContainer: {
+    textAlign: 'center',
+        width: '45%',
+            [theme.breakpoints.down('sm')]: {
+        width: '100%',
+            margin: '2% auto'
+    }
+},
+modalInner: {
+    [theme.breakpoints.down('sm')]: {
+        width: '81%',
+            margin: '0 auto'
+    }
+},
+input: {
+    [theme.breakpoints.down('sm')]: {
+        margin: '2% auto',
+        }
+
+},
+modal: {
+    [theme.breakpoints.down('sm')]: {
+        fontSizing: '12px',
+        }
+},
+
 }))
 
 
@@ -144,23 +179,23 @@ const Projects = () => {
                     <Link to='/' className={classes.Links}><Button className={classes.buttons}>Home</Button></Link>
                     <Link className={classes.Links}><Button className={classes.buttons} onClick={handleOpen} >Contact</Button></Link>
 
-                    <Dialog open={open} onClose={handleClose}>
+                    <Dialog className={classes.modal} open={open} onClose={handleClose}>
                         <DialogTitle>
                             Lets Chat!
                    </DialogTitle>
-                        <DialogContent>
+                        <DialogContent className={classes.modalInner}>
                             <DialogContentText className={classes.modalText}>
                                 <div className={classes.info}>
-                                    <p>Phone: 614.681.0179</p>
-                                    <p>Email: dlrayjr89@gmail.com</p>
-                                    <p>Location: Atlanta, GA</p>
+                                    <p className={classes.text}>Phone: 614.681.0179</p>
+                                    <p className={classes.text}>Email: dlrayjr89@gmail.com</p>
+                                    <p className={classes.text}>Location: Atlanta, GA</p>
 
 
                                 </div>
                                 <Divider />
                                 <div className={classes.inputContainer}>
                                     <TextField variant="outlined" type='text' label='Full Name' />
-                                    <TextField variant="outlined" type='text' label='Phone Number' />
+                                    <TextField className={classes.input} variant="outlined" type='text' label='Phone Number' />
                                     <TextField variant="outlined" type='text' label='Email Address' />
                                 </div>
 
