@@ -90,6 +90,28 @@
         width: 100%;
     }
 }
+
+@media (max-width: 650px){
+    .tilt-in-fwd-tr{
+        background-position:bottom;
+        background-position-y:85%;
+        background-repeat: no-repeat;
+        background-size: 200%;
+        color: white;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .tilt-in-fwd-tr{
+        background-position:bottom;
+        background-position-y:85%;
+        background-repeat: no-repeat;
+        background-size: 150%;
+        color: white;
+        width: 100%;
+    }
+}
 @keyframes tilt-in-fwd-tr {
   0% {
     -webkit-transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px) skew(-35deg, 10deg);
@@ -123,41 +145,56 @@
 @media (max-width: 375px){
     .FE {
         font-size: 0.5em;
-        width: 98.5%
+        width: 100%
     }
 }
 @media (max-width: 384px){
     .FE {
         font-size: 0.5em;
-        width: 98.5%;
+        width: 100%;
     }
 }
 
 @media (max-width: 412px){
     .FE {
         font-size: 0.5em;
-        width: 98.5%;
+        width: 100%;
     }
 }
 
 @media (max-width: 480px){
     .FE {
         font-size: 0.5em;
-        width: 98.5%;
+        width: 100%;
     }
 }
 
 @media (max-width: 533px){
     .FE {
         font-size: 0.5em;
-        width: 98.5%;
+        width: 100%;
     }
 }
 
 @media (max-width: 600px){
     .FE {
         font-size: 0.5em;
-        width: 98.5%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px){
+    .FE {
+        font-size: 0.5em;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .FE {
+        font-size: 0.5em;
+        width: 100%;
+        border: solid 2px red
     }
 }
 
@@ -201,6 +238,18 @@
 }
 
 @media (max-width: 600px){
+    .BE {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px){
+    .BE {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
     .BE {
         width: 100%;
     }
@@ -256,6 +305,20 @@
 }
 
 @media (max-width: 600px) {
+    .about {
+        width: 100%;
+        
+    }
+}
+
+@media (max-width: 650px) {
+    .about {
+        width: 100%;
+        
+    }
+}
+
+@media (max-width: 768px) {
     .about {
         width: 100%;
         

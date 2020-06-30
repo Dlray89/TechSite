@@ -16,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('sm')]: {
             height: '240vh'
-        }
+        },
+        [theme.breakpoints.down('md')]: {
+            height: '130vh'
+        },
+        
     },
     projectContainer: {
         border: 'solid 2px black',
@@ -26,6 +30,12 @@ const useStyles = makeStyles((theme) => ({
             width: '90%',
             margin: '0 auto',
             height: '210.3vh'
+
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '95%',
+            margin: '0 auto',
+            height: '106vh',
 
         }
     },
@@ -71,7 +81,12 @@ const useStyles = makeStyles((theme) => ({
             width: '90%',
             margin: '0 auto'
 
-        }
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '95%',
+            margin: '0 auto'
+
+        },
     },
 
 
@@ -97,6 +112,9 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         [theme.breakpoints.down('sm')]: {
             width: '81%'
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: '79%'
         },
         
 
