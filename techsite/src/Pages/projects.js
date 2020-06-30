@@ -12,13 +12,11 @@ const useStyles = makeStyles((theme) => ({
         background: '#3a6073',
         padding: '1%',
         [theme.breakpoints.down('sm')]: {
-            height: '240vh'
+            height: '380vh'
         },
-        [theme.breakpoints.down('sm')]: {
-            height: '240vh'
-        },
+        
         [theme.breakpoints.down('md')]: {
-            height: '130vh'
+            height: '230vh'
         },
         
     },
@@ -35,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             width: '95%',
             margin: '0 auto',
-            height: '106vh',
+            height: '213vh',
 
         }
     },
