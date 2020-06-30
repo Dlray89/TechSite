@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         background: '#3a6073',
         padding: '1%',
-        [theme.breakpoints.down('sm')]:{
+        [theme.breakpoints.down('sm')]: {
             height: '240vh'
         },
-        [theme.breakpoints.down('sm')]:{
+        [theme.breakpoints.down('sm')]: {
             height: '240vh'
         }
     },
@@ -23,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
         width: '90%',
         margin: '0 auto',
         [theme.breakpoints.down('sm')]: {
-            width: '100%',
+            width: '90%',
             margin: '0 auto',
-            height: '211.3vh'
-            
+            height: '210.3vh'
+
         }
     },
 
@@ -38,7 +38,8 @@ const useStyles = makeStyles((theme) => ({
         border: 'solid 1px black',
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
-            width: '100%'
+            width: '100%',
+            boxSizing: 'border-box'
         }
     },
     P2: {
@@ -52,9 +53,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             width: '100%',
             margin: '0 auto',
-            fontSizing:'1px'
-            
-            
+            fontSizing: '1px',
+            padding: '2%',
+            boxSizing: 'border-box'
+
+
         }
     },
     title: {
@@ -65,14 +68,14 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto',
         background: 'linear-gradient(to bottom, #16222a, #3a6073)',
         [theme.breakpoints.down('sm')]: {
-            width: '100%',
+            width: '90%',
             margin: '0 auto'
-            
+
         }
     },
-    
-    
-    
+
+
+
     Divider: {
         background: 'black'
     },
@@ -85,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     sautiImg: {
         width: '100%',
         [theme.breakpoints.down('sm')]: {
-            width: '100%'
+            width: '94%'
         }
 
     },
@@ -96,61 +99,61 @@ const useStyles = makeStyles((theme) => ({
         color: 'white'
     },
     text: {
-    [theme.breakpoints.down('sm')]: {
-        fontSizing: '12px',
+        [theme.breakpoints.down('sm')]: {
+            fontSizing: '12px',
             width: '90%',
-                textAlign: 'center',
-                    margin: '0 auto'
-    }
-},
+            textAlign: 'center',
+            margin: '5% auto'
+        }
+    },
     buttonsCont: {
         [theme.breakpoints.down('sm')]: {
         }
     },
     modalText: {
-    display: 'flex',
+        display: 'flex',
         justifyContent: 'space-evenly',
-            [theme.breakpoints.down('sm')]: {
-        width: '100%',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
             flexDirection: 'column',
-                margin: '0 auto'
-    }
-},
-info: {
-    display: 'flex',
+            margin: '0 auto'
+        }
+    },
+    info: {
+        display: 'flex',
         flexDirection: 'column',
-            justifyContent: 'space-evenly',
-                width: '40%',
-                    [theme.breakpoints.down('sm')]: {
-        width: '90%',
+        justifyContent: 'space-evenly',
+        width: '40%',
+        [theme.breakpoints.down('sm')]: {
+            width: '90%',
             margin: '0 auto'
-    }
-},
-inputContainer: {
-    textAlign: 'center',
+        }
+    },
+    inputContainer: {
+        textAlign: 'center',
         width: '45%',
-            [theme.breakpoints.down('sm')]: {
-        width: '100%',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
             margin: '2% auto'
-    }
-},
-modalInner: {
-    [theme.breakpoints.down('sm')]: {
-        width: '81%',
+        }
+    },
+    modalInner: {
+        [theme.breakpoints.down('sm')]: {
+            width: '81%',
             margin: '0 auto'
-    }
-},
-input: {
-    [theme.breakpoints.down('sm')]: {
-        margin: '2% auto',
+        }
+    },
+    input: {
+        [theme.breakpoints.down('sm')]: {
+            margin: '2% auto',
         }
 
-},
-modal: {
-    [theme.breakpoints.down('sm')]: {
-        fontSizing: '12px',
+    },
+    modal: {
+        [theme.breakpoints.down('sm')]: {
+            fontSizing: '12px',
         }
-},
+    },
 
 }))
 
@@ -172,7 +175,7 @@ const Projects = () => {
             <div className={classes.title}>
                 <div>
                     <p>
-                        Project
+                        Projects
                    </p>
                 </div>
                 <div>
@@ -217,7 +220,7 @@ const Projects = () => {
                     <div className={classes.P1}>
                         <p>Sauti</p>
                         <p className={classes.sauti}>
-                            <img alt='sauit page'className={classes.sautiImg} src={Sauti} />
+                            <img alt='sauit page' className={classes.sautiImg} src={Sauti} />
                         </p>
                     </div>
                     <Divider className={classes.Divider} orientation='vertical' />
@@ -234,10 +237,10 @@ const Projects = () => {
                     </p>
 
                         <div className={classes.buttonsCont}>
-                            <a  className={classes.Links} href='https://dlray89.github.io/SautiAfrica/'><Button className={classes.buttons} variant='outlined'>Website</Button></a>
-                        <a className={classes.Links} href='https://github.com/Dlray89/SautiAfrica'><Button variant='outlined'className={classes.buttons}>Code Source</Button></a>
+                            <a className={classes.Links} href='https://dlray89.github.io/SautiAfrica/'><Button className={classes.buttons} variant='outlined'>Website</Button></a>
+                            <a className={classes.Links} href='https://github.com/Dlray89/SautiAfrica'><Button variant='outlined' className={classes.buttons}>Code Source</Button></a>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -247,25 +250,25 @@ const Projects = () => {
 
                     <div className={classes.btnContainer}>
 
-                        <p  className={classes.text}>
+                        <p className={classes.text}>
                             Tech Stack: React - Material-UI - Javascript <br /> <br />
 
                             This project is a fan site of the most popular show Rick and Morty. <br /> You can see all avaliable characters and videos.
 
                     </p>
-                    <div className={classes.buttonsCont}>
-                        <a href='https://rickand-morty-fanpage.now.sh/' className={classes.Links}> <Button variant='outlined'className={classes.buttons}>Website</Button></a>
-                        <a href='https://github.com/Dlray89/RickandMortyFanpage' className={classes.Links}><Button variant='outlined'  className={classes.buttons}>Code Source</Button></a>
+                        <div className={classes.buttonsCont}>
+                            <a href='https://rickand-morty-fanpage.now.sh/' className={classes.Links}> <Button variant='outlined' className={classes.buttons}>Website</Button></a>
+                            <a href='https://github.com/Dlray89/RickandMortyFanpage' className={classes.Links}><Button variant='outlined' className={classes.buttons}>Code Source</Button></a>
                         </div>
-                        
-                        
+
+
                     </div>
 
 
                     <div className={classes.P1}>
                         <p>Rick and Morty Fan Site</p>
                         <p>
-                            <img alt='pic for rick and morty' className={classes.sautiImg} src={RickandMorty}   />
+                            <img alt='pic for rick and morty' className={classes.sautiImg} src={RickandMorty} />
                         </p>
                     </div>
 
@@ -278,24 +281,24 @@ const Projects = () => {
                     <div className={classes.P1}>
                         <p>Conway Game of life</p>
                         <p>
-                            <img alt='conway pic' className={classes.sautiImg} src={Conway}  />
+                            <img alt='conway pic' className={classes.sautiImg} src={Conway} />
                         </p>
                     </div>
 
                     <div className={classes.btnContainer}>
 
-                        <p  className={classes.text}>
-                            Tech Stack: Javascript - React - Material-UI - CSS  <br  />
-                              <br  /> 
+                        <p className={classes.text}>
+                            Tech Stack: Javascript - React - Material-UI - CSS  <br />
+                            <br />
 
-                              The Game of Life (an example of a cellular automaton) is played on an infinite two-dimensional rectangular <br />grid of cells. 
+                              The Game of Life (an example of a cellular automaton) is played on an infinite two-dimensional rectangular <br />grid of cells.
                     </p>
-                    <div className={classes.buttonsCont}>
-                        <a href='https://the-conway-game-of-life.vercel.app/' className={classes.Links}><Button variant='outlined'className={classes.buttons}>Website</Button></a>
-                        <a href='https://github.com/Dlray89/The-Conway_game-of_life' className={classes.Links}><Button variant='outlined' className={classes.buttons}>Code Source</Button></a>
+                        <div className={classes.buttonsCont}>
+                            <a href='https://the-conway-game-of-life.vercel.app/' className={classes.Links}><Button variant='outlined' className={classes.buttons}>Website</Button></a>
+                            <a href='https://github.com/Dlray89/The-Conway_game-of_life' className={classes.Links}><Button variant='outlined' className={classes.buttons}>Code Source</Button></a>
                         </div>
-                        
-                        
+
+
                     </div>
 
 

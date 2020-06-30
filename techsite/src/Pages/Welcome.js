@@ -14,177 +14,177 @@ const useStyles = makeStyles((theme) => ({
             boxSizing: 'border-box'
         },
         [theme.breakpoints.down('md')]: {
-        height: '190vh',
-        boxSizing: 'border-box',
+            height: '190vh',
+            boxSizing: 'border-box',
         }
 
 
     },
-introBox: {
-    border: 'solid 2px black',
+    introBox: {
+        border: 'solid 2px black',
         width: '90%',
-            height: ' 80.8vh',
-                margin: ' 0 auto',
-                    boxSizing: 'border-box',
-                        [theme.breakpoints.down('sm')]: {
-        height: '87%'
-    }
-},
-introText: {
-    width: '20%',
-        color: 'white',
-            [theme.breakpoints.down('sm')]: {
-        display: 'none'
-    }
-},
-introTextLink: {
-    textDecoration: 'none'
-},
-intro: {
-    height: '40vh',
-        boxSizing: 'border-box',
-            display: 'flex',
-                [theme.breakpoints.down('sm')]: {
-    }
-},
-skills: {
-    width: '50%',
-        display: 'flex'
-},
-about: {
-    width: '100%',
-        display: 'flex'
-},
-introTwo: {
-    height: '40vh',
-        boxSizing: 'border-box',
-            display: 'flex',
-                [theme.breakpoints.down('sm')]: {
-
-        width: '100%',
-
-        }
-},
-experience: {
-    width: '100%',
-        display: 'flex',
-            [theme.breakpoints.down('sm')]: {
-        display: 'flex',
-            flexDirection: 'column',
-                height: '121.5vh',
-                    width: '100%'
-    }
-},
-
-Nav: {
-    width: '90%',
-        margin: '0 auto',
-            boxSizing: 'border-box',
-                display: 'flex',
-                    justifyContent: 'space-between',
-                        [theme.breakpoints.down('sm')]: {
-    }
-
-},
-bottomNav: {
-    width: '90%',
+        height: ' 80.8vh',
         margin: ' 0 auto',
-            boxSizing: 'border-box',
-                display: 'flex',
-                    justifyContent: 'space-between',
-                        [theme.breakpoints.down('sm')]: {
-        width: '90%',
-            margin: '0 auto'
-    }
-},
-navContainer: {
-    width: '30%',
         boxSizing: 'border-box',
+        [theme.breakpoints.down('sm')]: {
+            height: '77.5%'
+        }
+    },
+    introText: {
+        width: '20%',
+        color: 'white',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        }
+    },
+    introTextLink: {
+        textDecoration: 'none'
+    },
+    intro: {
+        height: '40vh',
+        boxSizing: 'border-box',
+        display: 'flex',
+        [theme.breakpoints.down('sm')]: {
+        }
+    },
+    skills: {
+        width: '50%',
+        display: 'flex'
+    },
+    about: {
+        width: '100%',
+        display: 'flex'
+    },
+    introTwo: {
+        height: '40vh',
+        boxSizing: 'border-box',
+        display: 'flex',
+        [theme.breakpoints.down('sm')]: {
+
+            width: '100%',
+
+        }
+    },
+    experience: {
+        width: '100%',
+        display: 'flex',
+        [theme.breakpoints.down('sm')]: {
             display: 'flex',
-                [theme.breakpoints.down('sm')]: {
-        width: '100%'
-    }
-
-
-},
-navLinks: {
-    width: '40%',
-        boxSizing: 'border-box',
-            textDecoration: 'none'
-
-},
-socialmedia: {
-},
-modalText: {
-    display: 'flex',
-        justifyContent: 'space-evenly',
-            [theme.breakpoints.down('sm')]: {
-        width: '100%',
             flexDirection: 'column',
-                margin: '0 auto'
-    }
-},
-info: {
-    display: 'flex',
-        flexDirection: 'column',
-            justifyContent: 'space-evenly',
-                width: '40%',
-                    [theme.breakpoints.down('sm')]: {
+            height: '121.5vh',
+            width: '100%'
+        }
+    },
+
+    Nav: {
         width: '90%',
-            margin: '0 auto'
-    }
-},
-inputContainer: {
-    textAlign: 'center',
-        width: '45%',
-            [theme.breakpoints.down('sm')]: {
-        width: '100%',
-            margin: '2% auto'
-    }
-},
-divider: {
-    background: 'black'
-},
-buttons: {
-    color: 'white'
-},
-bottomLinks: {
-    textDecoration: 'none'
-},
-introP: {
-    [theme.breakpoints.down('sm')]: {
-        fontSizing: '0.5em',
-            padding: '2%',
-                textAlign: 'center',
-                    boxSizing: 'border-box'
-    }
-},
-
-modalInner: {
-    [theme.breakpoints.down('sm')]: {
-        width: '81%',
-            margin: '0 auto'
-    }
-},
-input: {
-    [theme.breakpoints.down('sm')]: {
-        margin: '2% auto',
+        margin: '0 auto',
+        boxSizing: 'border-box',
+        display: 'flex',
+        justifyContent: 'space-between',
+        [theme.breakpoints.down('sm')]: {
         }
 
-},
-text: {
-    [theme.breakpoints.down('sm')]: {
-        fontSizing: '12px',
+    },
+    bottomNav: {
+        width: '90%',
+        margin: ' 0 auto',
+        boxSizing: 'border-box',
+        display: 'flex',
+        justifyContent: 'space-between',
+        [theme.breakpoints.down('sm')]: {
             width: '90%',
-                textAlign: 'center',
-                    margin: '0 auto'
-    }
-},
-modal: {
-    [theme.breakpoints.down('sm')]: {
-        fontSizing: '12px',
+            margin: '0 auto'
         }
-}
+    },
+    navContainer: {
+        width: '30%',
+        boxSizing: 'border-box',
+        display: 'flex',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+        }
+
+
+    },
+    navLinks: {
+        width: '40%',
+        boxSizing: 'border-box',
+        textDecoration: 'none'
+
+    },
+    socialmedia: {
+    },
+    modalText: {
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            flexDirection: 'column',
+            margin: '0 auto'
+        }
+    },
+    info: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        width: '40%',
+        [theme.breakpoints.down('sm')]: {
+            width: '90%',
+            margin: '0 auto'
+        }
+    },
+    inputContainer: {
+        textAlign: 'center',
+        width: '45%',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            margin: '2% auto'
+        }
+    },
+    divider: {
+        background: 'black'
+    },
+    buttons: {
+        color: 'white'
+    },
+    bottomLinks: {
+        textDecoration: 'none'
+    },
+    introP: {
+        [theme.breakpoints.down('sm')]: {
+            fontSizing: '0.5em',
+            padding: '2%',
+            textAlign: 'center',
+            boxSizing: 'border-box'
+        }
+    },
+
+    modalInner: {
+        [theme.breakpoints.down('sm')]: {
+            width: '81%',
+            margin: '0 auto'
+        }
+    },
+    input: {
+        [theme.breakpoints.down('sm')]: {
+            margin: '2% auto',
+        }
+
+    },
+    text: {
+        [theme.breakpoints.down('sm')]: {
+            fontSizing: '12px',
+            width: '90%',
+            textAlign: 'center',
+            margin: '0 auto'
+        }
+    },
+    modal: {
+        [theme.breakpoints.down('sm')]: {
+            fontSizing: '12px',
+        }
+    }
 
 }))
 

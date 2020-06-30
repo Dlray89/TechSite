@@ -43,6 +43,15 @@
         
     }
 }
+
+@media (max-width: 533px){
+    .row2{
+        display: flex;
+        flex-direction: column-reverse;
+        
+        
+    }
+}
 @media (max-width: 375px){
     .row{
         display: flex;
@@ -71,6 +80,15 @@
 }
 
 @media (max-width: 480px){
+    .row{
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+}
+
+@media (max-width: 533px){
     .row{
         display: flex;
         flex-direction: column;
