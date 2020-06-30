@@ -89,7 +89,16 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         [theme.breakpoints.down('sm')]: {
             width: '94%'
-        }
+        },
+        
+
+    },
+    RickandmortyImg: {
+        width: '100%',
+        [theme.breakpoints.down('sm')]: {
+            width: '81%'
+        },
+        
 
     },
     Links: {
@@ -268,7 +277,7 @@ const Projects = () => {
                     <div className={classes.P1}>
                         <p>Rick and Morty Fan Site</p>
                         <p>
-                            <img alt='pic for rick and morty' className={classes.sautiImg} src={RickandMorty} />
+                            <img alt='pic for rick and morty' className={classes.RickandmortyImg} src={RickandMorty} />
                         </p>
                     </div>
 
