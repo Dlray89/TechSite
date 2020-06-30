@@ -13,8 +13,11 @@ const useStyles = makeStyles((theme) => ({
             height: '190vh',
             boxSizing: 'border-box'
         },
+        [theme.breakpoints.up('sm')]: {
+            height: '38%',
+        },
         [theme.breakpoints.down('md')]: {
-            height: '190vh',
+            height: '167vh',
             boxSizing: 'border-box',
         }
 
@@ -28,7 +31,10 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         [theme.breakpoints.down('sm')]: {
             height: '77.5%'
-        }
+        },
+        [theme.breakpoints.up('sm')]: {
+            height: '80%',
+        },
     },
     introText: {
         width: '20%',
