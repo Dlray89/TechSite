@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
         margin: ' 0 auto',
         boxSizing: 'border-box',
         [theme.breakpoints.down('sm')]: {
-            height: '81%'
+            height: '84%'
         },
         [theme.breakpoints.up('sm')]: {
             height: '80%',
