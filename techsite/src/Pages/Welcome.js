@@ -1,47 +1,30 @@
 import React from 'react'
 import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Divider, TextField, List, ListItem, ListItemText, Typography } from "@material-ui/core"
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import GitHubIcon from '@material-ui/icons/GitHub';
 import { Link } from 'react-router-dom'
-import './Welcome.css'
-
+import DavidPic from "../images/DavidLandscape.jpg"
 const useStyles = makeStyles((theme) => ({
     mainContiner: {
         padding: '1%',
         height: '100vh',
         boxSizing: 'border-box',
         background: '#3a6073',
-        [theme.breakpoints.down('sm')]: {
-            height: '190vh',
-            boxSizing: 'border-box'
-        },
-        [theme.breakpoints.up('sm')]: {
-            height: '38%',
-        },
-        [theme.breakpoints.down('md')]: {
-            height: '167vh',
-            boxSizing: 'border-box',
-        }
+        
 
 
     },
     introBox: {
         border: 'solid 2px black',
         width: '90%',
-        height: ' 80.8vh',
         margin: ' 0 auto',
         boxSizing: 'border-box',
-        [theme.breakpoints.down('sm')]: {
-            height: '84%'
-        },
-        [theme.breakpoints.up('sm')]: {
-            height: '80%',
-        },
+        
     },
     introText: {
         width: '20%',
         color: 'white',
-        [theme.breakpoints.down('sm')]: {
-            display: 'none'
-        }
+        
     },
     introTextLink: {
         textDecoration: 'none'
@@ -50,14 +33,13 @@ const useStyles = makeStyles((theme) => ({
         height: '40vh',
         boxSizing: 'border-box',
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-        }
+        
     },
     skills: {
         width: '50%',
         display: 'flex'
     },
-    about: {
+    greetingContainer: {
         width: '100%',
         display: 'flex'
     },
@@ -65,21 +47,12 @@ const useStyles = makeStyles((theme) => ({
         height: '40vh',
         boxSizing: 'border-box',
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-
-            width: '100%',
-
-        }
+        
     },
     experience: {
         width: '100%',
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-            display: 'flex',
-            flexDirection: 'column',
-            height: '121.5vh',
-            width: '100%'
-        }
+        
     },
 
     Nav: {
@@ -88,8 +61,7 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'space-between',
-        [theme.breakpoints.down('sm')]: {
-        }
+        
 
     },
     bottomNav: {
@@ -98,18 +70,13 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'space-between',
-        [theme.breakpoints.down('sm')]: {
-            width: '90%',
-            margin: '0 auto'
-        }
+        
     },
     navContainer: {
         width: '30%',
         boxSizing: 'border-box',
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%'
-        }
+        
 
 
     },
@@ -124,32 +91,22 @@ const useStyles = makeStyles((theme) => ({
     modalText: {
         display: 'flex',
         justifyContent: 'space-evenly',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
-            flexDirection: 'column',
-            margin: '0 auto'
-        }
+        
     },
     info: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         width: '40%',
-        [theme.breakpoints.down('sm')]: {
-            width: '90%',
-            margin: '0 auto'
-        }
+        
     },
     inputContainer: {
         textAlign: 'center',
         width: '45%',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
-            margin: '2% auto'
-        }
+        
     },
     divider: {
-        background: 'black'
+        background: 'white'
     },
     buttons: {
         color: 'white'
@@ -158,25 +115,11 @@ const useStyles = makeStyles((theme) => ({
         textDecoration: 'none'
     },
     introP: {
-        [theme.breakpoints.down('sm')]: {
-            fontSizing: '0.5em',
-            padding: '2%',
-            textAlign: 'center',
-            boxSizing: 'border-box'
-        }
-    },
-
-    modalInner: {
-        [theme.breakpoints.down('sm')]: {
-            width: '81%',
-            margin: '0 auto'
-        }
-    },
-    input: {
-        [theme.breakpoints.down('sm')]: {
-            margin: '2% auto',
-        }
-
+        padding:'2%',
+        boxSizing:'border-box',
+        marginBottom:'5%',
+        testAlign:'center'
+        
     },
     text: {
         [theme.breakpoints.down('sm')]: {
@@ -187,9 +130,60 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     modal: {
-        [theme.breakpoints.down('sm')]: {
-            fontSizing: '12px',
-        }
+        
+    },
+    greetingBox:{
+        width: '100%',
+        backgroundImage: 'url('+ DavidPic +')',
+        backgroundPosition: 'bottom',
+        backgroundPositionY:'85%',
+        backgroundRepeat:'no-repeat',
+        backgroundSize:'100%'
+    },
+    greeting: {
+        
+        background: '#3a6073 ',
+        width: '10%',
+        position: 'relative',
+        top: '60%',
+        color:'white',
+        textAlign:'center'
+
+    },
+    aboutTextContainer:{
+    width: '50%',
+    color: 'white',
+    fontSize: '1rem',
+    padding: '',
+    boxSizing: 'border-box',
+    background: 'linear-gradient(to bottom, #16222a, #3a6073)',
+
+    },
+    aboutTitle: {
+        padding:'0.6%',
+        textAlign:'center'
+    },
+    backendSkills:{
+    width: '50%',
+    textAlign: 'center',
+    color: 'white',
+    background: 'linear-gradient(to left, #16222a, #3a6073)'
+    },
+    backendSkillList:{
+        textAlign:'center'
+    },
+    frontEnd:{
+    width: '50%',
+    textAlign: 'center',
+    fontSize: '16px',
+    color: 'white',
+    background: 'linear-gradient(to right, #16222a, #3a6073)'
+    },
+    Davidpicture:{
+        width:'20vw'
+    },
+    ListItems: {
+        textAlign:'center'
     }
 
 }))
@@ -229,9 +223,9 @@ const Welcome = () => {
                         <DialogContent className={classes.modalInner}>
                             <DialogContentText className={classes.modalText}>
                                 <div className={classes.info}>
-                                    <p className={classes.text}>Phone: 614.681.0179</p>
+                                    <p className={classes.text}>Phone: 229.735.2351</p>
                                     <p className={classes.text}>Email: dlrayjr89@gmail.com</p>
-                                    <p className={classes.text}>Location: Atlanta, GA</p>
+                                    <p className={classes.text}>Location: Marietta, GA</p>
 
 
                                 </div>
@@ -258,9 +252,10 @@ const Welcome = () => {
 
             <div className={classes.introBox}>
                 <div className={classes.intro}>
-                    <div className={classes.about}>
-                        <div className='tilt-in-fwd-tr'>
-                            <p className='slide-in-tr'>HI IM DAVE</p>
+                    <div className={classes.greetingContainer}>
+                        <div className={classes.greetingBox}>
+                            
+                            <p className={classes.greeting}>HI IM DAVE</p>
                         </div>
 
 
@@ -272,65 +267,65 @@ const Welcome = () => {
 
                 </div>
 
-                <Divider className={classes.divider} />
 
                 <div className={classes.introTwo}>
                     <div className={classes.experience}>
 
-                        <div className="FE">
+                        <div className={classes.frontEnd}>
                             <List className='FEskills'>
-                                <Typography>Front End Skills</Typography>
-                                <Divider />
+                                
+                                <Divider className={classes.divider} />
                                 <ListItem button>
-                                    <ListItemText>Javascript - React - Python</ListItemText>
+                                    <ListItemText className={classes.ListItems} >Front-End Development</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider className={classes.divider} />
 
                                 <ListItem button>
-                                    <ListItemText> HTML - CSS - LESS</ListItemText>
+                                    <ListItemText className={classes.ListItems}> Design Pattern</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider className={classes.divider} />
                                 <ListItem button>
-                                    <ListItemText> Redux - Context-API</ListItemText>
+                                    <ListItemText className={classes.ListItems}> State Management</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider className={classes.divider} />
 
                                 <ListItem button>
-                                    <ListItemText> GraphQL - Apollo-Client - Prisma</ListItemText>
+                                    <ListItemText className={classes.ListItems}>Object-Oriented Programming</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider className={classes.divider} />
 
                             </List>
                         </div>
 
-                        <div className='about'>
-                            <p className='text-flicker-in-glow'>About me</p>
+                        <div className={classes.aboutTextContainer}>
+                            <p className={classes.aboutTitle}>Welcome to my house!</p>
+                            <Divider className={classes.divider} />
                             <p className={classes.introP}>
-                                My name is David L. Ray Jr and I am a software developer. I develop beautiful and dynamic applications for users so they can enhance their day to day life. I am BOLD with a curiosity like no other when it comes to life and looking for solutions to help the world or person reach their potential in life. I let my creativity take over and that's what leads my vision for success along with having a lot of zest to getting the job done.
+                                A house of creativity, passion, and ambition. I’m dedicated to bringing your vision to life using the latest and greatest technology. I create develop things from websites to web applications, so tell me about your vision and together we will bring it to life. 
                             </p>
                         </div>
 
-                        <div className='BE'>
-                            <List className='BEskills'>
-                                <Typography>Back End Skills</Typography>
-                                <Divider />
+                        <div className={classes.backendSkills}>
+                            <List className={classes.backendSkillList}>
+                                
+                                <Divider className={classes.divider} />
                                 <ListItem button>
-                                    <ListItemText>Node.js - Express.js - Bcrypt - Hashing</ListItemText>
+                                    <ListItemText className={classes.ListItems}>API design</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider className={classes.divider} />
 
                                 <ListItem button>
-                                    <ListItemText> Sqlite - Postgres</ListItemText>
+                                    <ListItemText className={classes.ListItems}> Front-End and Back-End Testing </ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider className={classes.divider} />
                                 <ListItem button>
-                                    <ListItemText> GraphQL</ListItemText>
+                                    <ListItemText className={classes.ListItems}> Security </ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider className={classes.divider} />
                                 <ListItem button>
-                                    <ListItemText> Prisma - Apollo</ListItemText>
+                                    <ListItemText className={classes.ListItems}> Database Development </ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider className={classes.divider} />
 
 
                             </List>
@@ -349,9 +344,9 @@ const Welcome = () => {
                 </div>
 
                 <div className={classes.socialmedia}>
-                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>LinkedIn</Button>
-                    </Link>
-                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>GitHub</Button></Link>
+                    <a href='https://www.linkedin.com/in/dapperdave1914/' className={classes.bottomLinks}><Button className={classes.buttons}><LinkedInIcon /></Button>
+                    </a>
+                    <a href='https://github.com/Dlray89' className={classes.bottomLinks}><Button className={classes.buttons}><GitHubIcon /></Button></a>
                 </div>
 
             </div>
