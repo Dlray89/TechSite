@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom'
 import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, TextField, Divider, Typography } from "@material-ui/core"
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub';
+import { useSpring, animated } from "react-spring"
 import './projects.css'
 import Sauti from '../images/sauti.PNG'
 import Prohash from '../images/prohash.PNG'
 import Conway from '../images/conway.PNG'
+
+
 
 const useStyles = makeStyles((theme) => ({
     mainContainer: {
@@ -269,7 +272,7 @@ const Projects = () => {
                     <div className={classes.Sauti}>
                         <div className={classes.SautiTitle}>
                         <Typography>
-                            Sauti
+                            Sauti | Trading Platform
                         </Typography>
                         <Typography>
                             HTML - LESS
@@ -335,7 +338,7 @@ const Projects = () => {
                     <div className={classes.Conway}>
                         <div className={classes.ConwayTitle}>
                             <Typography>
-                                Conway Game of life
+                                Conway's | Game of life
                             </Typography>
 
                             <Typography>
