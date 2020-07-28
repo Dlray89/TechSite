@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Divider, TextField, List, ListItem, ListItemText, Typography } from "@material-ui/core"
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub';
+import Contactops from '../crudhandle/contact_ops'
 import { Link } from 'react-router-dom'
 import DavidPic from "../images/DavidLandscape.jpg"
 const useStyles = makeStyles((theme) => ({
@@ -191,8 +192,18 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Welcome = () => {
+
+    const initContact = {
+        id: null,
+        fullname:'',
+        phonenumber:'',
+        email:''
+    }
+
     const classes = useStyles()
-    const [open, setOpen] = React.useState(false)
+    const [open, setOpen] = useState(false)
+    const [contacts, setContacts] = useState(initContact)
+    const [submitted, setSubmitted] = useState(false)
 
     const handleOpen = () => {
         setOpen(true)
@@ -202,6 +213,39 @@ const Welcome = () => {
     const handleClose = () => {
         setOpen(false)
     }
+
+    const handleContacts = e => {
+        const {name, value} = e.target
+        setContacts({...contacts, [name]: value })
+    }
+
+   const savecontact = () => {
+        let data = {
+            fullname: contacts.fullname,
+            phonenumber: contacts.phonenumber,
+            email: contacts.email
+        }
+
+        Contactops.createContact(data)
+        .then(res => {
+            setContacts({
+                id: res.data.id,
+                fullname: res.data.fullname,
+                phonenumber: res.data.phonenumber,
+                email: res.data.email
+            })
+            setSubmitted(true)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    const newContact = () => {
+        setContacts(initContact)
+        setSubmitted(false)
+    }
+    
 
     return (
         <div className={classes.mainContiner}>
@@ -215,8 +259,7 @@ const Welcome = () => {
                     <Link className={classes.navLinks}><Button className={classes.buttons}>Home </Button></Link>
                     <Link to='/projects' className={classes.navLinks}><Button className={classes.buttons}>Projects</Button></Link>
                     <Link className={classes.navLinks} onClick={handleOpen}><Button className={classes.buttons}>Contact</Button></Link>
-
-                    <Dialog open={open} onClose={handleClose} className={classes.modal}>
+                        <Dialog open={open} onClose={handleClose} className={classes.modal}>
                         <DialogTitle>
                             Lets Chat!
                         </DialogTitle>
@@ -231,18 +274,55 @@ const Welcome = () => {
                                 </div>
                                 <Divider />
                                 <div className={classes.inputContainer}>
-                                    <TextField variant="outlined" type='text' label='Full Name' />
-                                    <TextField className={classes.input} variant="outlined" type='text' label='Phone Number' />
-                                    <TextField variant="outlined" type='text' label='Email Address' />
+                                    <TextField
+                                    type='text'
+                                    id="fullname"
+                                    name='fullname'
+                                    value={contacts.fullname}
+                                    onChange={handleContacts}
+                                     variant="outlined"
+                                      type='text' 
+                                      label='Full Name' />
+
+                                    <TextField
+                                     className={classes.input} variant="outlined"
+                                      type='text' 
+                                      id='phonenumber'
+                                      name='phonenumber'
+                                      onChange={handleContacts}
+                                      value={contacts.phonenumber}
+                                      label='Phone Number' />
+
+                                    <TextField
+                                     variant="outlined"
+                                      type='text' 
+                                      label='Email Address'
+                                      name='email'
+                                      id='email'
+                                      onChange={handleContacts}
+                                      value={contacts.email}
+                                       />
                                 </div>
 
                             </DialogContentText>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleClose}>Send</Button>
+                            {submitted ? (
+                                <div>
+                                    <Button onClick={newContact}>Sumbit</Button>
+                                </div>
+                            ) : (
+                                <div>
+                            <Button onClick={savecontact}>Send</Button>
                             <Button onClick={handleClose}>Cancel</Button>
+                            </div>
+                            )}
+                            
                         </DialogActions>
                     </Dialog>
+                  
+
+                    
                 </div>
 
 
