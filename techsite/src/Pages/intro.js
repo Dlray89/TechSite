@@ -78,10 +78,10 @@ export default class TransitionsExample extends React.PureComponent {
                 <Transition 
                     items={this.state.items}
                     //initial={null}
-                    from={{ overflow: 'hidden', height: 0, opacity: 1}}
-                    enter={{ height: 50, opacity: 1, background: '#28d79f' }}
-                    leave={{ height: 0, opacity: 0, background: '#c23369' }}
-                    update={{ background: '#28b4d7' }}
+                    from={{ overflow: 'hidden', height: 0, opacity: 0, border:'solid 1px #24243e'}}
+                    enter={{ height: 50, opacity: 1, background: '#28d79f', background:"#F2F2F2", color:'black' }}
+                    leave={{ height: 0, opacity: 0, background: '#24243e' }}
+                    update={{ background: '#24243e', color:'white', border:'solid 1px white', '&:hover':{background:'red'} }}
                     trail={200}>
                     {item => styles => (
                         <animated.div style={{ ...defaultStyles, ...styles }}>
