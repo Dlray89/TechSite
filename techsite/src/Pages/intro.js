@@ -1,25 +1,51 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Transition, animated } from 'react-spring/renderprops'
+import css from './intro.css'
 
 
 const defaultStyles = {
     overflow: 'hidden',
-    width: '80%',
-    color: 'white',
+    width: '50%',
+    color: 'white',//
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center',//
     fontSize: '2em',
     fontFamily: "'Kanit', sans-serif",
     textTransform: 'uppercase',
     position: 'absolute',
     top: '40%',
-    left: '9%',
-    borderRadius: '100px',
-    boxShadow: '5px 10px red'
+    left: '10%',
     
+
+
 }
+
+//     //.fancy {
+//   position: relative;
+//   background-color: #FFC;
+//   padding: 2rem;
+//   text-align: center;
+//   max-width: 200px;
+// }
+
+// .fancy::before {
+//   content: "";
+
+//   position : absolute;
+//   z-index  : -1;
+//   bottom   : 15px;
+//   right    : 5px;
+//   width    : 50%;
+//   top      : 80%;
+//   max-width: 200px;
+
+//   box-shadow: 0px 13px 10px black;
+// //   transform: rotate(4deg);
+// }
+    
+// }
 
 export default class TransitionsExample extends React.PureComponent {
     state = { items: [] }
@@ -46,21 +72,13 @@ export default class TransitionsExample extends React.PureComponent {
 
         return (
             <div
-                style={{
-                    background: 'linear-gradient(to left, #232526, #414345)',
-                    overflow: 'hidden',        
-                    margin: 0,
-                    padding: 0,
-                    border:'solid 1px black',
-                    height: '100vh',
-                    
-                }}
+                className='color-change-2x'
             >
                 <Link to='/page' onClick={() => this.componentDidMount()}>
                 <Transition 
                     items={this.state.items}
                     //initial={null}
-                    from={{ overflow: 'hidden', height: 0, opacity: 0 }}
+                    from={{ overflow: 'hidden', height: 0, opacity: 1}}
                     enter={{ height: 50, opacity: 1, background: '#28d79f' }}
                     leave={{ height: 0, opacity: 0, background: '#c23369' }}
                     update={{ background: '#28b4d7' }}
