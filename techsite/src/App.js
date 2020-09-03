@@ -1,28 +1,24 @@
 import React from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom'
-import { useTransition, animated } from "react-spring"
+import { Route, Switch } from 'react-router-dom'
+import Intro from "../src/Pages/intro"
 import Welcome from "./Pages/Welcome"
 import Projects from "./Pages/projects"
+import Layout from '../src/Layout/index'
 import './App.css';
 
 function App() {
+  return (
+    <div className="App">
+          <Switch>
 
-    const location = useLocation()
-    const transition = useTransition(location, location => location.pathname, {
-        from: { opacity: 0, transfrom: "translate3d(100%, 0, 0)" },
-        enter: { opacity: 1, transform: "translate3d(0%, 0, 0" },
-        leave: { opacity: 0, transform: "translate3d(-100%, 0, 0" }
-    })
-    return transition.map(({ item: location, key, props }) => (
-        <animated.div key={key} style={props}>
-            <Switch location={location}>
-                <Route exact path='/' component={Welcome} />
-                <Route path='/projects' component={Projects} />
-            </Switch>
-
-        </animated.div>
-    ))
-
+            <Route exact path='/welcome' component={Welcome}   />
+            <Route exact path='/projects' component={Projects}   />
+              <Route exact path='/' component={Intro} />
+              <Route path='/page' component={ Layout } />
+        </Switch>
+      
+    </div>
+  );
 }
 
 export default App;
