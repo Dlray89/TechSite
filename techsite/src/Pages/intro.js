@@ -74,7 +74,7 @@ export default class TransitionsExample extends React.PureComponent {
             <div
                 className='color-change-2x'
             >
-                <Link to='/page' onClick={() => this.componentDidMount()}>
+                <Link to='/welcome' onClick={() => this.componentDidMount()}>
                 <Transition 
                     items={this.state.items}
                     //initial={null}

@@ -230,7 +230,7 @@ const Projects = () => {
                         Projects
                    </h1>
                    <div className={classes.NavButtons}>
-                    <Link to='/' className={classes.Links}><Button className={classes.buttons}>Home</Button></Link>
+                    <Link to='/welcome' className={classes.Links}><Button className={classes.buttons}>Home</Button></Link>
 
                     <Link className={classes.Links}><Button className={classes.buttons} onClick={handleOpen} >Contact</Button></Link>
                     </div>
