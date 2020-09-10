@@ -56,13 +56,13 @@ const Projects = () => {
             <Divider />
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div style={{ border: 'solid 2px red', width: '50%', display: 'flex', justifyContent: 'space-evenly' }}>
+                <div style={{ width: '50%', display: 'flex', justifyContent: 'space-evenly' }}>
                     <Link to='/welcome'><Button>Home</Button></Link>
                     <Link><Button>About</Button></Link>
                     <Link><Button>Contact</Button></Link>
                 </div>
 
-                <div style={{ border: 'solid 2px blue', width: '20%' }}>
+                <div style={{  width: '20%' }}>
                     <input
                         style={{ width: '70%' }}
                         value={search}
@@ -75,17 +75,17 @@ const Projects = () => {
             </div>
             <Divider />
 
-            <div style={{display:'flex'}}>
+            <div  style={{display:'flex'}}>
                 {searchResults.map(result => (
-                    <div variant="outlined" style={{ margin: '1% auto', display: 'flex', justifyContent: 'space-evenly', width: '30%', border: 'solid 2px yellow', flexDirection: 'column' }}>
+                    <div className='roll-in-left' variant="outlined" style={{ margin: '1% auto', display: 'flex', justifyContent: 'space-evenly', width: '30%', flexDirection: 'column', border: 'solid 2px black' }}>
+                        <Divider />
+                        <div style={{  width: '100%', display: 'flex', justifyContent: 'space-evenly', flexDirection: 'column'}}>
 
-                        <div style={{ border: 'solid 2px red', width: '100%', display: 'flex', justifyContent: 'space-evenly', flexDirection: 'column', }}>
 
-
-                            <p style={{ border: 'solid 2px green', margin: '0', width:'100%' }}>{result.name} <br /> {result.tech_stack}</p>
+                            <p style={{ margin: '0', width:'100%' }}>{result.name} <br /> {result.tech_stack}</p>
 
                         </div>
-                        <div style={{border:'solid 2px red', background: `url(${result.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
+                        <div style={{background: `url(${result.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
                             
 
 
@@ -100,12 +100,12 @@ const Projects = () => {
                 ))}
             </div>
             <Divider />
-            <div style={{display:'flex', justifyContent:'space-between', width:'98%', border:'solid 2px red', margin:' 0 auto'}}>
+            <div style={{display:'flex', justifyContent:'space-between', width:'98%',  margin:' 0 auto'}}>
                 <div style={{border:'solid 2px blue'}}>
                     &copy; 2020 DAPTHEDEV
                 </div>
 
-                <div style={{border:'solid 2px blue', width:'20%'}}>
+                <div style={{width:'20%'}}>
                     <LinkedInIcon />
                     <GitHubIcon />
                     <InstagramIcon />
