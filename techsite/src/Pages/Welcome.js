@@ -212,9 +212,10 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     list:{
-        height: '6vh', 
-        width: '100%', 
+        height: '7vh', 
+        width: '75%', 
         textAlign: 'center',
+        margin:'0 auto',
         
         '&:hover': {
             color: 'white',
@@ -303,7 +304,7 @@ const Welcome = () => {
                              
                             <div style={{ boxSizing: 'border-box', width: '40%', position: 'absolute', top: '10%', left: '50%', display: 'flex', flexDirection: 'column', justifyContent: "space-evenly", height: '25vh' }}>
 
-                                <Link className='flip-in-hor-top' ><Button variant='outlined' className={classes.button}  ><bold>Projects</bold></Button></Link>
+                                <Link to='/projects' className='flip-in-hor-top' ><Button variant='outlined' className={classes.button}  ><bold>Projects</bold></Button></Link>
 
                                 <Link className='flip-in-ver-right' ><Button className={classes.button} variant='outlined' >About</Button></Link>
 
@@ -396,25 +397,25 @@ const Welcome = () => {
                                 <ListItem button className={classes.list} >
                                     <ListItemText  >Application Development</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
                                     <ListItemText>Personal Web Design</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list} >
                                     <ListItemText>Server-Side Application</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
                                     <ListItemText>Website Refactoring</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
                             </div>
 
-                            <Divider style={{background: 'red', color:'red'}} orientation='vertical' />
+                            <Divider style={{background: 'black', color:'black'}} orientation='vertical' />
 
                             <div style={{ width: '48%' }}>
                                
@@ -422,36 +423,63 @@ const Welcome = () => {
                                 <ListItem button className={classes.list}>
                                     <ListItemText>Full-Stack Developer</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
                                 <ListItem button className={classes.list} >
                                     <ListItemText  >View my <a href={Resume} > resume</a></ListItemText>
                                      
                                 </ListItem>
-                                <Divider />
+                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button  className={classes.list}>
-                                    <ListItemText >See my <button onClick={handleCert} >certification</button></ListItemText>
+                                    <ListItemText ><Button variant='contained' onClick={handleCert} >See Certification</Button></ListItemText>
                                 </ListItem>
                                 <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
                                     <DialogTitle>Certification gained during my web development journey</DialogTitle>
                                         <DialogContent>
-                                            <DialogContentText>
-                                                    <a href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'>HTML5</a>
+                                            <DialogContentText style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
+                                            <div>
+                                            <a href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'>SoloLearn - HTML5 Course</a>
+                                            </div>
+                                                    
+                                            <div>
+                                                <a href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' >SoloLearn - CSS Course</a>
+                                            </div>
+
+                                            <div>
+                                                <a href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'>SoloLearn - Javascript Course</a>
+
+                                            </div>
+                                            <div>
+                                                <a href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'>SoloLearn - SQL Course</a>
+
+                                            </div>
+
+                                            <div>
+                                                <a href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'>Udemy - Beginner guide to Cyber Security Courses</a>
+
+                                            </div>
+
+                                            <div>
+                                                <a href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'>Udemy - Ethical Hacking BootCamp Courses</a>
+
+                                            </div>
+
+                                                    
                                             </DialogContentText>
                                         </DialogContent>
                                         <DialogActions>
 
-                                        <Button onClick={certClose} ></Button>
+                                        <Button onClick={certClose} >Close</Button>
                                         </DialogActions>
 
                                    
                                 </Dialog>
-                                <Divider />
+                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
                                     <ListItemText>Lambda Student</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
 
                             </div>
@@ -466,7 +494,7 @@ const Welcome = () => {
                                 <p>Primary Languages</p>
                             </div>
 
-                            <Divider />
+                            <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
 
                             <div style={{ width: '100%', margin: '3% auto', color: 'black', display: 'flex', justifyContent: 'space-evenly' }}>
 
@@ -479,7 +507,7 @@ const Welcome = () => {
                                 <img className='heartbeat' style={{ width: '6%' }} src={PY} />
                             </div>
                         </div>
-                         <Divider />
+                         <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
 
 
 
@@ -489,20 +517,20 @@ const Welcome = () => {
 
                             </div>
 
-                            <Divider />
+                           <Divider style={{background:'black', width:'50%', margin:'0 auto'}} />
 
                             <div>
                                 <a href='https://www.linkedin.com/in/dapperdave1914/' className={classes.bottomLinks}><Button className={classes.buttons}><LinkedInIcon style={{}} /></Button>
                                 </a>
 
-                                <a href='https://www.instagram.com/tapthedap' className={classes.bottomLinks}><Button className={classes.buttons}><InstagramIcon /></Button></a>
+                                <a href='https://www.instagram.com/tapthedap' className={classes.bottomLinks}><Button className={classes.buttons}><InstagramIcon  /></Button></a>
 
-                                <a href='https://www.facebook.com/ImodelIspeak15?ref=bookmarks' className={classes.bottomLinks}><Button className={classes.buttons}><FacebookIcon /></Button>
+                                <a href='https://www.facebook.com/ImodelIspeak15?ref=bookmarks' className={classes.bottomLinks}><Button className={classes.buttons}><FacebookIcon  /></Button>
                                 </a>
-                                <a href='https://github.com/Dlray89' className={classes.bottomLinks}><Button className={classes.buttons}><GitHubIcon /></Button></a>
+                                <a href='https://github.com/Dlray89' className={classes.bottomLinks}><Button className={classes.buttons}><GitHubIcon  /></Button></a>
 
                             </div>
-                             <Divider />
+                             
 
 
                         </div>

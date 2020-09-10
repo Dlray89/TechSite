@@ -1,26 +1,45 @@
 import React from 'react'
-import { DialogContentText } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import { DialogContentText, Dialog, DialogContent, DialogTitle, Button, Divider, DialogActions } from '@material-ui/core'
 
 
 
-const Modal = () => {
+const Modal = (props) => {
+    const [open, setOpen] = React.useState(false)
 
-    return(
+    const handleOpen = () => {
+        setOpen(true)
+    }
+
+    const handleClose = () => {
+        setOpen(false)
+    }
+
+
+
+    return (
         <div>
-             <Link className='flip-in-ver-left' ><Button className={classes.button} variant='outlined' onClick={handleOpen} >Contact</Button></Link>
+            <Button style={{width:'100%'}} onClick={handleOpen}>See More</Button>
+            <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>{props.name} <br /> {props.tech_stack}</DialogTitle>
+                <Divider />
+                <DialogContent>
+                    <DialogContentText style={{border:'solid 2px red', backgroundImage:`url(${props.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}} >
+                        
+                    </DialogContentText>
+                    <DialogContentText>
+                        <p>{props.details}</p>
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                        <a href={props.link} >Website</a>
+                        <Link ><Button href={props.githublink} >Code Source</Button></Link>
+                </DialogActions>
 
 
-
-                                <Dialog open={open} onClose={handleClose} className={classes.modal}>
-                                    <DialogTitle>Certification gained during my web development journey</DialogTitle>
-                                        <DialogContent>
-                                            <DialogContentText>
-                                                    <button>HTML</button>
-                                            </DialogContentText>
-                                        </DialogContent>
-
-                                   
-                                </Dialog>
+            </Dialog>
         </div>
     )
 }
+
+export default Modal

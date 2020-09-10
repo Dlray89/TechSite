@@ -17,7 +17,7 @@ const defaultStyles = {
     position: 'absolute',
     top: '40%',
     left: '10%',
-    boxShadow: '1px 1px 30px red'
+    boxShadow: '10px 22px 40px black'
     
 
 
@@ -56,8 +56,11 @@ export default class TransitionsExample extends React.PureComponent {
                     items={this.state.items}
                     //initial={null}
                     from={{ overflow: 'hidden', height: 0, opacity: 0}}
-                    enter={{ width:'70%' ,height: 75, opacity: 1, background: 'linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)', background:"linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)", color:'black', border:'solid 1px black ' }}                   leave={{ height: 0, opacity: 0, background: 'linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)' }}
-                    update={{ background: 'linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)', color:'black', border:'solid 1px #660708' }}
+
+                    enter={{ width:'70%' ,height: 75, opacity: 1, background: 'linear-gradient(to right, #d3cce3, #e9e4f0)', color:'black', border:'solid 1px black ', borderRadius:'5px' }}                   
+                    
+                    leave={{ height: 0, opacity: 0, background: 'linear-gradient(to right, #d3cce3, #e9e4f0)' }}
+                    update={{ background: 'linear-gradient(to right, #8e9eab, #eef2f3)', color:'black', border:'solid 1px #660708', borderRadius:'5px' }}
                     trail={200}>
                  {item => styles => (
                         <animated.div style={{ ...defaultStyles, ...styles }}>

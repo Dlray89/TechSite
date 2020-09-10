@@ -1,388 +1,118 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, TextField, Divider, Typography } from "@material-ui/core"
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import GitHubIcon from '@material-ui/icons/GitHub';
+import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, TextField, Divider, Typography, Card, CardHeader } from "@material-ui/core"
+
 import { useSpring, animated } from "react-spring"
 import './projects.css'
 import Sauti from '../images/sauti.PNG'
 import Prohash from '../images/prohash.PNG'
 import Conway from '../images/conway.PNG'
+import Modal from '../components/Modal'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import GitHubIcon from '@material-ui/icons/GitHub';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
+const projects = [
 
+    { "id": 1, "name": 'Sauti', "details": "Sauti is a Mobile-based trade and market information platform to trade legally and safely across borders. Empowering East Africa's women to make a better life for themselves and their families. Sauti provides tools for simplifying access to information on trading procedures, market information, and voicing incidents of corruption and harassment.", "link": "https://dlray89.github.io/SautiAfrica/', githublink: 'https://github.com/Dlray89/SautiAfrica", "tech_stack": "HTML - LESS", "img": Sauti },
 
-const useStyles = makeStyles((theme) => ({
-    mainContainer: {
-        boxSizing: 'border-box',
-        background: '#3a6073',
-        padding: '1%',
-        
-        
-    },
-    projectContainer: {
-        border: 'solid 2px black',
-        width: '90%',
-        margin: '0 auto',
-        
-    },
+    { "id": 2, "name": 'prohash', "details": "ProHash is a project management application that will allow you create projects and tasks to get you closer to your short and long term goals. You able to create an account, create, delete and update your projects. Stay organized and focus to your dreams and accomplishements.", "link": "https://prohash.vercel.app/', githublink: 'https://github.com/Dlray89/ProTask-RESTFul-API", "tech_stack": "React - Material-UI - NodeJS", "img": Prohash },
 
-    P1: {
-        color: 'white',
-        width: '30%',
-        height: '35vh',
-        background: 'black',
-        border: 'solid 1px black',
-        textAlign: 'center',
-       
-    },
-    Sauti: {
-        color: 'white',
-        width: '30%',
-        
-        backgroundImage: 'url('+ Sauti +')',
-        border: 'solid 1px black',
-        textAlign: 'center',
-        backgroundPosition:'center',
-        backgroundPositionY:'100%',
-        backgroundRepeat:'no-repeat',
-        backgroundSize:'100%'
-    },
-    SautiTitle: {
-        background:'#16222a',
-        padding:'3.5%'
-    },
-    SautiContent: {
-        padding:'2%',
-       
-        textAlign:'center'
-    },
-    SautiButtonContainer:{
-        
-        display:"flex",
-        justifyContent:'space-evenly'
-    },
-    SautiButtons:{
-        border:'solid 1px white',
-        color:'white'
-    },
-    Prohash:{
-        color: 'white',
-        width: '30%',
-        backgroundImage: 'url('+ Prohash +')',
-        border: 'solid 1px black',
-        textAlign: 'center',
-        backgroundPosition:'center',
-        backgroundPositionY:'95%',
-        backgroundRepeat:'no-repeat',
-        backgroundSize:'100%'
-    },
-    ProhashTitle:{
-        background:'#16222a',        
-        padding:'3%'
-    },
-    ProhashContent:{
-        padding:'2%',
-        textAlign:'center'
-    },
-    ProhashButtonContainer: {
-       
-        display:"flex",
-        justifyContent:'space-evenly'
-    },
-    ProhashButtons:{
-        border:'solid 1px white',
-        color:'white'
-    },
-    Conway:{
-        color: 'white',
-        width: '30%',
-        backgroundImage: 'url('+ Conway +')',
-        border: 'solid 1px black',
-        textAlign: 'center',
-        backgroundPosition:'center',
-        backgroundPositionY:'100%',
-        backgroundRepeat:'no-repeat',
-        backgroundSize:'100%'
-    },
-    ConwayTitle:{
-        background:'#16222a',
-        padding:'3.5%'
-    },
-    ConwayContent: {
-        padding:'2%',       
-        textAlign:'center'
-    },
-    ConwayButtonContainer: {      
-        display:"flex",
-        justifyContent:'space-evenly'
-    },
-    ConwayButtons:{
-        border:'solid 1px white',
-        color:'white'
-    },
-    P2: {
-        width: '30%'
-    },
-    btnContainer: {
-        color: 'white',
-        width: '80%',
-        height: '35vh',
-        background: 'linear-gradient(to right, #16222a, #3a6073)',
-       
-    },
-    title: {
-        color: 'white',
-        border: 'solid 2px black',
-        borderBottom: 'none',
-        width: '90%',
-        margin: '0 auto',
-        background: 'linear-gradient(to bottom, #16222a, #3a6073)',
-       
-    },
-
-
-
-    Divider: {
-        background: 'black'
-    },
-    P1Text: {
-        textAlign: 'center'
-    },
-    
-    RickandmortyImg: {
-        width: '100%',
-    },
-    Links: {
-        textDecoration: 'none'
-    },
-    buttons: {
-        color: 'white',  
-    },
-    
-    modalText: {
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        
-    },
-    info: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        width: '40%',
-       
-    },
-    inputContainer: {
-        textAlign: 'center',
-        width: '45%',
-        
-    },
-    NavTitle:{
-        
-        padding:'1%',
-        textAlign:'center',
-        fontSize:'20px',
-        width:'50%'
-    },
-    Nav:{
-        
-        display:'flex',
-        justifyContent:'space-evenly',
-        
-    },
-    NavButtons:{
-        
-        width:'60%',
-        padding:'2%',
-        display:'flex',
-        justifyContent:'space-evenly',
-        boxSizing:"border-box"
-    },
-    bottomNav: {
-        width: '90%',
-        margin: ' 0 auto',
-        boxSizing: 'border-box',
-        display: 'flex',
-        justifyContent: 'space-between',
-        
-    },
-
-}))
-
+    { "id": 3, "name": 'Conway', "details": "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.This game became widely known when it was mentioned in an article published by Scientific American in 1970. It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the gam", "link": "https://the-conway-game-of-life.vercel.app/', githublink:'https://github.com/Dlray89/The-Conway_game-of_life", "tech_stack": "React - Javascript - Material-UI", "img":Conway },
+]
 
 const Projects = () => {
-    const classes = useStyles()
-    const [open, setOpen] = React.useState(false)
 
-    const handleOpen = () => {
-        setOpen(true)
+
+
+    const [search, setSearch] = useState('')
+    const [searchResults, setSearchResults] = useState([])
+    const [openSauti, setOpenSauti] = useState(false)
+
+    const handleChnage = e => {
+        setSearch(e.target.value)
     }
 
-    const handleClose = () => {
-        setOpen(false)
+    const SautiOpen = () => {
+        setOpenSauti(true)
     }
+    const SautiClose = () => {
+        setOpenSauti(false)
+    }
+
+    React.useEffect(() => {
+        const results = projects.filter(project =>
+            project.name.toLowerCase().includes(search.toLowerCase())
+        )
+        setSearchResults(results)
+    }, [search])
 
     return (
-        <div className={classes.mainContainer}>
-            <div className={classes.title}>
-                
-                <div className={classes.Nav}>
-                    <h1 className={classes.NavTitle}>
-                        Projects
-                   </h1>
-                   <div className={classes.NavButtons}>
-                    <Link to='/welcome' className={classes.Links}><Button className={classes.buttons}>Home</Button></Link>
-
-                    <Link className={classes.Links}><Button className={classes.buttons} onClick={handleOpen} >Contact</Button></Link>
-                    </div>
-
-                    <Dialog className={classes.modal} open={open} onClose={handleClose}>
-                        <DialogTitle>
-                            Lets Chat!
-                   </DialogTitle>
-                        <DialogContent className={classes.modalInner}>
-                            <DialogContentText className={classes.modalText}>
-                                <div className={classes.info}>
-                                    <p className={classes.text}>Phone: 614.681.0179</p>
-                                    <p className={classes.text}>Email: dlrayjr89@gmail.com</p>
-                                    <p className={classes.text}>Location: Atlanta, GA</p>
-                                </div>
-                                <Divider orientation='vertical' />
-                                
-                                <div className={classes.inputContainer}>
-                                    <TextField variant="outlined" type='text' label='Full Name' />
-                                    <TextField className={classes.input} variant="outlined" type='text' label='Phone Number' />
-                                    <TextField variant="outlined" type='text' label='Email Address' />
-                                </div>
-
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleClose}>Send</Button>
-                            <Button onClick={handleClose}>Cancel</Button>
-                        </DialogActions>
-
-                    </Dialog>
-                </div>
-
+        <div>
+            <div>
+                <p>Project Board</p>
             </div>
+            <Divider />
 
-            <div className={classes.projectContainer}>
-
-                <div className='row '>
-                    <div className={classes.Sauti}>
-                        <div className={classes.SautiTitle}>
-                        <Typography>
-                            Sauti | Trading Platform
-                        </Typography>
-                        <Typography>
-                            HTML - LESS
-                        </Typography>
-                        </div>
-                    </div>
-                    <Divider className={classes.Divider}  />
-
-                    <div className={classes.btnContainer}>
-
-                        <p className={classes.SautiContent}>
-
-                        Sauti is a Mobile-based trade and market
-                        information platform to trade legally and safely across borders. Empowering East Africa's women to make a better life for themselves and their families. Sauti provides tools for simplifying access to information on trading procedures, market information, and voicing incidents of corruption and harassment. 
-                        
-                    </p>
-
-                        <div className={classes.SautiButtonContainer}>
-                            <a className={classes.Links} href='https://dlray89.github.io/SautiAfrica/'><Button className={classes.SautiButtons} variant='outlined'>Website</Button></a>
-                            <a className={classes.Links} href='https://github.com/Dlray89/SautiAfrica'><Button variant='outlined' className={classes.SautiButtons}>Code Source</Button></a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <Divider className={classes.Divider} />
-
-                <div className='row2 '>
-
-                    <div className={classes.btnContainer}>
-
-                        <p className={classes.ProhashContent}>
-                            ProHash is a project management application that will allow you create projects and tasks to get you closer to your short and long term goals. You able to create an account, create, delete and update your projects. Stay organized and focus to your dreams and accomplishements.
-                        </p>
-                        <div className={classes.ProhashButtonContainer}>
-                            <a href='https://prohash.vercel.app/' className={classes.Links}> <Button variant='outlined' className={classes.ProhashButtons}>Website</Button></a>
-                            <a href='https://github.com/Dlray89/ProTask-RESTFul-API' className={classes.Links}><Button variant='outlined' className={classes.ProhashButtons}>Code Source</Button></a>
-                        </div>
-
-
-                    </div>
-
-
-                    <div className={classes.Prohash}>
-                        <div className={classes.ProhashTitle}>
-                            <Typography>
-                                Prohash | Project Management 
-                            </Typography>
-                            <Typography>
-                                React - Material-UI - NodeJS
-                            </Typography>
-                        </div>
-                        
-                        
-                    </div>
-
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={{ border: 'solid 2px red', width: '50%', display: 'flex', justifyContent: 'space-evenly' }}>
+                    <Link to='/welcome'><Button>Home</Button></Link>
+                    <Link><Button>About</Button></Link>
+                    <Link><Button>Contact</Button></Link>
                 </div>
 
-                <Divider className={classes.Divider} />
-
-                <div className='row '>
-
-                    <div className={classes.Conway}>
-                        <div className={classes.ConwayTitle}>
-                            <Typography>
-                                Conway's | Game of life
-                            </Typography>
-
-                            <Typography>
-                                React - Javascript - Material-UI
-                            </Typography>
-                        </div>
-                       
-                        
-                    </div>
-
-                    <div className={classes.btnContainer}>
-
-                        <p className={classes.ConwayContent}>
-
-                            The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
-                            This game became widely known when it was mentioned in an article published by Scientific American in 1970. It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the game
-                    </p>
-                        <div className={classes.ConwayButtonContainer}>
-                            <a href='https://the-conway-game-of-life.vercel.app/' className={classes.Links}><Button variant='outlined' className={classes.ConwayButtons}>Website</Button></a>
-                            <a href='https://github.com/Dlray89/The-Conway_game-of_life' className={classes.Links}><Button variant='outlined' className={classes.ConwayButtons}>Code Source</Button></a>
-                        </div>
-
-
-                    </div>
-
-
-
+                <div style={{ border: 'solid 2px blue', width: '20%' }}>
+                    <input
+                        style={{ width: '70%' }}
+                        value={search}
+                        onChange={handleChnage}
+                        placeholder='Search projects'
+                    />
                 </div>
 
 
             </div>
-            <div className={classes.bottomNav}>
+            <Divider />
 
-                <div className={classes.copyright}>
-                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>&copy; Dapthedev</Button></Link>
-                </div>
+            <div style={{display:'flex'}}>
+                {searchResults.map(result => (
+                    <div variant="outlined" style={{ margin: '1% auto', display: 'flex', justifyContent: 'space-evenly', width: '30%', border: 'solid 2px yellow', flexDirection: 'column' }}>
 
-                <div className={classes.socialmedia}>
-                    <a href='https://www.linkedin.com/in/dapperdave1914/' className={classes.bottomLinks}><Button className={classes.buttons}><LinkedInIcon /></Button>
-                    </a>
-                    <a href='https://github.com/Dlray89' className={classes.bottomLinks}><Button className={classes.buttons}><GitHubIcon /></Button></a>
-                </div>
+                        <div style={{ border: 'solid 2px red', width: '100%', display: 'flex', justifyContent: 'space-evenly', flexDirection: 'column', }}>
 
+
+                            <p style={{ border: 'solid 2px green', margin: '0', width:'100%' }}>{result.name} <br /> {result.tech_stack}</p>
+
+                        </div>
+                        <div style={{border:'solid 2px red', background: `url(${result.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
+                            
+
+
+                        </div>
+
+                        
+
+                        <div style={{ border: 'solid 2px red', width: '100%' }}>
+                            <Modal key={result.id} name={result.name} img={result.img} tech_stack={result.tech_stack} details={result.details} link={result.link} githublink={result.githublink} />
+                        </div> 
+                    </div>
+                ))}
             </div>
+            <Divider />
+            <div style={{display:'flex', justifyContent:'space-between', width:'98%', border:'solid 2px red', margin:' 0 auto'}}>
+                <div style={{border:'solid 2px blue'}}>
+                    &copy; 2020 DAPTHEDEV
+                </div>
+
+                <div style={{border:'solid 2px blue', width:'20%'}}>
+                    <LinkedInIcon />
+                    <GitHubIcon />
+                    <InstagramIcon />
+                    <FacebookIcon />
+                </div>
+            </div>
+            <Divider />
         </div>
     )
 }
