@@ -7,7 +7,7 @@ import css from './intro.css'
 const defaultStyles = {
     overflow: 'hidden',
     width: '50%',
-    color: 'white',//
+    color: 'red',//
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',//
@@ -17,7 +17,7 @@ const defaultStyles = {
     position: 'absolute',
     top: '40%',
     left: '10%',
-    boxShadow: '1px 1px 30px white'
+    boxShadow: '1px 1px 30px red'
     
 
 
@@ -35,29 +35,29 @@ export default class TransitionsExample extends React.PureComponent {
 
         this.setState({ items: ['Welcome World'] })
         this.t1 = setTimeout(
-            () => this.setState({ items: ['My name is DAVE'] }),
+            () => this.setState({ items: ['Hi, im Dave! I am a full stack-developer'] }),
             3500
         )
         this.t2 = setTimeout(
-            () => this.setState({ items: ['I am a software developer'] }),
+            () => this.setState({ items: ['Ready to make your vision come true.'] }),
             7000
         )
-        this.t3 = setTimeout(() => this.setState({ items: ['Continue....'] }), 10500)
+        this.t3 = setTimeout(() => this.setState({ items: ['Tap here to get started'] }), 10500)
     }
 
     render() {
 
         return (
             <div
-                className='color-change-2x'
+                
             >
                 <Link to='/welcome' onClick={() => this.componentDidMount()}>
                 <Transition 
                     items={this.state.items}
                     //initial={null}
                     from={{ overflow: 'hidden', height: 0, opacity: 0}}
-                    enter={{ height: 50, opacity: 1, background: '#28d79f', background:"#F2F2F2", color:'black' }}                   leave={{ height: 0, opacity: 0, background: '#24243e' }}
-                    update={{ background: '#24243e', color:'white', border:'solid 1px white' }}
+                    enter={{ width:'70%' ,height: 75, opacity: 1, background: 'linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)', background:"linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)", color:'black', border:'solid 1px black ' }}                   leave={{ height: 0, opacity: 0, background: 'linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)' }}
+                    update={{ background: 'linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea)', color:'black', border:'solid 1px #660708' }}
                     trail={200}>
                  {item => styles => (
                         <animated.div style={{ ...defaultStyles, ...styles }}>

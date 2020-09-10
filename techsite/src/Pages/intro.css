@@ -1,3 +1,8 @@
+.script-box {
+    will-change: width, height, left, right;
+    position: relative;
+}
+
 .color-change-2x{
     
     overflow: hidden;        
