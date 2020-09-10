@@ -92,8 +92,8 @@ const Projects = () => {
                         </div>
 
                         
-
-                        <div style={{ border: 'solid 2px red', width: '100%' }}>
+                        <Divider />
+                        <div style={{  width: '100%' }}>
                             <Modal key={result.id} name={result.name} img={result.img} tech_stack={result.tech_stack} details={result.details} link={result.link} githublink={result.githublink} />
                         </div> 
                     </div>
