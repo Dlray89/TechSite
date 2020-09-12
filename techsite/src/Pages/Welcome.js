@@ -1,47 +1,46 @@
-import React from 'react'
-import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Divider, TextField, List, ListItem, ListItemText, Typography } from "@material-ui/core"
+import React, { useState } from 'react'
+import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, Divider, TextField, List, ListItem, ListItemText } from "@material-ui/core"
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import GitHubIcon from '@material-ui/icons/GitHub';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import Contactops from '../crudhandle/contact_ops'
 import { Link } from 'react-router-dom'
+import LOGO from "../images/dapthedev.gif"
+import Resume from '../resume/david_resume.pdf'
 import './Welcome.css'
+
+//icons
+import HTML from '../icons/html-5.png'
+import CSS from '../icons/css.png'
+import JS from '../icons/javascript.png'
+import NODE from '../icons/nodejs.png'
+import REACT from '../icons/react.png'
+import PY from '../icons/python.png'
+
+
 
 const useStyles = makeStyles((theme) => ({
     mainContiner: {
         padding: '1%',
         height: '100vh',
         boxSizing: 'border-box',
-        background: '#3a6073',
-        [theme.breakpoints.down('sm')]: {
-            height: '190vh',
-            boxSizing: 'border-box'
-        },
-        [theme.breakpoints.up('sm')]: {
-            height: '38%',
-        },
-        [theme.breakpoints.down('md')]: {
-            height: '167vh',
-            boxSizing: 'border-box',
-        }
+      
+
 
 
     },
     introBox: {
         border: 'solid 2px black',
         width: '90%',
-        height: ' 80.8vh',
-        margin: ' 0 auto',
+        margin: ' 3.5% auto',
         boxSizing: 'border-box',
-        [theme.breakpoints.down('sm')]: {
-            height: '84%'
-        },
-        [theme.breakpoints.up('sm')]: {
-            height: '80%',
-        },
+
     },
     introText: {
         width: '20%',
         color: 'white',
-        [theme.breakpoints.down('sm')]: {
-            display: 'none'
-        }
+
     },
     introTextLink: {
         textDecoration: 'none'
@@ -50,36 +49,28 @@ const useStyles = makeStyles((theme) => ({
         height: '40vh',
         boxSizing: 'border-box',
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-        }
+
     },
     skills: {
         width: '50%',
         display: 'flex'
     },
-    about: {
+    greetingContainer: {
         width: '100%',
-        display: 'flex'
+        display: 'flex',
+        background: 'lightgrey',
+
     },
     introTwo: {
         height: '40vh',
         boxSizing: 'border-box',
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
 
-            width: '100%',
-
-        }
     },
     experience: {
         width: '100%',
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-            display: 'flex',
-            flexDirection: 'column',
-            height: '121.5vh',
-            width: '100%'
-        }
+
     },
 
     Nav: {
@@ -88,8 +79,8 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'space-between',
-        [theme.breakpoints.down('sm')]: {
-        }
+
+
 
     },
     bottomNav: {
@@ -98,18 +89,12 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'space-between',
-        [theme.breakpoints.down('sm')]: {
-            width: '90%',
-            margin: '0 auto'
-        }
+
     },
     navContainer: {
-        width: '30%',
+        width: '100%',
         boxSizing: 'border-box',
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%'
-        }
 
 
     },
@@ -124,58 +109,38 @@ const useStyles = makeStyles((theme) => ({
     modalText: {
         display: 'flex',
         justifyContent: 'space-evenly',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
-            flexDirection: 'column',
-            margin: '0 auto'
-        }
+
     },
     info: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         width: '40%',
-        [theme.breakpoints.down('sm')]: {
-            width: '90%',
-            margin: '0 auto'
-        }
+
     },
     inputContainer: {
         textAlign: 'center',
         width: '45%',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
-            margin: '2% auto'
-        }
+
     },
     divider: {
-        background: 'black'
+        background: 'white'
     },
     buttons: {
-        color: 'white'
+        color: 'black',
+        '&:hover': {
+            color:'red'
+        }
+
     },
     bottomLinks: {
         textDecoration: 'none'
     },
     introP: {
-        [theme.breakpoints.down('sm')]: {
-            fontSizing: '0.5em',
-            padding: '2%',
-            textAlign: 'center',
-            boxSizing: 'border-box'
-        }
-    },
-
-    modalInner: {
-        [theme.breakpoints.down('sm')]: {
-            width: '81%',
-            margin: '0 auto'
-        }
-    },
-    input: {
-        [theme.breakpoints.down('sm')]: {
-            margin: '2% auto',
-        }
+        padding: '2%',
+        boxSizing: 'border-box',
+        marginBottom: '5%',
+        testAlign: 'center'
 
     },
     text: {
@@ -187,8 +152,77 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     modal: {
-        [theme.breakpoints.down('sm')]: {
-            fontSizing: '12px',
+
+    },
+    greetingBox: {
+        width: '100%',
+        backgroundImage: 'url(' + LOGO + ')',
+        backgroundPosition: 'start',
+        backgroundPositionY: '50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'filled',
+
+    },
+    greeting: {
+        background: '#3a6073 ',
+        width: '10%',
+        position: 'relative',
+        top: '60%',
+        color: 'white',
+        textAlign: 'center'
+
+    },
+    aboutTextContainer: {
+        width: '50%',
+        color: 'white',
+        fontSize: '1rem',
+        padding: '',
+        boxSizing: 'border-box',
+        background: 'linear-gradient(to bottom, #16222a, #3a6073)',
+
+    },
+    aboutTitle: {
+        padding: '0.6%',
+        textAlign: 'center'
+    },
+    news: {
+        width: '50%',
+        textAlign: 'center',
+
+        background: 'white',
+
+    },
+    backendSkillList: {
+        textAlign: 'center'
+    },
+    frontEnd: {
+        width: '50%',
+        textAlign: 'center',
+        fontSize: '16px',
+        color: 'white',
+        background: 'lightgrey',
+
+    },
+    Davidpicture: {
+        width: '20vw'
+    },
+    
+    button: {
+        width: '90%',
+        '&:hover': {
+            color: 'white',
+            background: 'black'
+        }
+    },
+    list:{
+        height: '7vh', 
+        width: '75%', 
+        textAlign: 'center',
+        margin:'0 auto',
+        
+        '&:hover': {
+            color: 'white',
+            background: 'black'
         }
     }
 
@@ -197,8 +231,19 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Welcome = () => {
+
+    const initContact = {
+        id: null,
+        fullname: '',
+        phonenumber: '',
+        email: ''
+    }
+
     const classes = useStyles()
-    const [open, setOpen] = React.useState(false)
+    const [open, setOpen] = useState(false)
+    const [openCerts, setOpenCerts] = useState(false)
+    const [contacts, setContacts] = useState(initContact)
+    const [submitted, setSubmitted] = useState(false)
 
     const handleOpen = () => {
         setOpen(true)
@@ -208,135 +253,295 @@ const Welcome = () => {
     const handleClose = () => {
         setOpen(false)
     }
+    
+    const handleCert = () => {
+        setOpenCerts(true)
+    }
+
+
+    const certClose = () => {
+        setOpenCerts(false)
+    }
+    const handleContacts = e => {
+        const { name, value } = e.target
+        setContacts({ ...contacts, [name]: value })
+    }
+
+    const savecontact = () => {
+        let data = {
+            fullname: contacts.fullname,
+            phonenumber: contacts.phonenumber,
+            email: contacts.email
+        }
+
+        Contactops.createContact(data)
+            .then(res => {
+                setContacts({
+                    id: res.data.id,
+                    fullname: res.data.fullname,
+                    phonenumber: res.data.phonenumber,
+                    email: res.data.email
+                })
+                setSubmitted(true)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    const newContact = () => {
+        setContacts(initContact)
+        setSubmitted(false)
+    }
+
 
     return (
         <div className={classes.mainContiner}>
-            <div className={classes.Nav}>
 
-                <div className={classes.introText}>
-                    <Link className={classes.introTextLink}><Button className={classes.buttons}>Full Stack developer</Button></Link>
-                </div>
-
-                <div className={classes.navContainer}>
-                    <Link className={classes.navLinks}><Button className={classes.buttons}>Home </Button></Link>
-                    <Link to='/projects' className={classes.navLinks}><Button className={classes.buttons}>Projects</Button></Link>
-                    <Link className={classes.navLinks} onClick={handleOpen}><Button className={classes.buttons}>Contact</Button></Link>
-
-                    <Dialog open={open} onClose={handleClose} className={classes.modal}>
-                        <DialogTitle>
-                            Lets Chat!
-                        </DialogTitle>
-                        <DialogContent className={classes.modalInner}>
-                            <DialogContentText className={classes.modalText}>
-                                <div className={classes.info}>
-                                    <p className={classes.text}>Phone: 614.681.0179</p>
-                                    <p className={classes.text}>Email: dlrayjr89@gmail.com</p>
-                                    <p className={classes.text}>Location: Atlanta, GA</p>
-
-
-                                </div>
-                                <Divider />
-                                <div className={classes.inputContainer}>
-                                    <TextField variant="outlined" type='text' label='Full Name' />
-                                    <TextField className={classes.input} variant="outlined" type='text' label='Phone Number' />
-                                    <TextField variant="outlined" type='text' label='Email Address' />
-                                </div>
-
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleClose}>Send</Button>
-                            <Button onClick={handleClose}>Cancel</Button>
-                        </DialogActions>
-                    </Dialog>
-                </div>
-
-
-
-
-            </div>
 
             <div className={classes.introBox}>
                 <div className={classes.intro}>
-                    <div className={classes.about}>
-                        <div className='tilt-in-fwd-tr'>
-                            <p className='slide-in-tr'>HI IM DAVE</p>
+                    <div className={classes.greetingContainer}>
+
+                        <div className={classes.greetingBox}>
+                             
+                            <div style={{ boxSizing: 'border-box', width: '40%', position: 'absolute', top: '18%', left: '50%', display: 'flex', flexDirection: 'column', justifyContent: "space-evenly", height: '25vh' }}>
+
+                                <Link to='/projects' className='flip-in-hor-top' ><Button variant='outlined' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
+
+                                <Link className='flip-in-ver-right' ><Button className={classes.button} variant='outlined' ><span className='jello-horizontal'>About</span></Button></Link>
+
+                                <Link className='flip-in-ver-left' ><Button className={classes.button} variant='outlined' onClick={handleOpen} ><span className='jello-horizontal'>Contact</span></Button></Link>
+
+
+
+                                <Dialog open={open} onClose={handleClose} className={classes.modal}>
+                                    <DialogTitle>
+                                        Lets Chat!
+                        </DialogTitle>
+                                    <DialogContent className={classes.modalInner}>
+                                        <DialogContentText className={classes.modalText}>
+                                            <div className={classes.info}>
+                                                <p className={classes.text}>Phone: 229.735.2351</p>
+                                                <p className={classes.text}>Email: dlrayjr89@gmail.com</p>
+                                                <p className={classes.text}>Location: Marietta, GA</p>
+
+
+                                            </div>
+                                            <Divider />
+                                            <div className={classes.inputContainer}>
+                                                <TextField
+                                                    type='text'
+                                                    id="fullname"
+                                                    name='fullname'
+                                                    value={contacts.fullname}
+                                                    onChange={handleContacts}
+                                                    variant="outlined"
+                                                    placeholder='Full Name' />
+
+                                                <TextField
+                                                    className={classes.input} variant="outlined"
+                                                    type='text'
+                                                    id='phonenumber'
+                                                    name='phonenumber'
+                                                    onChange={handleContacts}
+                                                    value={contacts.phonenumber}
+                                                    placeholder='Phone Number' />
+
+                                                <TextField
+                                                    variant="outlined"
+                                                    type='text'
+                                                    placeholder='Email Address'
+                                                    name='email'
+                                                    id='email'
+                                                    onChange={handleContacts}
+                                                    value={contacts.email}
+                                                />
+                                            </div>
+
+                                        </DialogContentText>
+                                    </DialogContent>
+                                    <DialogActions>
+                                        {submitted ? (
+                                            <div>
+                                                <Button onClick={newContact}>Sumbit</Button>
+                                            </div>
+                                        ) : (
+                                                <div>
+                                                    <Button onClick={savecontact}>Send</Button>
+                                                    <Button onClick={handleClose}>Cancel</Button>
+                                                </div>
+                                            )}
+
+                                    </DialogActions>
+                                </Dialog>
+                               
+                            </div>
+                           
+                            
+
                         </div>
-
-
                     </div>
-
-
-
-
-
                 </div>
+                <Divider style={{background:'black'}} />
 
-                <Divider className={classes.divider} />
 
                 <div className={classes.introTwo}>
-                    <div className={classes.experience}>
+                    <div className={classes.news}>
 
-                        <div className="FE">
-                            <List className='FEskills'>
-                                <Typography>Front End Skills</Typography>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText>Javascript - React - Python</ListItemText>
+                        <p style={{ fontSize: '20px', margin: '0 0 1% 0', padding: '1%', boxSizing: 'border-box' }}>Services & Career</p>
+                        <Divider style={{width:'40%', margin:'0 auto', background: 'black'}} />
+
+                        
+
+                        <List style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+
+                            <div style={{ width: '48%' }} >
+                                <ListItem button className={classes.list} >
+                                    <ListItemText className='jello-horizontal'  >Application Development</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
-                                <ListItem button>
-                                    <ListItemText> HTML - CSS - LESS</ListItemText>
+                                <ListItem button className={classes.list}>
+                                    <ListItemText className='jello-horizontal'>Personal Web Design</ListItemText>
                                 </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> Redux - Context-API</ListItemText>
+                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
+
+                                <ListItem button className={classes.list} >
+                                    <ListItemText className='jello-horizontal'>Server-Side Application</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
-                                <ListItem button>
-                                    <ListItemText> GraphQL - Apollo-Client - Prisma</ListItemText>
+                                <ListItem button className={classes.list}>
+                                    <ListItemText className='jello-horizontal'>Website Refactoring</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
+                            </div>
 
-                            </List>
-                        </div>
+                            <Divider style={{background: 'black', color:'black'}} orientation='vertical' />
 
-                        <div className='about'>
-                            <p className='text-flicker-in-glow'>About me</p>
-                            <p className={classes.introP}>
-                                My name is David L. Ray Jr and I am a software developer. I develop beautiful and dynamic applications for users so they can enhance their day to day life. I am BOLD with a curiosity like no other when it comes to life and looking for solutions to help the world or person reach their potential in life. I let my creativity take over and that's what leads my vision for success along with having a lot of zest to getting the job done.
-                            </p>
-                        </div>
+                            <div style={{ width: '48%' }}>
+                               
 
-                        <div className='BE'>
-                            <List className='BEskills'>
-                                <Typography>Back End Skills</Typography>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText>Node.js - Express.js - Bcrypt - Hashing</ListItemText>
+                                <ListItem button className={classes.list}>
+                                    <ListItemText className='jello-horizontal'>Full-Stack Developer</ListItemText>
                                 </ListItem>
-                                <Divider />
-
-                                <ListItem button>
-                                    <ListItemText> Sqlite - Postgres</ListItemText>
+                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <ListItem button className={classes.list} >
+                                    <ListItemText className='jello-horizontal' >View my <a href={Resume} > resume</a></ListItemText>
+                                     
                                 </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> GraphQL</ListItemText>
+                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
+
+                                <ListItem button  className={classes.list}>
+                                    <ListItemText className='jello-horizontal'>Check my <a onClick={handleCert} >Certifications</a></ListItemText>
                                 </ListItem>
-                                <Divider />
-                                <ListItem button>
-                                    <ListItemText> Prisma - Apollo</ListItemText>
+                                <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
+                                    <DialogTitle>Certification gained during my web development journey</DialogTitle>
+                                        <DialogContent>
+                                            <DialogContentText style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
+                                            <div>
+                                            <a href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'>SoloLearn - HTML5 Course</a>
+                                            </div>
+                                                    
+                                            <div>
+                                                <a href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' >SoloLearn - CSS Course</a>
+                                            </div>
+
+                                            <div>
+                                                <a href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'>SoloLearn - Javascript Course</a>
+
+                                            </div>
+                                            <div>
+                                                <a href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'>SoloLearn - SQL Course</a>
+
+                                            </div>
+
+                                            <div>
+                                                <a href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'>Udemy - Beginner guide to Cyber Security Courses</a>
+
+                                            </div>
+
+                                            <div>
+                                                <a href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'>Udemy - Ethical Hacking BootCamp Courses</a>
+
+                                            </div>
+
+                                                    
+                                            </DialogContentText>
+                                        </DialogContent>
+                                        <DialogActions>
+
+                                        <Button onClick={certClose} >Close</Button>
+                                        </DialogActions>
+
+                                   
+                                </Dialog>
+                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
+
+                                <ListItem button className={classes.list}>
+                                    <ListItemText className='jello-horizontal'>Lambda Student</ListItemText>
                                 </ListItem>
-                                <Divider />
+                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
 
-                            </List>
+                            </div>
+                            
+                        </List>
 
-                        </div>
                     </div>
+<Divider style={{background:'black'}} orientation='vertical' />
+                    <div className={classes.frontEnd}>
+                        <div style={{}}>
+                            <div style={{ padding: '0%', color: 'black' }}>
+                                <p>Primary Languages</p>
+                            </div>
+
+                            <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
+
+                            <div className='bounce-in-right'>
+
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={HTML} />
+
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={CSS} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={JS} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={REACT} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={NODE} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={PY} />
+                            </div>
+                        </div>
+                         <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
+
+
+
+                        <div style={{ width: '100%', margin: '0 auto', color: 'black' }}>
+                            <div>
+                                <p>Social Platforms</p>
+
+                            </div>
+
+                           <Divider style={{background:'black', width:'50%', margin:'0 auto'}} />
+
+                            <div>
+                                <a href='https://www.linkedin.com/in/dapperdave1914/' className={classes.bottomLinks}><Button className={classes.buttons}><LinkedInIcon style={{}} /></Button>
+                                </a>
+
+                                <a href='https://www.instagram.com/tapthedap' className={classes.bottomLinks}><Button className={classes.buttons}><InstagramIcon  /></Button></a>
+
+                                <a href='https://www.facebook.com/ImodelIspeak15?ref=bookmarks' className={classes.bottomLinks}><Button className={classes.buttons}><FacebookIcon  /></Button>
+                                </a>
+                                <a href='https://github.com/Dlray89' className={classes.bottomLinks}><Button className={classes.buttons}><GitHubIcon  /></Button></a>
+
+                            </div>
+                             
+
+
+                        </div> 
+                        <div className={classes.copyright}>
+                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>&copy; 2020; A dapthedev development</Button></Link>
+                </div>
+                    </div>
+
                 </div>
 
 
@@ -344,15 +549,9 @@ const Welcome = () => {
 
             <div className={classes.bottomNav}>
 
-                <div className={classes.copyright}>
-                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>&copy; Dapthedev</Button></Link>
-                </div>
+                
 
-                <div className={classes.socialmedia}>
-                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>LinkedIn</Button>
-                    </Link>
-                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>GitHub</Button></Link>
-                </div>
+
 
             </div>
         </div>

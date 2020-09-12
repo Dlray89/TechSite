@@ -1,337 +1,119 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, TextField, Divider } from "@material-ui/core"
+import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, TextField, Divider, Typography, Card, CardHeader } from "@material-ui/core"
+
+import { useSpring, animated } from "react-spring"
 import './projects.css'
 import Sauti from '../images/sauti.PNG'
-import RickandMorty from '../images/rick.PNG'
+import Prohash from '../images/prohash.PNG'
 import Conway from '../images/conway.PNG'
+import Modal from '../components/Modal'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import GitHubIcon from '@material-ui/icons/GitHub';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
-const useStyles = makeStyles((theme) => ({
-    mainContainer: {
-        boxSizing: 'border-box',
-        background: '#3a6073',
-        padding: '1%',
-        [theme.breakpoints.down('sm')]: {
-            height: '380vh'
-        },
-        
-        [theme.breakpoints.down('md')]: {
-            height: '230vh'
-        },
-        
-    },
-    projectContainer: {
-        border: 'solid 2px black',
-        width: '90%',
-        margin: '0 auto',
-        [theme.breakpoints.down('sm')]: {
-            width: '90%',
-            margin: '0 auto',
-            height: '210.3vh'
+const projects = [
 
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '95%',
-            margin: '0 auto',
-            height: '213vh',
+    { "id": 1, "name": 'Sauti', "details": "Sauti is a Mobile-based trade and market information platform to trade legally and safely across borders. Empowering East Africa's women to make a better life for themselves and their families. Sauti provides tools for simplifying access to information on trading procedures, market information, and voicing incidents of corruption and harassment.", "link": "https://dlray89.github.io/SautiAfrica/', githublink: 'https://github.com/Dlray89/SautiAfrica", "tech_stack": "HTML - LESS", "img": Sauti },
 
-        }
-    },
+    { "id": 2, "name": 'prohash', "details": "ProHash is a project management application that will allow you create projects and tasks to get you closer to your short and long term goals. You able to create an account, create, delete and update your projects. Stay organized and focus to your dreams and accomplishements.", "link": "https://prohash.vercel.app/', githublink: 'https://github.com/Dlray89/ProTask-RESTFul-API", "tech_stack": "React - Material-UI - NodeJS", "img": Prohash },
 
-    P1: {
-        color: 'white',
-        width: '30%',
-        height: '35vh',
-        background: 'black',
-        border: 'solid 1px black',
-        textAlign: 'center',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
-            boxSizing: 'border-box'
-        }
-    },
-    P2: {
-        width: '30%'
-    },
-    btnContainer: {
-        color: 'white',
-        width: '80%',
-        height: '35vh',
-        background: 'linear-gradient(to right, #16222a, #3a6073)',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
-            margin: '0 auto',
-            fontSizing: '1px',
-            padding: '2%',
-            boxSizing: 'border-box'
-
-
-        }
-    },
-    title: {
-        color: 'white',
-        border: 'solid 2px black',
-        borderBottom: 'none',
-        width: '90%',
-        margin: '0 auto',
-        background: 'linear-gradient(to bottom, #16222a, #3a6073)',
-        [theme.breakpoints.down('sm')]: {
-            width: '90%',
-            margin: '0 auto'
-
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '95%',
-            margin: '0 auto'
-
-        },
-    },
-
-
-
-    Divider: {
-        background: 'black'
-    },
-    P1Text: {
-        textAlign: 'center'
-    },
-    sauti: {
-        textAlign: 'center'
-    },
-    sautiImg: {
-        width: '100%',
-        [theme.breakpoints.down('sm')]: {
-            width: '94%'
-        },
-        
-
-    },
-    RickandmortyImg: {
-        width: '100%',
-        [theme.breakpoints.down('sm')]: {
-            width: '81%'
-        },
-        [theme.breakpoints.up('sm')]: {
-            width: '79%'
-        },
-        
-
-    },
-    Links: {
-        textDecoration: 'none'
-    },
-    buttons: {
-        color: 'white'
-    },
-    text: {
-        [theme.breakpoints.down('sm')]: {
-            fontSizing: '12px',
-            width: '90%',
-            textAlign: 'center',
-            margin: '5% auto'
-        }
-    },
-    buttonsCont: {
-        [theme.breakpoints.down('sm')]: {
-        }
-    },
-    modalText: {
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
-            flexDirection: 'column',
-            margin: '0 auto'
-        }
-    },
-    info: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        width: '40%',
-        [theme.breakpoints.down('sm')]: {
-            width: '90%',
-            margin: '0 auto'
-        }
-    },
-    inputContainer: {
-        textAlign: 'center',
-        width: '45%',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
-            margin: '2% auto'
-        }
-    },
-    modalInner: {
-        [theme.breakpoints.down('sm')]: {
-            width: '81%',
-            margin: '0 auto'
-        }
-    },
-    input: {
-        [theme.breakpoints.down('sm')]: {
-            margin: '2% auto',
-        }
-
-    },
-    modal: {
-        [theme.breakpoints.down('sm')]: {
-            fontSizing: '12px',
-        }
-    },
-
-}))
-
+    { "id": 3, "name": 'Conway', "details": "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.This game became widely known when it was mentioned in an article published by Scientific American in 1970. It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the gam", "link": "https://the-conway-game-of-life.vercel.app/', githublink:'https://github.com/Dlray89/The-Conway_game-of_life", "tech_stack": "React - Javascript - Material-UI", "img":Conway },
+    
+]
 
 const Projects = () => {
-    const classes = useStyles()
-    const [open, setOpen] = React.useState(false)
 
-    const handleOpen = () => {
-        setOpen(true)
+
+
+    const [search, setSearch] = useState('')
+    const [searchResults, setSearchResults] = useState([])
+    const [openSauti, setOpenSauti] = useState(false)
+
+    const handleChnage = e => {
+        setSearch(e.target.value)
     }
 
-    const handleClose = () => {
-        setOpen(false)
+    const SautiOpen = () => {
+        setOpenSauti(true)
     }
+    const SautiClose = () => {
+        setOpenSauti(false)
+    }
+
+    React.useEffect(() => {
+        const results = projects.filter(project =>
+            project.name.toLowerCase().includes(search.toLowerCase())
+        )
+        setSearchResults(results)
+    }, [search])
 
     return (
-        <div className={classes.mainContainer}>
-            <div className={classes.title}>
-                <div>
-                    <p>
-                        Projects
-                   </p>
-                </div>
-                <div>
-                    <Link to='/' className={classes.Links}><Button className={classes.buttons}>Home</Button></Link>
-                    <Link className={classes.Links}><Button className={classes.buttons} onClick={handleOpen} >Contact</Button></Link>
-
-                    <Dialog className={classes.modal} open={open} onClose={handleClose}>
-                        <DialogTitle>
-                            Lets Chat!
-                   </DialogTitle>
-                        <DialogContent className={classes.modalInner}>
-                            <DialogContentText className={classes.modalText}>
-                                <div className={classes.info}>
-                                    <p className={classes.text}>Phone: 614.681.0179</p>
-                                    <p className={classes.text}>Email: dlrayjr89@gmail.com</p>
-                                    <p className={classes.text}>Location: Atlanta, GA</p>
-
-
-                                </div>
-                                <Divider />
-                                <div className={classes.inputContainer}>
-                                    <TextField variant="outlined" type='text' label='Full Name' />
-                                    <TextField className={classes.input} variant="outlined" type='text' label='Phone Number' />
-                                    <TextField variant="outlined" type='text' label='Email Address' />
-                                </div>
-
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleClose}>Send</Button>
-                            <Button onClick={handleClose}>Cancel</Button>
-                        </DialogActions>
-
-                    </Dialog>
-                </div>
-
+        <div>
+            <div>
+                <p>Project Board</p>
             </div>
+            <Divider />
 
-            <div className={classes.projectContainer}>
-
-                <div className='row '>
-                    <div className={classes.P1}>
-                        <p>Sauti</p>
-                        <p className={classes.sauti}>
-                            <img alt='sauit page' className={classes.sautiImg} src={Sauti} />
-                        </p>
-                    </div>
-                    <Divider className={classes.Divider} orientation='vertical' />
-
-                    <div className={classes.btnContainer}>
-
-                        <p className={classes.text}>
-                            Tech Stack: HTML - LESS <br />
-                            <br />
-                        Sauti is a Mobile-based trade and market
-                        information
-                        Empowering East Africa's women-led SMEs <br />
-                        to trade legally and safely across borders.
-                    </p>
-
-                        <div className={classes.buttonsCont}>
-                            <a className={classes.Links} href='https://dlray89.github.io/SautiAfrica/'><Button className={classes.buttons} variant='outlined'>Website</Button></a>
-                            <a className={classes.Links} href='https://github.com/Dlray89/SautiAfrica'><Button variant='outlined' className={classes.buttons}>Code Source</Button></a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <Divider className={classes.Divider} />
-
-                <div className='row2 '>
-
-                    <div className={classes.btnContainer}>
-
-                        <p className={classes.text}>
-                            Tech Stack: React - Material-UI - Javascript <br /> <br />
-
-                            This project is a fan site of the most popular show Rick and Morty. <br /> You can see all avaliable characters and videos.
-
-                    </p>
-                        <div className={classes.buttonsCont}>
-                            <a href='https://rickand-morty-fanpage.now.sh/' className={classes.Links}> <Button variant='outlined' className={classes.buttons}>Website</Button></a>
-                            <a href='https://github.com/Dlray89/RickandMortyFanpage' className={classes.Links}><Button variant='outlined' className={classes.buttons}>Code Source</Button></a>
-                        </div>
-
-
-                    </div>
-
-
-                    <div className={classes.P1}>
-                        <p>Rick and Morty Fan Site</p>
-                        <p>
-                            <img alt='pic for rick and morty' className={classes.RickandmortyImg} src={RickandMorty} />
-                        </p>
-                    </div>
-
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={{ width: '50%', display: 'flex', justifyContent: 'space-evenly' }}>
+                    <Link to='/welcome'><Button>Home</Button></Link>
+                    <Link><Button>About</Button></Link>
+                    <Link><Button>Contact</Button></Link>
                 </div>
 
-                <Divider className={classes.Divider} />
-
-                <div className='row '>
-
-                    <div className={classes.P1}>
-                        <p>Conway Game of life</p>
-                        <p>
-                            <img alt='conway pic' className={classes.sautiImg} src={Conway} />
-                        </p>
-                    </div>
-
-                    <div className={classes.btnContainer}>
-
-                        <p className={classes.text}>
-                            Tech Stack: Javascript - React - Material-UI - CSS  <br />
-                            <br />
-
-                              The Game of Life (an example of a cellular automaton) is played on an infinite two-dimensional rectangular <br />grid of cells.
-                    </p>
-                        <div className={classes.buttonsCont}>
-                            <a href='https://the-conway-game-of-life.vercel.app/' className={classes.Links}><Button variant='outlined' className={classes.buttons}>Website</Button></a>
-                            <a href='https://github.com/Dlray89/The-Conway_game-of_life' className={classes.Links}><Button variant='outlined' className={classes.buttons}>Code Source</Button></a>
-                        </div>
-
-
-                    </div>
-
-
-
+                <div style={{  width: '20%' }}>
+                    <input
+                        style={{ width: '70%' }}
+                        value={search}
+                        onChange={handleChnage}
+                        placeholder='Search projects'
+                    />
                 </div>
 
 
             </div>
+            <Divider />
+
+            <div  style={{display:'flex', flexWrap:'wrap', margin:" 03 auto"}}>
+                {searchResults.map(result => (
+                    <div className='roll-in-left' variant="outlined" style={{ margin: '1% auto', display: 'flex', justifyContent: 'space-evenly', width: '30%', flexDirection: 'column', border: 'solid 2px black' }}>
+                        <Divider />
+                        <div style={{  width: '100%', display: 'flex', justifyContent: 'space-evenly', flexDirection: 'column'}}>
+
+
+                            <p style={{ margin: '0', width:'100%' }}>{result.name} <br /> {result.tech_stack}</p>
+
+                        </div>
+                        <div style={{background: `url(${result.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
+                            
+
+
+                        </div>
+
+                        
+                        <Divider />
+                        <div style={{  width: '100%' }}>
+                            <Modal key={result.id} name={result.name} img={result.img} tech_stack={result.tech_stack} details={result.details} link={result.link} githublink={result.githublink} />
+                        </div> 
+                    </div>
+                ))}
+            </div>
+            <Divider />
+            <div style={{display:'flex', justifyContent:'space-between', width:'98%',  margin:' 0 auto'}}>
+                <div style={{}}>
+                    &copy; 2020 DAPTHEDEV
+                </div>
+
+                <div style={{width:'20%', display:'flex', justifyContent:'space-evenly'}}>
+                    <LinkedInIcon />
+                    <GitHubIcon />
+                    <InstagramIcon />
+                    <FacebookIcon />
+                </div>
+            </div>
+            <Divider />
         </div>
     )
 }
