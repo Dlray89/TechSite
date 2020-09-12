@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '1%',
         height: '100vh',
         boxSizing: 'border-box',
-        background: 'white',
+      
 
 
 
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     introBox: {
         border: 'solid 2px black',
         width: '90%',
-        margin: ' 0 auto',
+        margin: ' 3.5% auto',
         boxSizing: 'border-box',
 
     },
@@ -128,6 +128,9 @@ const useStyles = makeStyles((theme) => ({
     },
     buttons: {
         color: 'black',
+        '&:hover': {
+            color:'red'
+        }
 
     },
     bottomLinks: {
@@ -302,13 +305,13 @@ const Welcome = () => {
 
                         <div className={classes.greetingBox}>
                              
-                            <div style={{ boxSizing: 'border-box', width: '40%', position: 'absolute', top: '10%', left: '50%', display: 'flex', flexDirection: 'column', justifyContent: "space-evenly", height: '25vh' }}>
+                            <div style={{ boxSizing: 'border-box', width: '40%', position: 'absolute', top: '18%', left: '50%', display: 'flex', flexDirection: 'column', justifyContent: "space-evenly", height: '25vh' }}>
 
-                                <Link to='/projects' className='flip-in-hor-top' ><Button variant='outlined' className={classes.button}  ><bold>Projects</bold></Button></Link>
+                                <Link to='/projects' className='flip-in-hor-top' ><Button variant='outlined' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
 
-                                <Link className='flip-in-ver-right' ><Button className={classes.button} variant='outlined' >About</Button></Link>
+                                <Link className='flip-in-ver-right' ><Button className={classes.button} variant='outlined' ><span className='jello-horizontal'>About</span></Button></Link>
 
-                                <Link className='flip-in-ver-left' ><Button className={classes.button} variant='outlined' onClick={handleOpen} >Contact</Button></Link>
+                                <Link className='flip-in-ver-left' ><Button className={classes.button} variant='outlined' onClick={handleOpen} ><span className='jello-horizontal'>Contact</span></Button></Link>
 
 
 
@@ -334,7 +337,7 @@ const Welcome = () => {
                                                     value={contacts.fullname}
                                                     onChange={handleContacts}
                                                     variant="outlined"
-                                                    label='Full Name' />
+                                                    placeholder='Full Name' />
 
                                                 <TextField
                                                     className={classes.input} variant="outlined"
@@ -343,12 +346,12 @@ const Welcome = () => {
                                                     name='phonenumber'
                                                     onChange={handleContacts}
                                                     value={contacts.phonenumber}
-                                                    label='Phone Number' />
+                                                    placeholder='Phone Number' />
 
                                                 <TextField
                                                     variant="outlined"
                                                     type='text'
-                                                    label='Email Address'
+                                                    placeholder='Email Address'
                                                     name='email'
                                                     id='email'
                                                     onChange={handleContacts}
@@ -395,22 +398,22 @@ const Welcome = () => {
 
                             <div style={{ width: '48%' }} >
                                 <ListItem button className={classes.list} >
-                                    <ListItemText  >Application Development</ListItemText>
+                                    <ListItemText className='jello-horizontal'  >Application Development</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText>Personal Web Design</ListItemText>
+                                    <ListItemText className='jello-horizontal'>Personal Web Design</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list} >
-                                    <ListItemText>Server-Side Application</ListItemText>
+                                    <ListItemText className='jello-horizontal'>Server-Side Application</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText>Website Refactoring</ListItemText>
+                                    <ListItemText className='jello-horizontal'>Website Refactoring</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
                             </div>
@@ -421,17 +424,17 @@ const Welcome = () => {
                                
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText>Full-Stack Developer</ListItemText>
+                                    <ListItemText className='jello-horizontal'>Full-Stack Developer</ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
                                 <ListItem button className={classes.list} >
-                                    <ListItemText  >View my <a href={Resume} > resume</a></ListItemText>
+                                    <ListItemText className='jello-horizontal' >View my <a href={Resume} > resume</a></ListItemText>
                                      
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button  className={classes.list}>
-                                    <ListItemText ><Button variant='contained' onClick={handleCert} >See Certification</Button></ListItemText>
+                                    <ListItemText className='jello-horizontal'>Check my <a onClick={handleCert} >Certifications</a></ListItemText>
                                 </ListItem>
                                 <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
                                     <DialogTitle>Certification gained during my web development journey</DialogTitle>
@@ -477,7 +480,7 @@ const Welcome = () => {
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText>Lambda Student</ListItemText>
+                                    <ListItemText className='jello-horizontal'>Lambda Student</ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
@@ -496,15 +499,15 @@ const Welcome = () => {
 
                             <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
 
-                            <div style={{ width: '100%', margin: '3% auto', color: 'black', display: 'flex', justifyContent: 'space-evenly' }}>
+                            <div className='bounce-in-right'>
 
-                                <img className='heartbeat' style={{ width: '6%' }} src={HTML} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={HTML} />
 
-                                <img className='heartbeat' style={{ width: '6%' }} src={CSS} />
-                                <img className='heartbeat' style={{ width: '6%' }} src={JS} />
-                                <img className='heartbeat' style={{ width: '6%' }} src={REACT} />
-                                <img className='heartbeat' style={{ width: '6%' }} src={NODE} />
-                                <img className='heartbeat' style={{ width: '6%' }} src={PY} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={CSS} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={JS} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={REACT} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={NODE} />
+                                <img className='jello-horizontal' style={{ width: '7%' }} src={PY} />
                             </div>
                         </div>
                          <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
@@ -533,8 +536,10 @@ const Welcome = () => {
                              
 
 
-                        </div>
-
+                        </div> 
+                        <div className={classes.copyright}>
+                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>&copy; 2020; A dapthedev development</Button></Link>
+                </div>
                     </div>
 
                 </div>
@@ -544,9 +549,7 @@ const Welcome = () => {
 
             <div className={classes.bottomNav}>
 
-                <div className={classes.copyright}>
-                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>&copy; Dapthedev</Button></Link>
-                </div>
+                
 
 
 

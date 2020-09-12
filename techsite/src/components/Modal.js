@@ -24,7 +24,7 @@ const Modal = (props) => {
                 <DialogTitle>{props.name} <br /> {props.tech_stack}</DialogTitle>
                 <Divider />
                 <DialogContent>
-                    <DialogContentText style={{border:'solid 2px red', backgroundImage:`url(${props.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}} >
+                    <DialogContentText style={{backgroundImage:`url(${props.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}} >
                         
                     </DialogContentText>
                     <DialogContentText>

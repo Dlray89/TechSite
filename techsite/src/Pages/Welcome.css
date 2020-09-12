@@ -129,107 +129,142 @@
   }
 }
 
-
-
-
-.heartbeat {
-	-webkit-animation: heartbeat 1.5s ease-in-out 1.5s infinite both;
-	        animation: heartbeat 1.5s ease-in-out 1.5s infinite both;
-            box-shadow: 5px 5px 20px black;
-            border-radius: 50px;
+.bounce-in-right {
+	-webkit-animation: bounce-in-right 10 both;
+	        animation: bounce-in-right 10 both;
+            width: 100%; 
+            margin: 3% auto;
+            color: black; 
+            display: flex;
+            justify-content: space-evenly
 }
 
 
-@-webkit-keyframes heartbeat {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: center center;
-            transform-origin: center center;
+@-webkit-keyframes bounce-in-right {
+  0% {
+    -webkit-transform: translateX(600px);
+            transform: translateX(600px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
+    opacity: 1;
   }
-  10% {
-    -webkit-transform: scale(0.91);
-            transform: scale(0.91);
+  55% {
+    -webkit-transform: translateX(68px);
+            transform: translateX(68px);
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
-  17% {
-    -webkit-transform: scale(0.98);
-            transform: scale(0.98);
+  72% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
   }
-  33% {
-    -webkit-transform: scale(0.87);
-            transform: scale(0.87);
+  81% {
+    -webkit-transform: translateX(32px);
+            transform: translateX(32px);
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
-  45% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+  90% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
   }
-}
-@keyframes heartbeat {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: center center;
-            transform-origin: center center;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  10% {
-    -webkit-transform: scale(0.91);
-            transform: scale(0.91);
+  95% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
-  17% {
-    -webkit-transform: scale(0.98);
-            transform: scale(0.98);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  33% {
-    -webkit-transform: scale(0.87);
-            transform: scale(0.87);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  45% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
   }
 }
-
-.jello-horizontal:hov {
-
-
-	-webkit-animation: jello-horizontal 0.9s both;
-    animation: jello-horizontal 0.9s both;
-    height: 6vh;
-    width: 100%; 
-    text-align: center
+@keyframes bounce-in-right {
+  0% {
+    -webkit-transform: translateX(600px);
+            transform: translateX(600px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateX(68px);
+            transform: translateX(68px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateX(32px);
+            transform: translateX(32px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
 }
+
 
 
 .jello-horizontal:hover {
-
-
 	-webkit-animation: jello-horizontal 0.9s both;
-    animation: jello-horizontal 0.9s both;
-    height: 6vh;
-    width: 100%; 
-    text-align: center
+	        animation: jello-horizontal 0.9s both;
 }
 
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-9-11 20:22:39
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation jello-horizontal
+ * ----------------------------------------
+ */
 @-webkit-keyframes jello-horizontal {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
@@ -290,3 +325,5 @@
             transform: scale3d(1, 1, 1);
   }
 }
+
+

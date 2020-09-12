@@ -5,7 +5,7 @@ import css from './intro.css'
 
 
 const defaultStyles = {
-    overflow: 'hidden',
+    
     width: '50%',
     color: 'red',//
     display: 'flex',
