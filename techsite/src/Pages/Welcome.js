@@ -208,7 +208,8 @@ const useStyles = makeStyles((theme) => ({
     },
     
     button: {
-        width: '90%',
+      
+        width: '100%',
         '&:hover': {
             color: 'white',
             background: 'black'
@@ -244,6 +245,15 @@ const Welcome = () => {
     const [openCerts, setOpenCerts] = useState(false)
     const [contacts, setContacts] = useState(initContact)
     const [submitted, setSubmitted] = useState(false)
+    const [toggle, setToggle] = useState(false)
+
+    const handleToggle = () => {
+        setToggle(true)
+    }
+
+    const toggleOff = () => {
+        setToggle(false)
+    }
 
     const handleOpen = () => {
         setOpen(true)
@@ -308,8 +318,16 @@ const Welcome = () => {
                             <div style={{ boxSizing: 'border-box', width: '40%', position: 'absolute', top: '18%', left: '50%', display: 'flex', flexDirection: 'column', justifyContent: "space-evenly", height: '25vh' }}>
 
                                 <Link to='/projects' className='flip-in-hor-top' ><Button variant='outlined' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
-
-                                <Link className='flip-in-ver-right' ><Button className={classes.button} variant='outlined' ><span className='jello-horizontal'>About</span></Button></Link>
+                                
+                                {toggle ? (
+                                   
+                                       <Button className='jello-horizontal' style={{width:'80%', margin:"0 auto"}} onClick={toggleOff} variant='outlined'>COMING SOON</Button>
+                                   
+                                ) : (
+                                   
+                                       <Link className='flip-in-ver-right' ><Button onClick={handleToggle} className={classes.button} variant='outlined' ><span className='jello-horizontal'>About</span></Button></Link>
+                                   
+                                )}
 
                                 <Link className='flip-in-ver-left' ><Button className={classes.button} variant='outlined' onClick={handleOpen} ><span className='jello-horizontal'>Contact</span></Button></Link>
 
