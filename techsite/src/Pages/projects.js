@@ -7,6 +7,7 @@ import './projects.css'
 import Sauti from '../images/sauti.PNG'
 import Prohash from '../images/prohash.PNG'
 import Conway from '../images/conway.PNG'
+import Coming_Soon from '../images/comingsoon.jpg'
 import Modal from '../components/Modal'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -20,6 +21,9 @@ const projects = [
     { "id": 2, "name": 'prohash', "details": "ProHash is a project management application that will allow you create projects and tasks to get you closer to your short and long term goals. You able to create an account, create, delete and update your projects. Stay organized and focus to your dreams and accomplishements.", "link": "https://prohash.vercel.app/', githublink: 'https://github.com/Dlray89/ProTask-RESTFul-API", "tech_stack": "React - Material-UI - NodeJS", "img": Prohash },
 
     { "id": 3, "name": 'Conway', "details": "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.This game became widely known when it was mentioned in an article published by Scientific American in 1970. It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the gam", "link": "https://the-conway-game-of-life.vercel.app/', githublink:'https://github.com/Dlray89/The-Conway_game-of_life", "tech_stack": "React - Javascript - Material-UI", "img":Conway },
+    {
+        "id": 4, "name":"notes.IO", "details":"A terminal note-taking feature to take notes and save them to a JSON file. You can create, delete, see a listing of all your notes or read a specific one. It's your choice! Typing commands in the terminal can get out of control. There will be a time you may forget specific commands you did hours ago but have no worries notes.IO got your back.","tech_stack": "Node.JS", "img":Coming_Soon
+    }
     
 ]
 
@@ -50,7 +54,7 @@ const Projects = () => {
     }, [search])
 
     return (
-        <div>
+        <div style={{height:'100vh'}}>
             <div>
                 <p>Project Board</p>
             </div>
@@ -83,7 +87,7 @@ const Projects = () => {
                         <div style={{  width: '100%', display: 'flex', justifyContent: 'space-evenly', flexDirection: 'column'}}>
 
 
-                            <p style={{ margin: '0', width:'100%' }}>{result.name} <br /> {result.tech_stack}</p>
+                            <p style={{ margin: '0', width:'100%' }}>{result.name} <br /> Tech Stach: {result.tech_stack}</p>
 
                         </div>
                         <div style={{background: `url(${result.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
