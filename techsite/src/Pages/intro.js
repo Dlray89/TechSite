@@ -33,9 +33,9 @@ export default class TransitionsExample extends React.PureComponent {
         this.t2 && clearTimeout(this.t2)
         this.t3 && clearTimeout(this.t3)
 
-        this.setState({ items: ['Welcome World'] })
+        this.setState({ items: ['Welcome World!'] })
         this.t1 = setTimeout(
-            () => this.setState({ items: ['Hi, im Dave! I am a full stack-developer'] }),
+            () => this.setState({ items: ['My name is Dave! Im a Developer'] }),
             3500
         )
         this.t2 = setTimeout(
@@ -64,7 +64,7 @@ export default class TransitionsExample extends React.PureComponent {
                     trail={200}>
                  {item => styles => (
                         <animated.div style={{ ...defaultStyles, ...styles }}>
-                            {item}
+                           <p className="text">{item}</p> 
 
                             
                         </animated.div>

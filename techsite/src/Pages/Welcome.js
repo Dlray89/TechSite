@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
         padding: '1%',
         height: '100vh',
         boxSizing: 'border-box',
+        [theme.breakpoints.down('xs')]: {
+            
+        },
       
 
 
@@ -35,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
         width: '90%',
         margin: ' 3.5% auto',
         boxSizing: 'border-box',
+        
 
     },
     introText: {
@@ -65,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
         height: '40vh',
         boxSizing: 'border-box',
         display: 'flex',
+        [theme.breakpoints.down('xs')]: {
+            flexDirection: 'column'
+        }
 
     },
     experience: {
@@ -161,6 +168,16 @@ const useStyles = makeStyles((theme) => ({
         backgroundPositionY: '50%',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'filled',
+        [theme.breakpoints.down('xs')]: {
+            width:'105%',
+            
+            backgroundPosition: 'start',
+            backgroundPositionY: '50%',
+            backgroundPositionX: '50%',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'filled',
+            
+        }
 
     },
     greeting: {
@@ -190,6 +207,10 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
 
         background: 'white',
+        [theme.breakpoints.down('xs')]: {
+            
+            width:'100%'
+        }
 
     },
     backendSkillList: {
@@ -201,6 +222,13 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '16px',
         color: 'white',
         background: 'lightgrey',
+        [theme.breakpoints.down('xs')]: {
+            
+            marginTop:'-53%',
+            width:'100%',
+            
+           
+        }
 
     },
     Davidpicture: {
@@ -213,6 +241,11 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             color: 'white',
             background: 'black'
+        },
+        [theme.breakpoints.down('xs')]: {
+            
+            width:'100%',
+            fontSize:'10px',
         }
     },
     list:{
@@ -224,7 +257,20 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             color: 'white',
             background: 'black'
+        },
+        [theme.breakpoints.down('xs')]: {
+            width:'76%',
+          
+            fontSize:'small'
         }
+
+    },
+    line: {
+        background:'black',
+        [theme.breakpoints.down('xs')]:{
+            visibility:'hidden'
+        }
+    
     }
 
 }))
@@ -306,16 +352,16 @@ const Welcome = () => {
 
 
     return (
-        <div className={classes.mainContiner}>
+        <div className='mainContainer'>
 
 
-            <div className={classes.introBox}>
-                <div className={classes.intro}>
-                    <div className={classes.greetingContainer}>
+            <div className='introBox'>
+                <div className='intro'>
+                    <div className='greetingContainer'>
 
                         <div className={classes.greetingBox}>
                              
-                            <div style={{ boxSizing: 'border-box', width: '40%', position: 'absolute', top: '18%', left: '50%', display: 'flex', flexDirection: 'column', justifyContent: "space-evenly", height: '25vh' }}>
+                            <div className='greetingBoxLinks' >
 
                                 <Link to='/projects' className='flip-in-hor-top' ><Button variant='contained' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
                                 
@@ -412,9 +458,9 @@ const Welcome = () => {
 
                         
 
-                        <List style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                        <List className='servicesandcareer' >
 
-                            <div style={{ width: '48%' }} >
+                            <div className='services' >
                                 <ListItem button className={classes.list} >
                                     <ListItemText className='jello-horizontal'  >Application Development</ListItemText>
                                 </ListItem>
@@ -508,9 +554,11 @@ const Welcome = () => {
                         </List>
 
                     </div>
-<Divider style={{background:'black'}} orientation='vertical' />
+<Divider className={classes.line}  orientation='vertical' />
+
                     <div className={classes.frontEnd}>
-                        <div style={{}}>
+
+                        <div>
                             <div style={{ padding: '0%', color: 'black' }}>
                                 <p>Primary Languages</p>
                             </div>
@@ -528,6 +576,7 @@ const Welcome = () => {
                                 <img className='jello-horizontal' style={{ width: '7%' }} src={PY} />
                             </div>
                         </div>
+
                          <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
 
 
