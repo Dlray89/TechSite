@@ -1,10 +1,12 @@
 .text {
-    color:black
+    color:black;
+    font-family: 'Cinzel', serif;
 }
 
 @media (max-width: 414px){
     .text {
-        
+            font-family: 'Cinzel', serif;
+
         font-size: 13px;
         padding:1%;
         width: 100%
@@ -13,7 +15,9 @@
 
 @media(max-width: 600px) {
     .text {
-        font-size: 16px
+        font-size: 16px;
+        font-family: 'Cinzel', serif;
+
     }
 }
 

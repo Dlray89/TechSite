@@ -258,6 +258,7 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
         textDecoration: 'none',
+        fontFamily: 'Cinzel, serif'
        
     },
     Certs: {
@@ -453,22 +454,22 @@ const Welcome = () => {
 
                             <div className='services' >
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal' style={{fontFamily: 'Cinzel serif'}}  >Online Portfolio</ListItemText>
+                                    <ListItemText className='jello-horizontal' style={{fontFamily: 'Cinzel, serif'}}><p style={{fontFamily: 'Cinzel, serif'}}> Online Portfolio</p></ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal' >E-Commerce Website</ListItemText>
+                                    <ListItemText className='jello-horizontal' ><p style={{fontFamily: 'Cinzel, serif'}}>E-Commerce Website</p></ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal'>Application development</ListItemText>
+                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Application development</p></ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
-                                <ListItem button className={classes.list}>//
-                                    <ListItemText className='jello-horizontal'>Website Refactoring</ListItemText>
+                                <ListItem button className={classes.list}>
+                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Website Refactoring</p></ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
                             </div>
@@ -479,45 +480,45 @@ const Welcome = () => {
                                
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'>Full-Stack Developer</ListItemText>
+                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Full-Stack Developer</p></ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal' >View my <a style={{textDecoration:'none', color:'red'}} href={Resume}> Resume</a></ListItemText>
+                                    <ListItemText className='jello-horizontal' ><p style={{fontFamily: 'Cinzel, serif'}}>View my <a style={{textDecoration:'none', color:'red'}} href={Resume}> Resume</a></p></ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button  className={classes.list} onClick={handleCert}>
-                                    <ListItemText className='jello-horizontal'>Click to see Certifications</ListItemText>
+                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}} >Click to see Certifications</p></ListItemText>
                                 </ListItem>
                                 <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
-                                    <DialogTitle>Certification gained during my web development journey. </DialogTitle>
+                                    <DialogTitle><p style={{fontFamily: 'Cinzel, serif'}} >Certification gained during my web development journey.</p> </DialogTitle>
                                         <DialogContent>
                                             <DialogContentText style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
                                             <div>
-                                            <a className={classes.link} href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'><Button className={classes.Certs} >SoloLearn - HTML5 Course</Button></a>
+                                            <a className={classes.link} href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs} >SoloLearn - HTML5 Course</Button></a>
                                             </div>
                                                     
                                             <div>
-                                                <a className={classes.link}  href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' ><Button className={classes.Certs}>SoloLearn - CSS Course</Button></a>
+                                                <a className={classes.link}  href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' ><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs}>SoloLearn - CSS Course</Button></a>
                                             </div>
 
                                             <div>
-                                                <a className={classes.link} href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'><Button className={classes.Certs}>SoloLearn - Javascript Course</Button></a>
+                                                <a className={classes.link} href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs}>SoloLearn - Javascript Course</Button></a>
 
                                             </div>
                                             <div>
-                                                <a className={classes.link} href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'><Button className={classes.Certs}>SoloLearn - SQL Course</Button></a>
-
-                                            </div>
-
-                                            <div>
-                                                <a className={classes.link}  href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button className={classes.Certs}>Udemy - Beginner guide to Cyber Security Courses</Button></a>
+                                                <a className={classes.link} href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs}>SoloLearn - SQL Course</Button></a>
 
                                             </div>
 
                                             <div>
-                                                <a className={classes.link}  href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button className={classes.Certs}>Udemy - Ethical Hacking BootCamp Courses</Button></a>
+                                                <a className={classes.link}  href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs}>Udemy - Beginner guide to Cyber Security Courses</Button></a>
+
+                                            </div>
+
+                                            <div>
+                                                <a className={classes.link}  href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button style={{fontFamily: 'Cinzel, serif'}}className={classes.Certs}>Udemy - Ethical Hacking BootCamp Courses</Button></a>
 
                                             </div>
 
@@ -526,7 +527,7 @@ const Welcome = () => {
                                         </DialogContent>
                                         <DialogActions>
 
-                                        <Button onClick={certClose} >Close</Button>
+                                        <Button style={{fontFamily: 'Cinzel, serif'}} onClick={certClose} >Close</Button>
                                         </DialogActions>
 
                                    
@@ -534,7 +535,7 @@ const Welcome = () => {
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'>Lambda Student</ListItemText>
+                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Lambda Student</p></ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
