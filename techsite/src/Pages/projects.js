@@ -18,7 +18,7 @@ const projects = [
 
     { "id": 1, name: 'Sauti', details: "Sauti is a Mobile-based trade and market information platform to trade legally and safely across borders. Empowering East Africa's women to make a better life for themselves and their families. Sauti provides tools for simplifying access to information on trading procedures, market information, and voicing incidents of corruption and harassment.", link: "https://dlray89.github.io/SautiAfrica/", githublink: "https://github.com/Dlray89/SautiAfrica", tech_stack: "HTML - LESS", img: Sauti },
 
-    { "id": 2, name: 'prohash', details: "ProHash is a project management application that will allow you create projects and tasks to get you closer to your short and long term goals. You able to create an account, create, delete and update your projects. Stay organized and focus to your dreams and accomplishements.", link: "https://prohash.vercel.app/", githublink: "https://github.com/Dlray89/ProTask-RESTFul-API", tech_stack: "React - Material-UI - NodeJS", img: Prohash },
+    { "id": 2, name: 'Prohash', details: "ProHash is a project management application that will allow you create projects and tasks to get you closer to your short and long term goals. You able to create an account, create, delete and update your projects. Stay organized and focus to your dreams and accomplishements.", link: "https://prohash.vercel.app/", githublink: "https://github.com/Dlray89/ProTask-RESTFul-API", tech_stack: "React - Material-UI - NodeJS", img: Prohash },
 
     { "id": 3, name: 'Conway', details: "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.This game became widely known when it was mentioned in an article published by Scientific American in 1970. It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the gam", link: "https://the-conway-game-of-life.vercel.app/", githublink:'https://github.com/Dlray89/The-Conway_game-of_life', tech_stack: "React - Javascript - Material-UI", img:Conway },
     {
@@ -29,6 +29,8 @@ const projects = [
 
 const useStyles = makeStyles((theme) => ({
     button: {
+        fontFamily: 'Cinzel, serif',
+
 
         '&:hover': {
             background: 'black',

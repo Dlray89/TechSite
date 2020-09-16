@@ -2,6 +2,7 @@
     margin: 0 auto;
     height: 100vh;
     box-sizing: border-box;
+    font-family: 'Cinzel', serif;
     
 }
 @media(max-width: 600px){
@@ -373,6 +374,7 @@
     width: 105%;
     margin: 0 auto;
     text-align: center;
+    font-family: 'Cinzel', serif;
 }
 
 .jello-horizontal:hover {

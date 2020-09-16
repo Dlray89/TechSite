@@ -9,6 +9,8 @@ const useStyles = makeStyles((theme) => ({
         background:'black',
         color: 'white',
         width:'100%',
+        fontFamily: 'Cinzel serif',
+
         '&:hover': {
             background: 'darkgrey',
             color: 'black'
@@ -35,21 +37,26 @@ const Modal = (props) => {
         <div>
             <Button className={classes.button} variant='contained' onClick={handleOpen}> View More</Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>{props.name} <br /> {props.tech_stack}</DialogTitle>
+                <DialogTitle style={{fontFamily:'Cinzel serif'
+}} >{props.name} <br /> {props.tech_stack}</DialogTitle>
                 <Divider />
                 <DialogContent>
                     <DialogContentText style={{backgroundImage:`url(${props.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}} >
                         
                     </DialogContentText>
                     <DialogContentText>
-                        <p>{props.details}</p>
+                        <p style={{fontFamily:'Cinzel serif'
+}} >{props.details}</p>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                        <a href={props.link}><Button>Website</Button></a>
-                        <a  href={props.github}><Button >Code Source</Button></a>
+                        <a href={props.link}><Button style={{fontFamily:'Cinzel serif'
+}}  >Website</Button></a>
+                        <a  href={props.github}><Button style={{fontFamily:'Cinzel serif'
+}}  >Code Source</Button></a>
                 </DialogActions>
-                    <Button className={classes.button} onClick={handleClose} >Close</Button>
+                    <Button className={classes.button} onClick={handleClose} style={{fontFamily:'Cinzel serif'
+}}  >Close</Button>
             </Dialog>
         </div>
     )

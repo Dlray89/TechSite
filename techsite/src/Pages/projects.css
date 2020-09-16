@@ -1,7 +1,9 @@
 .projectContainer {
     height: 120vh;
     background-color: lightgray;
-    margin: 0
+    margin: 0;
+    font-family: 'Cinzel', serif;
+
 }
 
 @media(max-width: 600px) {

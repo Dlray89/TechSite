@@ -12,7 +12,7 @@ const defaultStyles = {
     justifyContent: 'center',
     alignItems: 'center',//
     fontSize: '2em',
-    fontFamily: "'Kanit', sans-serif",
+    fontFamily: 'Cinzel serif',
     textTransform: 'uppercase',
     position: 'absolute',
     top: '40%',

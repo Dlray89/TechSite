@@ -453,17 +453,17 @@ const Welcome = () => {
 
                             <div className='services' >
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal'  >Application Development</ListItemText>
+                                    <ListItemText className='jello-horizontal' style={{fontFamily: 'Cinzel serif'}}  >Online Portfolio</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'>Personal Web Design</ListItemText>
+                                    <ListItemText className='jello-horizontal'>E-Commerce Website</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal'>Server-Side Application</ListItemText>
+                                    <ListItemText className='jello-horizontal'>Application development</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
