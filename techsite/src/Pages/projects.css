@@ -1,6 +1,7 @@
 .projectContainer {
-    height: 100vh;
+    height: 120vh;
     background-color: lightgray;
+    margin: 0
 }
 
 @media(max-width: 600px) {

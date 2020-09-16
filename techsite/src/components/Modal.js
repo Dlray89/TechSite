@@ -33,7 +33,7 @@ const Modal = (props) => {
 
     return (
         <div>
-            <Button className={classes.button} variant='contained' onClick={handleOpen}>See More</Button>
+            <Button className={classes.button} variant='contained' onClick={handleOpen}> View More</Button>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>{props.name} <br /> {props.tech_stack}</DialogTitle>
                 <Divider />
@@ -46,8 +46,8 @@ const Modal = (props) => {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                        <a href={props.link} >Website</a>
-                        <Link ><Button href={props.githublink} >Code Source</Button></Link>
+                        <a href={props.link}><Button>Website</Button></a>
+                        <a  href={props.github}><Button >Code Source</Button></a>
                 </DialogActions>
                     <Button className={classes.button} onClick={handleClose} >Close</Button>
             </Dialog>
