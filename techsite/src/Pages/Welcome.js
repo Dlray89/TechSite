@@ -210,11 +210,10 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         background: 'lightgrey',
         [theme.breakpoints.down('xs')]: {
-            
-            width:'87.5%',
+            width:'87.3%',
             margin:' 0 auto',
             position:'absolute',
-            top:"82%"
+            top:"84%"
         }
 
     },
@@ -477,7 +476,7 @@ const Welcome = () => {
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal' >View my <a href={Resume} > Resume</a></ListItemText>
+                                    <ListItemText className='jello-horizontal' >View my <a style={{textDecoration:'none', color:'red'}} href={Resume}> Resume</a></ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
