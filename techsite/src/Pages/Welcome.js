@@ -467,7 +467,7 @@ const Welcome = () => {
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
-                                <ListItem button className={classes.list}>
+                                <ListItem button className={classes.list}>//
                                     <ListItemText className='jello-horizontal'>Website Refactoring</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />

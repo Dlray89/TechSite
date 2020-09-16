@@ -30,7 +30,7 @@ const Modal = (props) => {
     const handleClose = () => {
         setOpen(false)
     }
-
+//
 
 
     return (
