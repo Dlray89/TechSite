@@ -27,12 +27,23 @@ const projects = [
     
 ]
 
+const useStyles = makeStyles((theme) => ({
+    button: {
+
+        '&:hover': {
+            background: 'black',
+            color:'white'
+        }
+    }
+}))
+
 const Projects = () => {
 
-
+    const classes = useStyles()
 
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState([])
+    
     const [openSauti, setOpenSauti] = useState(false)
 
     const handleChnage = e => {
@@ -54,40 +65,36 @@ const Projects = () => {
     }, [search])
 
     return (
-        <div style={{height:'100vh'}}>
+        <div className='projectContainer' >
+
             <div>
                 <p>Project Board</p>
             </div>
+
+
             <Divider />
 
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div style={{ width: '50%', display: 'flex', justifyContent: 'space-evenly' }}>
-                    <Link to='/welcome'><Button>Home</Button></Link>
-                    <Link><Button>About</Button></Link>
-                    <Link><Button>Contact</Button></Link>
+            <div className='navbar'>
+                <div className='linksContainer' >
+                    <Link to='/welcome'><Button className={classes.button} >Home</Button></Link>
+                    <Link><Button className={classes.button} >About</Button></Link>
+                    <Link><Button className={classes.button}>Contact</Button></Link>
                 </div>
 
-                <div style={{  width: '20%' }}>
-                    <input
-                        style={{ width: '70%' }}
-                        value={search}
-                        onChange={handleChnage}
-                        placeholder='Search projects'
-                    />
-                </div>
+                
 
 
             </div>
             <Divider />
 
-            <div  style={{display:'flex', flexWrap:'wrap', margin:" 03 auto"}}>
+            <div className='projects'  >
                 {searchResults.map(result => (
-                    <div className='roll-in-left' variant="outlined" style={{ margin: '1% auto', display: 'flex', justifyContent: 'space-evenly', width: '30%', flexDirection: 'column', border: 'solid 2px black' }}>
+                    <div className='roll-in-left' variant="outlined">
                         <Divider />
-                        <div style={{  width: '100%', display: 'flex', justifyContent: 'space-evenly', flexDirection: 'column'}}>
+                        <div className='projectContent' >
 
 
-                            <p style={{ margin: '0', width:'100%' }}>{result.name} <br /> Tech Stach: {result.tech_stack}</p>
+                            <p className='text'>{result.name} <br /> {result.tech_stack}</p>
 
                         </div>
                         <div style={{background: `url(${result.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>

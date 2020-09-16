@@ -1,6 +1,89 @@
+.projectContainer {
+    height: 100vh;
+    background-color: lightgray;
+}
+
+@media(max-width: 600px) {
+    .projectContainer {
+        height: 200vh
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: center
+}
+
+@media(max-width: 600px){
+    .navbar {
+       
+        justify-content: space-between
+    }
+}
+
+.linksContainer {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+@media(max-width: 600px){
+    .linksContainer {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+
+input {
+    width: 70%
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+@media(max-width: 600px) {
+    .projects {
+        flex-direction: column
+    }
+}
+
+.projectContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column
+}
+
+
+.text {
+    margin: 0%;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+
+
 .roll-in-left {
-	-webkit-animation: roll-in-left 9s ease-out both;
-	        animation: roll-in-left 9s ease-out both;
+	-webkit-animation: roll-in-left 6s ease-out both;
+	        animation: roll-in-left 6s ease-out both;
+            margin: 1% auto;
+            display: flex;
+            justify-content: space-evenly;
+            width: 30%;
+            flex-direction: column;
+            border: solid 2px black;
+}
+
+@media(max-width: 600px){
+    .roll-in-left {
+        width: 90%;
+       
+    }
 }
 
 /* ----------------------------------------------

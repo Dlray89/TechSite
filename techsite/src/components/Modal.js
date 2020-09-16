@@ -1,11 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { DialogContentText, Dialog, DialogContent, DialogTitle, Button, Divider, DialogActions } from '@material-ui/core'
+import { DialogContentText, Dialog, DialogContent, DialogTitle, Button, Divider, DialogActions, makeStyles } from '@material-ui/core'
+import './Modal.css'
 
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+        background:'black',
+        color: 'white',
+        width:'100%',
+        '&:hover': {
+            background: 'darkgrey',
+            color: 'black'
+        }
+    }
+}))
 
 
 const Modal = (props) => {
     const [open, setOpen] = React.useState(false)
+    const classes = useStyles()
 
     const handleOpen = () => {
         setOpen(true)
@@ -19,7 +33,7 @@ const Modal = (props) => {
 
     return (
         <div>
-            <Button variant='contained' style={{width:'100%'}} onClick={handleOpen}>See More</Button>
+            <Button className={classes.button} variant='contained' onClick={handleOpen}>See More</Button>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>{props.name} <br /> {props.tech_stack}</DialogTitle>
                 <Divider />
@@ -35,7 +49,7 @@ const Modal = (props) => {
                         <a href={props.link} >Website</a>
                         <Link ><Button href={props.githublink} >Code Source</Button></Link>
                 </DialogActions>
-                    <Button onClick={handleClose} >Close</Button>
+                    <Button className={classes.button} onClick={handleClose} >Close</Button>
             </Dialog>
         </div>
     )
