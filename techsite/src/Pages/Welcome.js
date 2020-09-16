@@ -458,7 +458,7 @@ const Welcome = () => {
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'>E-Commerce Website</ListItemText>
+                                    <ListItemText className='jello-horizontal' >E-Commerce Website</ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
 
