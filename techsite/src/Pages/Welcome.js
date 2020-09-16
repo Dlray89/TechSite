@@ -28,18 +28,6 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             
         },
-      
-
-
-
-    },
-    introBox: {
-        border: 'solid 2px black',
-        width: '90%',
-        margin: ' 3.5% auto',
-        boxSizing: 'border-box',
-        
-
     },
     introText: {
         width: '20%',
@@ -208,7 +196,6 @@ const useStyles = makeStyles((theme) => ({
 
         background: 'white',
         [theme.breakpoints.down('xs')]: {
-            
             width:'100%'
         }
 
@@ -224,10 +211,10 @@ const useStyles = makeStyles((theme) => ({
         background: 'lightgrey',
         [theme.breakpoints.down('xs')]: {
             
-            marginTop:'-53%',
-            width:'100%',
-            
-           
+            width:'87.5%',
+            margin:' 0 auto',
+            position:'absolute',
+            top:"82%"
         }
 
     },
@@ -236,14 +223,12 @@ const useStyles = makeStyles((theme) => ({
     },
     
     button: {
-      
         width: '100%',
         '&:hover': {
             color: 'white',
             background: 'black'
         },
         [theme.breakpoints.down('xs')]: {
-            
             width:'100%',
             fontSize:'10px',
         }
@@ -492,42 +477,41 @@ const Welcome = () => {
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal' >View my <a href={Resume} > resume</a></ListItemText>
-                                     
+                                    <ListItemText className='jello-horizontal' >View my <a href={Resume} > Resume</a></ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
 
-                                <ListItem button  className={classes.list}>
-                                    <ListItemText className='jello-horizontal'>Check my <a onClick={handleCert} >Certifications</a></ListItemText>
+                                <ListItem button  className={classes.list} onClick={handleCert}>
+                                    <ListItemText className='jello-horizontal'>Click to see Certifications</ListItemText>
                                 </ListItem>
                                 <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
-                                    <DialogTitle>Certification gained during my web development journey</DialogTitle>
+                                    <DialogTitle>Certification gained during my web development journey. </DialogTitle>
                                         <DialogContent>
                                             <DialogContentText style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
                                             <div>
-                                            <a href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'>SoloLearn - HTML5 Course</a>
+                                            <a href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'><Button>SoloLearn - HTML5 Course</Button></a>
                                             </div>
                                                     
                                             <div>
-                                                <a href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' >SoloLearn - CSS Course</a>
+                                                <a href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' ><Button>SoloLearn - CSS Course</Button></a>
                                             </div>
 
                                             <div>
-                                                <a href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'>SoloLearn - Javascript Course</a>
+                                                <a href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'><Button>SoloLearn - Javascript Course</Button></a>
 
                                             </div>
                                             <div>
-                                                <a href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'>SoloLearn - SQL Course</a>
-
-                                            </div>
-
-                                            <div>
-                                                <a href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'>Udemy - Beginner guide to Cyber Security Courses</a>
+                                                <a href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'><Button>SoloLearn - SQL Course</Button></a>
 
                                             </div>
 
                                             <div>
-                                                <a href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'>Udemy - Ethical Hacking BootCamp Courses</a>
+                                                <a href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button></Button>Udemy - Beginner guide to Cyber Security Courses</a>
+
+                                            </div>
+
+                                            <div>
+                                                <a href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button>Udemy - Ethical Hacking BootCamp Courses</Button></a>
 
                                             </div>
 
