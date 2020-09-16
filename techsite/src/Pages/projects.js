@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { makeStyles, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, TextField, Divider, Typography, Card, CardHeader } from "@material-ui/core"
-
+import Contactops from '../crudhandle/contact_ops.js'
 import { useSpring, animated } from "react-spring"
 import './projects.css'
 import Sauti from '../images/sauti.PNG'
@@ -39,12 +39,81 @@ const useStyles = makeStyles((theme) => ({
 
 const Projects = () => {
 
+    const initContact = {
+        id: null,
+        fullname: '',
+        phonenumber: '',
+        email: ''
+    }
+
     const classes = useStyles()
 
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState([])
     
     const [openSauti, setOpenSauti] = useState(false)
+    const [open, setOpen] = useState(false)
+    const [openCerts, setOpenCerts] = useState(false)
+    const [contacts, setContacts] = useState(initContact)
+    const [submitted, setSubmitted] = useState(false)
+    const [toggle, setToggle] = useState(false)
+
+    const handleToggle = () => {
+        setToggle(true)
+    }
+
+    const toggleOff = () => {
+        setToggle(false)
+    }
+
+    const handleOpen = () => {
+        setOpen(true)
+
+    }
+
+    const handleClose = () => {
+        setOpen(false)
+    }
+    
+    const handleCert = () => {
+        setOpenCerts(true)
+    }
+
+
+    const certClose = () => {
+        setOpenCerts(false)
+    }
+    const handleContacts = e => {
+        const { name, value } = e.target
+        setContacts({ ...contacts, [name]: value })
+    }
+
+    const savecontact = () => {
+        let data = {
+            fullname: contacts.fullname,
+            phonenumber: contacts.phonenumber,
+            email: contacts.email
+        }
+
+        Contactops.createContact(data)
+            .then(res => {
+                setContacts({
+                    id: res.data.id,
+                    fullname: res.data.fullname,
+                    phonenumber: res.data.phonenumber,
+                    email: res.data.email
+                })
+                setSubmitted(true)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    const newContact = () => {
+        setContacts(initContact)
+        setSubmitted(false)
+    }
 
     const handleChnage = e => {
         setSearch(e.target.value)
@@ -79,6 +148,63 @@ const Projects = () => {
                     <Link to='/welcome'><Button className={classes.button} >Home</Button></Link>
                     <Link><Button className={classes.button} >About</Button></Link>
                     <Link><Button className={classes.button}>Contact</Button></Link>
+                    <Dialog open={open} onClose={handleClose} className={classes.modal}>
+                                    <DialogTitle>
+                                        Lets Chat!
+                        </DialogTitle>
+                                    <DialogContent className={classes.modalInner}>
+                                        <DialogContentText className={classes.modalText}>
+                                            <div className={classes.info}>
+                                                <p className={classes.text}>Phone: 229.735.2351</p>
+                                                
+                                                    </div>
+                                            <Divider />
+                                            <div className={classes.inputContainer}>
+                                                <TextField
+                                                    type='text'
+                                                    id="fullname"
+                                                    name='fullname'
+                                                    value={contacts.fullname}
+                                                    onChange={handleContacts}
+                                                    variant="outlined"
+                                                    placeholder='Full Name' />
+
+                                                <TextField
+                                                    className={classes.input} variant="outlined"
+                                                    type='text'
+                                                    id='phonenumber'
+                                                    name='phonenumber'
+                                                    onChange={handleContacts}
+                                                    value={contacts.phonenumber}
+                                                    placeholder='Phone Number' />
+
+                                                <TextField
+                                                    variant="outlined"
+                                                    type='text'
+                                                    placeholder='Email Address'
+                                                    name='email'
+                                                    id='email'
+                                                    onChange={handleContacts}
+                                                    value={contacts.email}
+                                                />
+                                            </div>
+
+                                        </DialogContentText>
+                                    </DialogContent>
+                                    <DialogActions>
+                                        {submitted ? (
+                                            <div>
+                                                <Button onClick={newContact}>Sumbit</Button>
+                                            </div>
+                                        ) : (
+                                                <div>
+                                                    <Button onClick={savecontact}>Send</Button>
+                                                    <Button onClick={handleClose}>Cancel</Button>
+                                                </div>
+                                            )}
+
+                                    </DialogActions>
+                                </Dialog>
                 </div>
 
                 
@@ -94,7 +220,7 @@ const Projects = () => {
                         <div className='projectContent' >
                             
 
-                            <p className='text'>{result.name} <br /> {result.tech_stack}</p>
+                            <p className='projecttext'>{result.name} <br /> {result.tech_stack}</p>
 
                         </div>
                         <div style={{background: `url(${result.img})`, height:'30vh', backgroundRepeat:'no-repeat', backgroundSize:'cover'}}>
