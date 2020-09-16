@@ -228,8 +228,8 @@ const useStyles = makeStyles((theme) => ({
             background: 'black'
         },
         [theme.breakpoints.down('xs')]: {
-            width:'100%',
-            fontSize:'10px',
+            
+            textAlign:'center'
         }
     },
     list:{
@@ -255,6 +255,16 @@ const useStyles = makeStyles((theme) => ({
             visibility:'hidden'
         }
     
+    },
+    link: {
+        textDecoration: 'none',
+       
+    },
+    Certs: {
+        '&:hover': {
+            color: 'white',
+            background: 'black'
+        }
     }
 
 }))
@@ -347,7 +357,7 @@ const Welcome = () => {
                              
                             <div className='greetingBoxLinks' >
 
-                                <Link to='/projects' className='flip-in-hor-top' ><Button variant='contained' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
+                                <Link to='/projects' style={{textDecoration:'none'}} className='flip-in-hor-top' ><Button variant='contained' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
                                 
                                 {toggle ? (
                                    
@@ -355,11 +365,11 @@ const Welcome = () => {
                                    
                                 ) : (
                                    
-                                       <Link className='flip-in-ver-right' ><Button onClick={handleToggle} className={classes.button} variant='contained' ><span className='jello-horizontal'>About</span></Button></Link>
+                                       <Link style={{textDecoration:'none'}} className='flip-in-ver-right' ><Button onClick={handleToggle} className={classes.button} variant='contained' ><span className='jello-horizontal'>About</span></Button></Link>
                                    
                                 )}
 
-                                <Link className='flip-in-ver-left' ><Button className={classes.button} variant='contained' onClick={handleOpen} ><span className='jello-horizontal'>Contact</span></Button></Link>
+                                <Link className='flip-in-ver-left' style={{textDecoration:'none'}} ><Button className={classes.button} variant='contained' onClick={handleOpen} ><span className='jello-horizontal'>Contact</span></Button></Link>
 
 
 
@@ -371,11 +381,8 @@ const Welcome = () => {
                                         <DialogContentText className={classes.modalText}>
                                             <div className={classes.info}>
                                                 <p className={classes.text}>Phone: 229.735.2351</p>
-                                                <p className={classes.text}>Email: dlrayjr89@gmail.com</p>
-                                                <p className={classes.text}>Location: Marietta, GA</p>
-
-
-                                            </div>
+                                                
+                                                    </div>
                                             <Divider />
                                             <div className={classes.inputContainer}>
                                                 <TextField
@@ -488,29 +495,29 @@ const Welcome = () => {
                                         <DialogContent>
                                             <DialogContentText style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
                                             <div>
-                                            <a href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'><Button>SoloLearn - HTML5 Course</Button></a>
+                                            <a className={classes.link} href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'><Button className={classes.Certs} >SoloLearn - HTML5 Course</Button></a>
                                             </div>
                                                     
                                             <div>
-                                                <a href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' ><Button>SoloLearn - CSS Course</Button></a>
+                                                <a className={classes.link}  href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' ><Button className={classes.Certs}>SoloLearn - CSS Course</Button></a>
                                             </div>
 
                                             <div>
-                                                <a href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'><Button>SoloLearn - Javascript Course</Button></a>
+                                                <a className={classes.link} href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'><Button className={classes.Certs}>SoloLearn - Javascript Course</Button></a>
 
                                             </div>
                                             <div>
-                                                <a href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'><Button>SoloLearn - SQL Course</Button></a>
-
-                                            </div>
-
-                                            <div>
-                                                <a href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button></Button>Udemy - Beginner guide to Cyber Security Courses</a>
+                                                <a className={classes.link} href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'><Button className={classes.Certs}>SoloLearn - SQL Course</Button></a>
 
                                             </div>
 
                                             <div>
-                                                <a href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button>Udemy - Ethical Hacking BootCamp Courses</Button></a>
+                                                <a className={classes.link}  href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button className={classes.Certs}>Udemy - Beginner guide to Cyber Security Courses</Button></a>
+
+                                            </div>
+
+                                            <div>
+                                                <a className={classes.link}  href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button className={classes.Certs}>Udemy - Ethical Hacking BootCamp Courses</Button></a>
 
                                             </div>
 
@@ -552,11 +559,11 @@ const Welcome = () => {
 
                                 <img className='jello-horizontal' style={{ width: '7%' }} src={HTML} />
 
-                                <img className='jello-horizontal' style={{ width: '7%' }} src={CSS} />
-                                <img className='jello-horizontal' style={{ width: '7%' }} src={JS} />
-                                <img className='jello-horizontal' style={{ width: '7%' }} src={REACT} />
-                                <img className='jello-horizontal' style={{ width: '7%' }} src={NODE} />
-                                <img className='jello-horizontal' style={{ width: '7%' }} src={PY} />
+                                <img className='jello-horizontal ' style={{ width: '7%' }} src={CSS} />
+                                <img className='jello-horizontal ' style={{ width: '7%' }} src={JS} />
+                                <img className='jello-horizontal ' style={{ width: '7%' }} src={REACT} />
+                                <img className='jello-horizontal ' style={{ width: '7%' }} src={NODE} />
+                                <img className='jello-horizontal ' style={{ width: '7%' }} src={PY} />
                             </div>
                         </div>
 
