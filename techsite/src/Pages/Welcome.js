@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
         background: 'white'
     },
     buttons: {
-        color: 'black',
+        color: 'black', 
         '&:hover': {
             color:'red'
         }
@@ -154,8 +154,11 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: 'url(' + LOGO + ')',
         backgroundPosition: 'start',
         backgroundPositionY: '50%',
+        backgroundPositionX: '50%',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'filled',
+        backgroundSize: '70%',
+        
         [theme.breakpoints.down('xs')]: {
             width:'105%',
             
@@ -165,7 +168,11 @@ const useStyles = makeStyles((theme) => ({
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'filled',
             
-        }
+        },
+        [theme.breakpoints.down('sm')]: {
+            width:'100%',
+            backgroundPositionX: '50%'
+        },
 
     },
     greeting: {
@@ -222,7 +229,7 @@ const useStyles = makeStyles((theme) => ({
     },
     
     button: {
-        width: '100%',
+        width: '80%',
         '&:hover': {
             color: 'white',
             background: 'black'
@@ -234,7 +241,7 @@ const useStyles = makeStyles((theme) => ({
     },
     list:{
         height: '7vh', 
-        width: '75%', 
+        width: '100%', 
         textAlign: 'center',
         margin:'0 auto',
         
@@ -245,6 +252,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             width:'86%',
             fontSize:'small'
+        },
+        [theme.breakpoints.down('sm')]: {//this is at 960px
+        
+            width:'100%'
         }
 
     },
@@ -348,14 +359,9 @@ const Welcome = () => {
     return (
         <div className='mainContainer'>
 
-
+                
             <div className='introBox'>
-                <div className='intro'>
-                    <div className='greetingContainer'>
-
-                        <div className={classes.greetingBox}>
-                             
-                            <div className='greetingBoxLinks' >
+             <div className='greetingBoxLinks' >
 
                                 <Link to='/projects' style={{textDecoration:'none'}} className='flip-in-hor-top' ><Button variant='contained' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
                                 
@@ -432,6 +438,13 @@ const Welcome = () => {
                                 </Dialog>
                                
                             </div>
+                            <Divider style={{background: 'black' }}/>
+                <div className='intro'>
+                    <div className='greetingContainer'>
+
+                        <div className={classes.greetingBox}>
+                             
+                           
                            
                             
 
@@ -453,24 +466,24 @@ const Welcome = () => {
 
                             <div className='services' >
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal' style={{fontFamily: 'Cinzel, serif'}}><p style={{fontFamily: 'Cinzel, serif'}}> Online Portfolio</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText'> Online Portfolio</p></ListItemText>
                                 </ListItem>
-                                <Divider style={{margin:'0 auto', width:'85%', background:'black'}} />
+                                <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal' ><p style={{fontFamily: 'Cinzel, serif'}}>E-Commerce Website</p></ListItemText>
+                                    <ListItemText className='jello-horizontal' ><p className='welcomeText'>E-Commerce Website</p></ListItemText>
                                 </ListItem>
-                                <Divider style={{margin:'0 auto', width:'85%', background:'black'}} />
+                                <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Application development</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Application development</p></ListItemText>
                                 </ListItem>
-                                <Divider style={{margin:'0 auto', width:'85%', background:'black'}} />
+                                <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Website Refactoring</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Website Refactoring</p></ListItemText>
                                 </ListItem>
-                                <Divider style={{margin:'0 auto', width:'85%', background:'black'}} />
+                                <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
                             </div>
 
                             <Divider style={{background: 'black', color:'black'}} orientation='vertical' />
@@ -479,16 +492,16 @@ const Welcome = () => {
                                
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Full-Stack Developer</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Full-Stack Developer</p></ListItemText>
                                 </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'85%', background:'black'}} />
+                                <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal' ><p style={{fontFamily: 'Cinzel, serif'}}>View my <a style={{textDecoration:'none', color:'red'}} href={Resume}> Resume</a></p></ListItemText>
+                                    <ListItemText className='jello-horizontal' ><p className='welcomeText'>View my <a style={{textDecoration:'none', color:'red'}} href={Resume}> Resume</a></p></ListItemText>
                                 </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'85%', background:'black'}} />
+                                <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button  className={classes.list} onClick={handleCert}>
-                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}} >Click to see Certifications</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Click to see Certifications</p></ListItemText>
                                 </ListItem>
                                 <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
                                     <DialogTitle><p style={{fontFamily: 'Cinzel, serif'}} >Certification gained during my web development journey.</p> </DialogTitle>
@@ -531,12 +544,12 @@ const Welcome = () => {
 
                                    
                                 </Dialog>
-                                <Divider  style={{margin:'0 auto', width:'85%', background:'black'}} />
+                                <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Lambda Student</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Lambda Student</p></ListItemText>
                                 </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'85%', background:'black'}} />
+                                <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
 
 
                             </div>
@@ -546,7 +559,7 @@ const Welcome = () => {
                     </div>
 <Divider className={classes.line}  orientation='vertical' />
 
-                    <div className={classes.frontEnd}>
+                    <div className='langandsocial'>
 
                         <div>
                             <div style={{ padding: '0%', color: 'black' }}>
