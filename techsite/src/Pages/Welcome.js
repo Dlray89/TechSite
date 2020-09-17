@@ -243,8 +243,7 @@ const useStyles = makeStyles((theme) => ({
             background: 'black'
         },
         [theme.breakpoints.down('xs')]: {
-            width:'76%',
-          
+            width:'86%',
             fontSize:'small'
         }
 
@@ -456,22 +455,22 @@ const Welcome = () => {
                                 <ListItem button className={classes.list} >
                                     <ListItemText className='jello-horizontal' style={{fontFamily: 'Cinzel, serif'}}><p style={{fontFamily: 'Cinzel, serif'}}> Online Portfolio</p></ListItemText>
                                 </ListItem>
-                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <Divider style={{margin:'0 auto', width:'85%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
                                     <ListItemText className='jello-horizontal' ><p style={{fontFamily: 'Cinzel, serif'}}>E-Commerce Website</p></ListItemText>
                                 </ListItem>
-                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <Divider style={{margin:'0 auto', width:'85%', background:'black'}} />
 
                                 <ListItem button className={classes.list} >
                                     <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Application development</p></ListItemText>
                                 </ListItem>
-                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <Divider style={{margin:'0 auto', width:'85%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
                                     <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Website Refactoring</p></ListItemText>
                                 </ListItem>
-                                <Divider style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <Divider style={{margin:'0 auto', width:'85%', background:'black'}} />
                             </div>
 
                             <Divider style={{background: 'black', color:'black'}} orientation='vertical' />
@@ -482,11 +481,11 @@ const Welcome = () => {
                                 <ListItem button className={classes.list}>
                                     <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Full-Stack Developer</p></ListItemText>
                                 </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <Divider  style={{margin:'0 auto', width:'85%', background:'black'}} />
                                 <ListItem button className={classes.list} >
                                     <ListItemText className='jello-horizontal' ><p style={{fontFamily: 'Cinzel, serif'}}>View my <a style={{textDecoration:'none', color:'red'}} href={Resume}> Resume</a></p></ListItemText>
                                 </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <Divider  style={{margin:'0 auto', width:'85%', background:'black'}} />
 
                                 <ListItem button  className={classes.list} onClick={handleCert}>
                                     <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}} >Click to see Certifications</p></ListItemText>
@@ -532,12 +531,12 @@ const Welcome = () => {
 
                                    
                                 </Dialog>
-                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <Divider  style={{margin:'0 auto', width:'85%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
                                     <ListItemText className='jello-horizontal'><p style={{fontFamily: 'Cinzel, serif'}}>Lambda Student</p></ListItemText>
                                 </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'75%', background:'black'}} />
+                                <Divider  style={{margin:'0 auto', width:'85%', background:'black'}} />
 
 
                             </div>

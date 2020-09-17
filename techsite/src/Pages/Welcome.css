@@ -382,11 +382,17 @@
 	        animation: jello-horizontal 0.9s both;
 }
 
-@media(max-width:414px) {
+@media(max-width:600px) {
     .jello-horizontal {
-        font-size: 10px;
+       
        
     }
+}
+
+.
+
+@media(max-width: 600px) {
+
 }
 
 
