@@ -245,7 +245,7 @@ const Projects = () => {
                     &copy; 2020 DAPTHEDEV
                 </div>
 
-                <div style={{width:'20%', display:'flex', justifyContent:'space-evenly'}}>
+                <div style={{width:'50%', display:'flex', justifyContent:'space-evenly'}}>
                     <LinkedInIcon />
                     <GitHubIcon />
                     <InstagramIcon />
