@@ -138,8 +138,8 @@ const Projects = () => {
     return (
         <div className='projectContainer' >
 
-            <div>
-                <p>Project Board</p>
+            <div style={{fontSize: '20px', background: 'black', padding: '1%'}}>
+                <p style={{color:'white'}}>Project Board</p>
             </div>
 
 
@@ -239,8 +239,8 @@ const Projects = () => {
                     </div>
                 ))}
             </div>
-            <Divider />
-            <div style={{display:'flex', justifyContent:'space-between', width:'98%',  margin:' 0 auto'}}>
+            <Divider style={{margin:' 5% 0% 0% 0%'}} />
+            <div style={{display:'flex', justifyContent:'space-between', width:'98%',  margin:' 0% auto'}}>
                 <div style={{}}>
                     &copy; 2020 DAPTHEDEV
                 </div>
