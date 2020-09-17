@@ -504,7 +504,8 @@ const Welcome = () => {
                                     <ListItemText className='jello-horizontal'><p className='welcomeText' >Click to see Certifications</p></ListItemText>
                                 </ListItem>
                                 <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
-                                    <DialogTitle><p style={{fontFamily: 'Cinzel, serif'}} >Certification gained during my web development journey.</p> </DialogTitle>
+                                    <DialogTitle><p style={{fontFamily: 'Cinzel, serif', textAlign:'center'}} >Certification gained during my web development journey.</p> </DialogTitle>
+                                    <Divider  />
                                         <DialogContent>
                                             <DialogContentText style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
                                             <div>
