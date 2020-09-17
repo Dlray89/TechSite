@@ -36,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
             background: 'black',
             color:'white'
         }
+    },
+    social: {
+        '&:hover': {
+            
+            color: 'red'
+        }
     }
 }))
 
@@ -239,17 +245,17 @@ const Projects = () => {
                     </div>
                 ))}
             </div>
-            <Divider style={{margin:' 5% 0% 0% 0%'}} />
+            <Divider style={{margin:' 2% 0% 0% 0%'}} />
             <div style={{display:'flex', justifyContent:'space-between', width:'98%',  margin:' 0% auto'}}>
                 <div style={{}}>
                     &copy; 2020 DAPTHEDEV
                 </div>
 
                 <div style={{width:'50%', display:'flex', justifyContent:'space-evenly'}}>
-                    <LinkedInIcon />
-                    <GitHubIcon />
-                    <InstagramIcon />
-                    <FacebookIcon />
+                    <a href='https://www.linkedin.com/in/dapperdave1914/'><Button className={classes.social} ><LinkedInIcon /> </Button></a>
+                    <a href='https://github.com/Dlray89'><Button className={classes.social} ><GitHubIcon /></Button></a>
+                    <a href='https://www.instagram.com/tapthedap'><Button className={classes.social} ><InstagramIcon /></Button></a>
+                    <a href='https://www.facebook.com/ImodelIspeak15?ref=bookmarks'><Button className={classes.social}><FacebookIcon /></Button></a>
                 </div>
             </div>
             <Divider />
