@@ -31,7 +31,7 @@
 
 @media(max-width:600px) {
     .introBox {
-        height: 121vh
+        height: 119vh
     }
 }
 
@@ -62,17 +62,7 @@
     
     
 }
-@media(max-width: 751px) {
-    .greetingContainer {
-        
-    }
-}
 
-@media(max-width: 960px) {
-    .greetingContainer {
-        
-    }
-}
 
 .greetingBoxLinks {
     box-sizing: border-box;
@@ -114,9 +104,9 @@
     
 }
 
-@media(max-width: 460px) {
+@media(max-width: 464px) {
     .langandsocial {
-        width: 40%
+        width: 30%
     }
 }
 
