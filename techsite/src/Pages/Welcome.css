@@ -23,7 +23,8 @@
 
 @media (max-width: 460px){
     .introBox {
-        height: 115vh;
+        height: 100vh;
+        box-sizing: border-box
      
         
     }
@@ -31,15 +32,10 @@
 
 @media(max-width:600px) {
     .introBox {
-        height: 119vh
+        height: 110vh
     }
 }
 
-@media(max-width:880px) {
-    .introBox {
-        
-    }
-}
 
 
 
