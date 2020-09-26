@@ -8,6 +8,7 @@ import Sauti from '../images/sauti.PNG'
 import Prohash from '../images/prohash.PNG'
 import Conway from '../images/conway.PNG'
 import Coming_Soon from '../images/comingsoon.jpg'
+import SAA from '../images/saa.PNG'
 import Modal from '../components/Modal'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -26,6 +27,10 @@ const projects = [
     { "id": 3, name: 'Conway', details: "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.This game became widely known when it was mentioned in an article published by Scientific American in 1970. It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the gam", link: "https://the-conway-game-of-life.vercel.app/", githublink:'https://github.com/Dlray89/The-Conway_game-of_life', tech_stack: "React - Javascript - Material-UI", img:Conway },
     {
         "id": 4, name:"notes.IO", details:"A terminal note-taking feature to take notes and save them to a JSON file. You can create, delete, see a listing of all your notes or read a specific one. It's your choice! Typing commands in the terminal can get out of control. There will be a time you may forget specific commands you did hours ago but have no worries notes.IO got your back.",tech_stack: "Node.JS", img:Coming_Soon
+    },
+    {
+        "id": 5, name:'Stay Alive Artistry', details:"Stay Alive Artistry is art that feeds the soul. Angel Price passion for art comes from knowing that art heals the soul. she make pieces that have the power to let people know that they are the creator of their own reality. Everyone should feel like they can be whatever they want to be, no dream is too big! \n COMING SOON! UNDER DEVELOPMENT" , img: SAA, tech_stack:'React - Material-UI'
+
     }
     
 ]
