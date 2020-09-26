@@ -13,6 +13,9 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import LocationCityIcon from '@material-ui/icons/LocationCity';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 const projects = [
 
@@ -42,6 +45,81 @@ const useStyles = makeStyles((theme) => ({
             
             color: 'red'
         }
+    },
+    modalText: {
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        flexDirection:'column',
+        
+        width:'100%'
+
+    },
+    info: {
+        display: 'flex',
+        flexDirection: 'row',
+        
+        width: '100%',
+
+    },
+    text: {
+        border:'solid 1px black',
+        margin:'0 auto',
+        fontSize:'12px',  
+        width:'100%',      
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        
+        [theme.breakpoints.down('sm')]: {
+            fontSizing: '12px',
+            width: '90%',
+            textAlign: 'center',
+            margin: '0 auto'
+        }
+    },
+    inputContainer:{
+       
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-evenly',
+        margin:'2% auto',
+        width:'100%'
+    },
+    input:{
+        margin:'2% auto',
+        width:'100%',
+        
+    },
+     buttonContainer: {
+       
+        display:'flex',
+        flexDirection:'column'
+    },
+    modalButton: {
+        background:'black',
+        color:'white',
+        width:'100%',
+        margin:'1% auto',
+        '&:hover':{
+            background:'grey',
+            color:'white'
+        }
+    },
+    submittedButton: {
+        
+        width:'100%',
+        margin:'1% auto',
+        '&:hover':{
+            background:'black',
+            color:'white'
+        }
+
+    },
+    modalTitle: {
+        textAlign:'center',
+        background:'black',
+        color:'white',
+        fontFamily: 'Cinzel, serif'
     }
 }))
 
@@ -58,7 +136,7 @@ const Projects = () => {
 
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState([])
-    
+    const [sending, setSending] = useState(false)
     const [openSauti, setOpenSauti] = useState(false)
     const [open, setOpen] = useState(false)
     const [openCerts, setOpenCerts] = useState(false)
@@ -155,20 +233,26 @@ const Projects = () => {
                 <div className='linksContainer' >
                     <Link to='/welcome'><Button className={classes.button} >Home</Button></Link>
                     <Link><Button className={classes.button} >About</Button></Link>
-                    <Link><Button className={classes.button}>Contact</Button></Link>
+                    <Link><Button className={classes.button} onClick={handleOpen}>Contact</Button></Link>
                     <Dialog open={open} onClose={handleClose} className={classes.modal}>
-                                    <DialogTitle>
-                                        Lets Chat!
+                                   <DialogTitle className={classes.modalTitle}  >
+                                       <p style={{fontFamily:'Cinzel, serif'}}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
                         </DialogTitle>
                                     <DialogContent className={classes.modalInner}>
-                                        <DialogContentText className={classes.modalText}>
+                                         <DialogContentText className={classes.modalText}>
                                             <div className={classes.info}>
-                                                <p className={classes.text}>Phone: 229.735.2351</p>
+                                                <p className={classes.text}><LocationCityIcon /> Marietta, GA</p>
+                                                <p className={classes.text}><PhoneIcon  /> 229.735.2351</p>
+                                                <p className={classes.text}><EmailIcon /> dlrayjr89@gmail.com</p>
+                                                
                                                 
                                                     </div>
-                                            <Divider />
+                                                   
+                                            <Divider style={{background:'black'}} />
                                             <div className={classes.inputContainer}>
+                                                
                                                 <TextField
+                                                className={classes.input}
                                                     type='text'
                                                     id="fullname"
                                                     name='fullname'
@@ -187,6 +271,7 @@ const Projects = () => {
                                                     placeholder='Phone Number' />
 
                                                 <TextField
+                                                className={classes.input}
                                                     variant="outlined"
                                                     type='text'
                                                     placeholder='Email Address'
@@ -199,15 +284,16 @@ const Projects = () => {
 
                                         </DialogContentText>
                                     </DialogContent>
-                                    <DialogActions>
+                                    <DialogActions className={classes.buttonContainer}>
                                         {submitted ? (
-                                            <div>
-                                                <Button onClick={newContact}>Sumbit</Button>
+                                            <div style={{width:'90%'}} >
+                                                <Button variant='contained' className={classes.submittedButton} onClick={newContact}>Sumbit</Button>
                                             </div>
                                         ) : (
-                                                <div>
-                                                    <Button onClick={savecontact}>Send</Button>
-                                                    <Button onClick={handleClose}>Cancel</Button>
+                                                <div style={{width:'90%'}}>
+                                                    <Button variant='contained' className={classes.modalButton} onClick={savecontact}>Send</Button>    
+                                                    
+                                                    <Button variant='contained' className={classes.modalButton} onClick={handleClose}>Cancel</Button>
                                                 </div>
                                             )}
 

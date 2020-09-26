@@ -17,6 +17,9 @@ import JS from '../icons/javascript.png'
 import NODE from '../icons/nodejs.png'
 import REACT from '../icons/react.png'
 import PY from '../icons/python.png'
+import LocationCityIcon from '@material-ui/icons/LocationCity';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 
 
@@ -104,18 +107,23 @@ const useStyles = makeStyles((theme) => ({
     modalText: {
         display: 'flex',
         justifyContent: 'space-evenly',
-
+        flexDirection:'column',
+        
+        width:'100%'
     },
     info: {
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        width: '40%',
+        flexDirection: 'row',
+        
+        width: '100%',
 
     },
     inputContainer: {
-        textAlign: 'center',
-        width: '45%',
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'space-evenly',
+        margin:'2% auto',
+        width:'100%'
 
     },
     divider: {
@@ -139,6 +147,16 @@ const useStyles = makeStyles((theme) => ({
 
     },
     text: {
+        border:'solid 1px black',
+        margin:'0 auto',
+        fontSize:'15px',  
+        width:'100%',      
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        fontFamily: 'Cinzel, serif',
+        color:'black',
+
         [theme.breakpoints.down('sm')]: {
             fontSizing: '12px',
             width: '90%',
@@ -276,6 +294,42 @@ const useStyles = makeStyles((theme) => ({
             color: 'white',
             background: 'black'
         }
+    },
+    input:{
+        margin:'2% auto',
+        width:'100%',
+        
+    },
+    buttonContainer: {
+       
+        display:'flex',
+        flexDirection:'column'
+    },
+    modalButton: {
+        background:'black',
+        color:'white',
+        width:'100%',
+        margin:'1% auto',
+        '&:hover':{
+            background:'grey',
+            color:'white'
+        }
+    },
+    submittedButton: {
+        
+        width:'100%',
+        margin:'1% auto',
+        '&:hover':{
+            background:'black',
+            color:'white'
+        }
+
+    },
+    modalTitle: {
+        textAlign:'center',
+        background:'black',
+        color:'white',
+        fontFamily: 'Cinzel, serif'
     }
 
 }))
@@ -293,6 +347,7 @@ const Welcome = () => {
 
     const classes = useStyles()
     const [open, setOpen] = useState(false)
+    const [sending, setSending] = useState(false)
     const [openCerts, setOpenCerts] = useState(false)
     const [contacts, setContacts] = useState(initContact)
     const [submitted, setSubmitted] = useState(false)
@@ -344,6 +399,7 @@ const Welcome = () => {
                     email: res.data.email
                 })
                 setSubmitted(true)
+                setSending(true)
             })
             .catch(err => {
                 console.log(err)
@@ -380,13 +436,15 @@ const Welcome = () => {
 
 
                                 <Dialog open={open} onClose={handleClose} className={classes.modal}>
-                                    <DialogTitle>
-                                        Lets Chat!
+                                    <DialogTitle className={classes.modalTitle}  >
+                                       <p style={{fontFamily:'Cinzel, serif'}}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
                         </DialogTitle>
                                     <DialogContent className={classes.modalInner}>
                                         <DialogContentText className={classes.modalText}>
                                             <div className={classes.info}>
-                                                <p className={classes.text}>Phone: 229.735.2351</p>
+                                                <p className={classes.text}><LocationCityIcon /> Marietta, GA</p>
+                                                <p className={classes.text}><PhoneIcon  /> 229.735.2351</p>
+                                                <p className={classes.text}><EmailIcon /> dlrayjr89@gmail.com</p>
                                                 
                                                     </div>
                                             <Divider />
@@ -422,15 +480,16 @@ const Welcome = () => {
 
                                         </DialogContentText>
                                     </DialogContent>
-                                    <DialogActions>
+                                    <DialogActions className={classes.buttonContainer}>
                                         {submitted ? (
-                                            <div>
-                                                <Button onClick={newContact}>Sumbit</Button>
+                                            <div style={{width:'90%'}} >
+                                                <Button variant='contained' className={classes.submittedButton} onClick={newContact}>Sumbit</Button>
                                             </div>
                                         ) : (
-                                                <div>
-                                                    <Button onClick={savecontact}>Send</Button>
-                                                    <Button onClick={handleClose}>Cancel</Button>
+                                                <div style={{width:'90%'}}>
+                                                    <Button variant='contained' className={classes.modalButton} onClick={savecontact}>Send</Button>    
+                                                    
+                                                    <Button variant='contained' className={classes.modalButton} onClick={handleClose}>Cancel</Button>
                                                 </div>
                                             )}
 
@@ -501,7 +560,7 @@ const Welcome = () => {
                                 <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button  className={classes.list} onClick={handleCert}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Click to see Certifications</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Click to see <span style={{color:'red'}}>Certification</span> </p></ListItemText>
                                 </ListItem>
                                 <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
                                     <DialogTitle><p style={{fontFamily: 'Cinzel, serif', textAlign:'center'}} >Certification gained during my web development journey.</p> </DialogTitle>
