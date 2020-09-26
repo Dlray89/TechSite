@@ -4,6 +4,7 @@ import Intro from "../src/Pages/intro"
 import IntroBG from './Pages/introBG'
 import Welcome from "./Pages/Welcome"
 import Projects from "./Pages/projects"
+import About from './Pages/About'
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Route exact path='/welcome' component={Welcome}   />
             <Route exact path='/projects' component={Projects}   />
               <Route exact path='/' component={IntroBG} />
+              <Route exact path='/aboutme' component={About} />
         </Switch>
       
     </div>

@@ -421,15 +421,11 @@ const Welcome = () => {
 
                                 <Link to='/projects' style={{textDecoration:'none'}} className='flip-in-hor-top' ><Button variant='contained' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
                                 
-                                {toggle ? (
+                              
                                    
-                                       <Button className='jello-horizontal' style={{width:'80%', margin:"0 auto"}} onClick={toggleOff} variant='contained'>COMING SOON</Button>
+                            <Link to='/aboutme' style={{textDecoration:'none'}} className='flip-in-ver-right' ><Button onClick={handleToggle} className={classes.button} variant='contained' ><span className='jello-horizontal'>About</span></Button></Link>
                                    
-                                ) : (
-                                   
-                                       <Link style={{textDecoration:'none'}} className='flip-in-ver-right' ><Button onClick={handleToggle} className={classes.button} variant='contained' ><span className='jello-horizontal'>About</span></Button></Link>
-                                   
-                                )}
+                              
 
                                 <Link className='flip-in-ver-left' style={{textDecoration:'none'}} ><Button className={classes.button} variant='contained' onClick={handleOpen} ><span className='jello-horizontal'>Contact</span></Button></Link>
 
@@ -551,7 +547,7 @@ const Welcome = () => {
                                
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Full-Stack Developer</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Full-Stack Engineer</p></ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
                                 <ListItem button className={classes.list} >

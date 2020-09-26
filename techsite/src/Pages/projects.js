@@ -232,7 +232,7 @@ const Projects = () => {
             <div className='navbar'>
                 <div className='linksContainer' >
                     <Link to='/welcome'><Button className={classes.button} >Home</Button></Link>
-                    <Link><Button className={classes.button} >About</Button></Link>
+                    <Link to='/aboutme' ><Button className={classes.button} >About</Button></Link>
                     <Link><Button className={classes.button} onClick={handleOpen}>Contact</Button></Link>
                     <Dialog open={open} onClose={handleClose} className={classes.modal}>
                                    <DialogTitle className={classes.modalTitle}  >
