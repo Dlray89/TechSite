@@ -483,7 +483,8 @@ const Welcome = () => {
                                             </div>
                                         ) : (
                                                 <div style={{width:'90%'}}>
-                                                    <Button variant='contained' className={classes.modalButton} onClick={savecontact}>Send</Button>    
+                                                    <Button variant='contained' className={classes.modalButton} onClick={savecontact}>Send</Button>
+                                                           
                                                     
                                                     <Button variant='contained' className={classes.modalButton} onClick={handleClose}>Cancel</Button>
                                                 </div>

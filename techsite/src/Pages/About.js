@@ -122,70 +122,88 @@ const useStyles = makeStyles((theme) => ({
             'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
     },
     aboutContainer: {
-        border:'solid 1px black',
-        margin:'1% auto',
+        border: 'solid 1px black',
+        margin: '1% auto',
         fontFamily: 'Cinzel, serif',
-        
+
     },
     aboutContainer2: {
-        justifyContent:'space-evenly',
+        justifyContent: 'space-evenly',
         display: 'flex',
-        width:'80%',
-        margin:'1% auto'
+        width: '80%',
+        margin: '1% auto',
+        
+        color:'white'
     },
     aboutContainer3: {
-        border:'solid 1px black',
-        background:'grey',
-        margin:'1% auto'
+        border: 'solid 1px black',
+        background: 'grey',
+        margin: '1% auto',
+       
     },
     aboutTitle: {
-        color:'black',
-       
-        
+        color: 'black',
+
+
     },
     aboutText: {
         border: 'solid 1px black',
         width: '100%',
-        padding:'1%',
-        textAlign:'center',
-        color:'white',
-        background:'grey'
+        padding: '1%',
+        textAlign: 'center',
+        color: 'white',
+        background: 'grey'
     },
     pastcareers: {
         border: 'solid 1px black',
-         width: '45%' 
+        width: '45%',
+        background:'black',
     },
-    careerText:{
-        color:'red',
-        textAlign:'center',
-       
+    careerText: {
+        color: 'white',
+        textAlign: 'center',
+
     },
     careerP: {
-         fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cinzel, serif',
     },
-    status:{
+    status: {
         border: 'solid 1px black',
-         width: '45%' 
+        width: '45%',
+        background:'black',
     },
     specText: {
         fontFamily: 'Cinzel, serif',
-        color:'white'
-        
+        color: 'white'
+
     },
     specTitle: {
         fontFamily: 'Cinzel, serif',
-        color:'white'
+        color: 'white'
+    },
+    img: {
+
+        '&:hover': {
+            position: 'relative',
+            top: '-25px',
+            left: '-35px',
+            width: '500px',
+            height:' auto',
+            display: 'block',
+            zIndex: '999'
+
     }
+}
 }))
 
 const pastCareers = [
     {
         id: 1,
-        name: 'Profession Model'
+        name: 'Professional Model'
     },
     {
         id: 2,
-        name: 'Sales Profession'
+        name: 'Sales Professional'
     },
     {
         id: 3,
@@ -199,6 +217,7 @@ const pastCareers = [
         id: 5,
         name: 'Associate Banker'
     },
+
 ]
 
 
@@ -368,8 +387,8 @@ const About = () => {
             <div className={classes.root}>
                 <GridList className={classes.gridList} cols={6.0}>
                     {pictureData.map((tile) => (
-                        <GridListTile key={tile.img}>
-                            <img src={tile.img} alt={tile.title} width='50%' />
+                        <GridListTile  key={tile.img}>
+                            <img  src={tile.img} alt={tile.title} width='50%' />
                             <GridListTileBar
                                 title={tile.title}
                                 classes={{
@@ -403,14 +422,18 @@ const About = () => {
 
                 <div className={classes.aboutContainer2} >
                     <div className={classes.pastcareers} >
-                        
+
                         <List>
-                                <h4>Past career</h4>
-                                <Divider />
+                            <h4 style={{ margin:'-1.5% auto', padding:'3%', background:'grey', borderBottom:'solid 1px grey'}}>Past career</h4>
+                      
                             {pastCareers.map(item => (
-                                <ListItem style={{height:'7vh'}} button>
+                                <div>
+
+                                <ListItem style={{ height: '7vh' }} button>
                                     <ListItemText className={classes.careerText}><p c>{item.name}</p></ListItemText>
                                 </ListItem>
+                                <Divider style={{background:'white'}} />
+                                </div>
                             ))}
 
 
@@ -419,24 +442,31 @@ const About = () => {
                     </div>
 
                     <div className={classes.status} >
-                        
+
                         <List>
-                            <h4>Stats</h4>
-                            <Divider />
-                            <ListItem style={{height:'7vh'}} button>
+                            <h4 style={{ margin:'-1.5% auto', padding:'3%', background:'grey', borderBottom:'solid 1px grey'}}>Stats</h4>
+                          
+                            <ListItem style={{ height: '7vh' }} button>
                                 <ListItemText className={classes.careerText}> <p className={classes.careerP}>Orgin: Detroit, MI</p></ListItemText>
                             </ListItem>
-                            <ListItem style={{height:'7vh'}}button>
+                            <Divider style={{background:'white'}} />
+                            <ListItem style={{ height: '7vh' }} button>
                                 <ListItemText className={classes.careerText}><p className={classes.careerP}>Nickname: Dap</p></ListItemText>
                             </ListItem>
-                            <ListItem style={{height:'7vh'}} button>
+                            <Divider style={{background:'white'}} />
+                            <ListItem style={{ height: '7vh' }} button>
                                 <ListItemText className={classes.careerText}><p className={classes.careerP}>Brand: dapthedev</p></ListItemText>
                             </ListItem>
-                            <ListItem style={{height:'7vh'}}button>
+                            <Divider style={{background:'white'}} />
+                            <ListItem style={{ height: '7vh' }} button>
                                 <ListItemText className={classes.careerText}><p className={classes.careerP}>birthday: 11/28/89</p></ListItemText>
                             </ListItem>
-                        
-                            
+                            <Divider style={{background:'white'}} />
+                                 <ListItem style={{ height: '7vh' }} button>
+                                <ListItemText className={classes.careerText}><p className={classes.careerP}>Interest: Steak, Anime, Nature, Coffee, Comedy, Movies, and pumpkin spicy pastries</p></ListItemText>
+                            </ListItem>
+
+
                         </List>
 
                     </div>
@@ -446,26 +476,26 @@ const About = () => {
             </div>
 
             <div className={classes.aboutContainer3} >
-                <h4 className={classes.specTitle}>Specilization</h4>
+                <h4 className={classes.specTitle}>Specialization</h4>
                 <p className={classes.specText}>I specialized in both front-end, back-end development and solution making. The skiils I have acquired will provide great results and user satisfication. My goals is to
                 provide a steamless yet user-friendly enviroment for all clients. Understanding the user needs and providing a solution I can develop products such as but not limited to
                     <List>
-                        <ListItem style={{height:'7vh'}} button>
+                        <ListItem style={{ height: '7vh' }} button>
                             <ListItemText className={classes.careerText}><p className={classes.careerP}>Websites</p></ListItemText>
                         </ListItem>
-                        <ListItem style={{height:'7vh'}} button>
+                        <ListItem style={{ height: '7vh' }} button>
                             <ListItemText className={classes.careerText}><p className={classes.careerP}>e-commerce platforms</p></ListItemText>
                         </ListItem>
-                        <ListItem style={{height:'7vh'}} button>
+                        <ListItem style={{ height: '7vh' }} button>
                             <ListItemText className={classes.careerText}><p className={classes.careerP}>front-end applications</p></ListItemText>
                         </ListItem>
-                        <ListItem style={{height:'7vh'}} button>
+                        <ListItem style={{ height: '7vh' }} button>
                             <ListItemText className={classes.careerText}><p className={classes.careerP}>Server-Side Apllications</p></ListItemText>
                         </ListItem>
-                        <ListItem style={{height:'7vh'}} button>
+                        <ListItem style={{ height: '7vh' }} button>
                             <ListItemText className={classes.careerText}><p className={classes.careerP}>Database Development</p></ListItemText>
                         </ListItem>
-                        
+
                     </List>
                     I am passionate about what I do and very confident in my skills. Need a developer with that thinks outside the box, well you came to the right place. Go up to the contact and leave me a message.
                 </p>
