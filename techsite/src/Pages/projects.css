@@ -1,8 +1,9 @@
 .projectContainer {
     height: 120vh;
     background-color: white;
-    
     font-family: 'Cinzel', serif;
+    overflow-x: hidden
+
 
 }
 
