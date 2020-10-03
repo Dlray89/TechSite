@@ -61,7 +61,10 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         display: 'flex',
         [theme.breakpoints.down('xs')]: {
-            flexDirection: 'column'
+            flexDirection: 'reverse-column',
+            width:'100%',
+            height: '70vh'
+            
         }
 
     },
@@ -133,11 +136,27 @@ const useStyles = makeStyles((theme) => ({
         color: 'black', 
         '&:hover': {
             color:'red'
+        },
+        [theme.breakpoints.down('xs')]: {
+           fontSize:'12px',
+            width: '30%'
         }
 
     },
     bottomLinks: {
-        textDecoration: 'none'
+        textDecoration: 'none',
+        [theme.breakpoints.down('xs')]: {
+            width: '100%',
+            fontSize:'15px'
+        }
+    },
+    copyright: {
+        [theme.breakpoints.down('xs')]: {
+            width: '100%',
+            margin: '0% auto',
+            boxSizing:'border-box',
+        }
+
     },
     introP: {
         padding: '2%',
@@ -221,7 +240,8 @@ const useStyles = makeStyles((theme) => ({
 
         background: 'white',
         [theme.breakpoints.down('xs')]: {
-            width:'100%'
+            width:'60%',
+            height:'66vh'
         }
 
     },
@@ -268,8 +288,8 @@ const useStyles = makeStyles((theme) => ({
             background: 'black'
         },
         [theme.breakpoints.down('xs')]: {
-            width:'86%',
-            fontSize:'small'
+            width:'100%%',
+            fontSize:'small',
         },
         [theme.breakpoints.down('sm')]: {//this is at 960px
         
@@ -330,6 +350,11 @@ const useStyles = makeStyles((theme) => ({
         background:'black',
         color:'white',
         fontFamily: 'Cinzel, serif'
+    },
+    specButton: {
+        color:'red',
+        textDecoration:'none',
+        
     }
 
 }))
@@ -513,7 +538,7 @@ const Welcome = () => {
                 <div className={classes.introTwo}>
                     <div className={classes.news}>
 
-                        <p style={{ fontSize: '20px', margin: '0 0 1% 0', padding: '1%', boxSizing: 'border-box' }}>Services & Career</p>
+                        <p style={{ fontSize: '20px', margin: '0 0 1% 0', padding: '1%', boxSizing: 'border-box' }}>Specializations & Career</p>
                         <Divider style={{width:'40%', margin:'0 auto', background: 'black'}} />
 
                         
@@ -522,12 +547,12 @@ const Welcome = () => {
 
                             <div className='services' >
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText'> Online Portfolio</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText'> Online Portfolio's</p></ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal' ><p className='welcomeText'>E-Commerce Website</p></ListItemText>
+                                    <ListItemText className='jello-horizontal' ><p className='welcomeText'>E-Commerce Website's</p></ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
 
@@ -537,14 +562,14 @@ const Welcome = () => {
                                 <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Website Refactoring</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Server-Side Applications</p></ListItemText>
                                 </ListItem>
                                 <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
                             </div>
 
                             <Divider style={{background: 'black', color:'black'}} orientation='vertical' />
 
-                            <div style={{ width: '48%' }}>
+                            <div className='careers'>
                                
 
                                 <ListItem button className={classes.list}>
@@ -552,12 +577,12 @@ const Welcome = () => {
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
                                 <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal' ><p className='welcomeText'>View my <a style={{textDecoration:'none', color:'red'}} href={Resume}> Resume</a></p></ListItemText>
+                                    <ListItemText className='jello-horizontal' ><p className='welcomeText'>View my <a className={classes.specButton}  href={Resume}> Resume</a></p></ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button  className={classes.list} onClick={handleCert}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Click to see <span style={{color:'red'}}>Certification</span> </p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Click to see <span className={classes.specButton} >Certification</span> </p></ListItemText>
                                 </ListItem>
                                 <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
                                     <DialogTitle><p style={{fontFamily: 'Cinzel, serif', textAlign:'center'}} >Certification gained during my web development journey.</p> </DialogTitle>
@@ -604,7 +629,7 @@ const Welcome = () => {
                                 <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
 
                                 <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Lambda Student</p></ListItemText>
+                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Lambda Grad Student</p></ListItemText>
                                 </ListItem>
                                 <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
 
@@ -627,13 +652,13 @@ const Welcome = () => {
 
                             <div className='bounce-in-right'>
 
-                                <img className='jello-horizontal' style={{ width: '7%' }} src={HTML} />
+                                <img className='jello-horizontal pic1'  src={HTML} />
 
-                                <img className='jello-horizontal ' style={{ width: '7%' }} src={CSS} />
-                                <img className='jello-horizontal ' style={{ width: '7%' }} src={JS} />
-                                <img className='jello-horizontal ' style={{ width: '7%' }} src={REACT} />
-                                <img className='jello-horizontal ' style={{ width: '7%' }} src={NODE} />
-                                <img className='jello-horizontal ' style={{ width: '7%' }} src={PY} />
+                                <img className='jello-horizontal pic1'  src={CSS} />
+                                <img className='jello-horizontal pic1'  src={JS} />
+                                <img className='jello-horizontal  pic1'  src={REACT} />
+                                <img className='jello-horizontal pic1'  src={NODE} />
+                                <img className='jello-horizontal pic1'  src={PY} />
                             </div>
                         </div>
 
@@ -641,9 +666,9 @@ const Welcome = () => {
 
 
 
-                        <div style={{ width: '100%', margin: '0 auto', color: 'black' }}>
+                        <div className='socialMediaContainer'>
                             <div>
-                                <p>Social Platforms</p>
+                                <p className='socialMedialTitle'>Social Platforms</p>
 
                             </div>
 

@@ -21,18 +21,10 @@
     
 }
 
-@media (max-width: 460px){
+@media(max-width: 375px){
     .introBox {
-        height: 100vh;
-        box-sizing: border-box
-     
-        
-    }
-}
-
-@media(max-width:600px) {
-    .introBox {
-        height: 109vh
+      
+        height: 118vh;
     }
 }
 
@@ -45,11 +37,7 @@
     display: flex; 
 }
 
-@media(max-width: 880px) {
-    .intro {
-      
-    }
-}
+
 
 .greetingContainer {
     width: 100%;
@@ -76,19 +64,93 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+@media(max-width: 375px) {
+    .servicesandcareer {
+        flex-direction: column;
+        width: 100%
+    }
+}
+
+@media(max-width: 411px) {
+    .servicesandcareer {
+        
+        flex-direction: column
+    }
+}
+
+@media(max-width: 480px) {
+    .servicesandcareer {
+        
+        flex-direction: column
+    }
+}
+
+
 .services {
     width: 48%;  
 }
+
+@media(max-width: 375px) {
+    .services {
+        width:100%;
+        
+    }
+}
+
+@media(max-width: 411px) {
+    .services {
+        width:100%;
+        
+    }
+}
+
+@media(max-width: 480px) {
+    .services {
+        width:100%;
+        
+    }
+}
+
+.careers {
+    width: 48%;
+}
+
+@media(max-width: 375px) {
+    .careers {
+        width: 100%
+    }
+}
+
+@media(max-width: 411px) {
+    .careers {
+        width: 100%
+    }
+}
+
+@media(max-width: 480px) {
+    .careers {
+        width: 100%
+    }
+}
+
 
 .welcomeText {
     font-size: 1rem;
     font-family: 'Cinzel', serif;
     width: 100%;
 }
-
-@media(max-width: 688px) {
+@media(max-width: 375px) {
     .welcomeText {
-        font-size: 0.8rem
+        width:100%;
+        font-size: 16px
+    }
+}
+
+@media(max-width: 411px) {
+    .welcomeText {
+        width:100%;
+        font-size: 16px
     }
 }
 
@@ -97,25 +159,45 @@
     text-align: center;
     color: white;
     background: lightgray;
+    margin:0 auto;
+    box-sizing: border-box
     
 }
 
-@media(max-width: 464px) {
+@media(max-width: 375px){
     .langandsocial {
-        width: 30%
+        margin: 0 auto;
+        width: 50%;
+        top: 40%
+      
+    }
+
+}
+
+.socialMediaContainer {
+    width: 100%;
+    margin: 0 auto;
+     color: black
+}
+
+@media(max-width: 375px) {
+    .socialMediaContainer {
+        margin:0% auto;
+    }
+}
+ .socialMedialTitle {
+
+ }
+
+ @media(max-width: 375px) {
+    .socialMedialTitle {
     }
 }
 
-@media(max-width: 600px) {
-    .langandsocial{
-    
-    margin: 0 auto;
-    position: absolute;
-    top: 88%;
-    width: 87.4%;
-    
-    }
-}
+ .socialMediaIcons {
+
+ }
+
 
 
 
@@ -315,6 +397,32 @@
             justify-content: space-evenly
 }
 
+@media(max-width: 375px) {
+    .bounce-in-right {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+}
+
+@media(max-width: 411px) {
+    .bounce-in-right {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+}
+
+@media(max-width: 480px){
+    .bounce-in-right {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+}
+
 
 @-webkit-keyframes bounce-in-right {
   0% {
@@ -429,9 +537,42 @@
    
 }
 
+.pic1 {
+    width: 10%;
+}
+
+@media(max-width: 375px) {
+    .pic1 {
+        
+        width: 35% ;
+    }
+}
+
+@media(max-width: 411px) {
+    .pic1 {
+        
+        width: 35% ;
+    }
+}
+
+@media(max-width: 480px) {
+    .pic1 {
+        
+        width: 35% ;
+    }
+}
+
+
+
 .jello-horizontal:hover {
 	-webkit-animation: jello-horizontal 0.9s both;
 	        animation: jello-horizontal 0.9s both;
+}
+
+@media(max-width: 375px) {
+    .jello-horizontal {
+        width:'100%'
+    }
 }
 
 @media(max-width:600px) {
