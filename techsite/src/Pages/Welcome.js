@@ -7,7 +7,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import Contactops from '../crudhandle/contact_ops'
 import { Link } from 'react-router-dom'
 import LOGO from "../images/dapthedev.gif"
-import Resume from '../resume/davidray_resume.pdf'
+import Resume from '../resume/davidray_resume_update.pdf'
 import './Welcome.css'
 
 //icons
