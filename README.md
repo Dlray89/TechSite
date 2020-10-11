@@ -10,8 +10,6 @@ I created this website using:
 ![](https://img.shields.io/badge/CSS-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=blue)
 ![](https://img.shields.io/badge/MaterialUI-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=blue)
 
-Foobar is a Python library for dealing with word pluralization.
-
 ## Installation
 
 Use the package yarn or NPM to start.
