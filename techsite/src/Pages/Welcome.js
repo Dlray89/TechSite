@@ -92,16 +92,16 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'filled',
         backgroundSize: '100%',
+        height:'50vh',
         
         [theme.breakpoints.down('xs')]: {
             width:'105%',
-            
             backgroundPosition: 'start',
             backgroundPositionY: '50%',
             backgroundPositionX: '50%',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'filled',
-            
+            height:'20vh'
         },
         [theme.breakpoints.down('sm')]: {
             width:'100%',
