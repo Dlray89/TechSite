@@ -173,7 +173,7 @@ const useStyles = makeStyles((theme) => ({
         background: ' #2980b9',
         [theme.breakpoints.down('xs')]:{
             
-            fontSize:'18px',
+            fontSize:'15px',
             padding:'3%',
             textAlign:'center'
         }
@@ -185,7 +185,7 @@ const useStyles = makeStyles((theme) => ({
         margin:'2% 0',
         [theme.breakpoints.down('xs')]:{
             
-            fontSize:'18px',
+            fontSize:'15px',
             width:'95%',
             margin:'2% auto'
         }
@@ -357,7 +357,7 @@ bottomtext:{
     [theme.breakpoints.down('xs')]:{
         
         width:'100%',
-        fontSize:'18px',
+        fontSize:'15px',
         textAlign:'center'
         
     }
@@ -601,8 +601,8 @@ const About = () => {
                 </div>
 
                 <div className={classes.bn_Links}>
-                    <Link className={classes.BN_link}>Home</Link>
-                    <Link className={classes.BN_link}>About</Link>
+                    <Link to='/welcome' className={classes.BN_link}>Home</Link>
+                    <Link to='/aboutme' className={classes.BN_link}>About</Link>
                 </div>
 
                 <div className={classes.navIcons}>
