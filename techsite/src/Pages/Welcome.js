@@ -120,8 +120,7 @@ const useStyles = makeStyles((theme) => ({
             background: 'linear-gradient(to left, #2980b9, #2c3e50)'
         },
         [theme.breakpoints.down('xs')]: {
-            
-            textAlign:'center'
+            width:'100%'
         }
     },
     input:{
@@ -171,19 +170,32 @@ const useStyles = makeStyles((theme) => ({
         width:'100%',
         margin:'2% 0%',
         alignContent:'center',
+        [theme.breakpoints.down('xs')]:{
+        }
     },
     icons: {
+        [theme.breakpoints.down('xs')]:{
+            width:'15%'
+        }
     },
     Special:{
      
         textAlign:'center',
-        background: 'linear-gradient(to right, #2980b9, #2c3e50)'
+        background: 'linear-gradient(to right, #2980b9, #2c3e50)',
+        [theme.breakpoints.down('xs')]:{
+            
+        }
     },
     intro:{
        
         padding:'1%',
         background:'linear-gradient(to right, #2980b9, #2c3e50)',
-        color:'white'
+        color:'white',
+        [theme.breakpoints.down('xs')]:{
+            padding:'1%',
+            textAlign:'center',
+            fontSize:'15px'
+        }
     },
     box_one:{
         borderTop:'solid 1px black',
@@ -196,13 +208,21 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'filled',
         backgroundSize: '100%',
+        [theme.breakpoints.down('xs')]:{
+            width:'100%',
+            padding:'5%'
+        }
     },
     box_one_info:{
         background:'rgba(27, 20, 17, 0.8)', 
         color:'white', 
         width:'20%', 
         padding:'1%',
-        margin: '0 auto'
+        margin: '0 auto',
+        [theme.breakpoints.down('xs')]:{
+            width:'70%',
+            fontSize:'14px'
+        }
     },
     box2:{
         borderTop:'solid 1px black',
@@ -215,14 +235,23 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'filled',
         backgroundSize: '100%',
-        margin:'1% 0%'
+        margin:'1% 0%',
+        [theme.breakpoints.down('xs')]:{
+            width:'100%',
+            padding:'5%'
+        }
     },
     box_two_info:{
         background:'rgba(27, 20, 17, 0.8)', 
         color:'white', 
         width:'20%', 
         padding:'1%',
-        margin:'0 auto'
+        margin:'0 auto',
+        [theme.breakpoints.down('xs')]:{
+            width:'70%',
+            fontSize:'14px'
+
+        }
     },
     box_three:{
         borderTop:'solid 1px black',
@@ -235,6 +264,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'filled',
         backgroundSize: '100%',
+        [theme.breakpoints.down('xs')]:{
+            width:'100%',
+            padding:'5%'
+        }
         
     
     },
@@ -243,12 +276,20 @@ const useStyles = makeStyles((theme) => ({
         color:'white', 
         width:'20%', 
         padding:'1%',
-        margin:'0 auto'
+        margin:'0 auto',
+        [theme.breakpoints.down('xs')]:{
+            width:'70%',
+            fontSize:'14px'
+
+        }
     },
     title_special:{
         padding:'2%',
         color:'white',
-        fontSize:'22px'
+        fontSize:'22px',
+        [theme.breakpoints.down('xs')]:{
+            fontSize:'18px'
+        }
     },
     socialButtonContainer:{
         width:'30%',
@@ -266,22 +307,46 @@ const useStyles = makeStyles((theme) => ({
         border: 'solid 1px black',
         alignContent:'center',
         background:'linear-gradient(to left, #2980b9, #2c3e50)',
-        color:'white'
+        color:'white',
+        [theme.breakpoints.down('xs')]:{
+            padding:'5%',
+            width:'100%',
+            display:'flex',
+            flexDirection:'column-reverse'
+        }
     },
     navTitle:{
         width: '30%',
-        padding:'0.6%'
+        padding:'0.6%',
+        [theme.breakpoints.down('xs')]:{
+            fontSize:'10px',
+            width:'100%'
+        }
     },
     navIcons:{
         width:'20%', 
         display:'flex', 
         justifyContent:'space-evenly',
+        [theme.breakpoints.down('xs')]:{
+            fontSize:'10px',
+            width:'100%',
+            display:'flex',
+            flexWrap:'wrap'
+        
+        }
+        
     },
     bn_Links:{
         width:'50%',
         display:'flex',
         justifyContent:'space-evenly',
         padding:'0.6%',
+        [theme.breakpoints.down('xs')]:{
+            
+            fontSize:'15px',
+            width:'100%',
+            display:'flex',
+        }
     },
     link:{
         textDecoration:'none',
@@ -294,7 +359,11 @@ const useStyles = makeStyles((theme) => ({
         color:'white',
         '&:hover': {
             color: 'black'
-        }
+        },
+        [theme.breakpoints.down('xs')]:{
+            fontSize:'15px',
+            width:'100%',
+      }
     },
     
 
@@ -394,15 +463,15 @@ const Welcome = () => {
             <div className='introBox'>
              <div className='greetingBoxLinks' >
 
-                                <Link to='/projects' style={{textDecoration:'none'}} className='flip-in-hor-top' ><Button variant='contained' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
+                                <Link to='/projects' className='flip-in-hor-top' ><Button variant='contained' className={classes.button}  ><span className='jello-horizontal' >Projects</span></Button></Link>
                                 
                               
                                    
-                            <Link to='/aboutme' style={{textDecoration:'none'}} className='flip-in-ver-right' ><Button onClick={handleToggle} className={classes.button} variant='contained' ><span className='jello-horizontal'>About</span></Button></Link>
+                            <Link to='/aboutme' className='flip-in-ver-right' ><Button onClick={handleToggle} className={classes.button} variant='contained' ><span className='jello-horizontal'>About</span></Button></Link>
                                    
                               
 
-                                <Link className='flip-in-ver-left' style={{textDecoration:'none'}} ><Button className={classes.button} variant='contained' onClick={handleOpen} ><span className='jello-horizontal'>Contact</span></Button></Link>
+                                <Link className='flip-in-ver-left' ><Button className={classes.button} variant='contained' onClick={handleOpen} ><span className='jello-horizontal'>Contact</span></Button></Link>
 
 
 
