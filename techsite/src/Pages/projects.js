@@ -42,9 +42,9 @@ const useStyles = makeStyles((theme) => ({
     button: {
         fontFamily: 'Cinzel, serif',
         width:'98%',
-      
-
-
+        [theme.breakpoints.down('xs')]:{
+            width:'100%'
+        },
         '&:hover': {
             background: 'linear-gradient(to right, #2980b9, #2c3e50)',
             color:'white',
@@ -53,14 +53,12 @@ const useStyles = makeStyles((theme) => ({
     },
     links:{
         width:'100%',
-        textDecoration:'none'
-    },
-    social: {
-        color:'white',
-        '&:hover': {
-            color: 'black'
+        textDecoration:'none',
+        [theme.breakpoints.down('xs')]:{
+            width:'100%',
         }
     },
+    
     modalText: {
         display: 'flex',
         justifyContent: 'space-evenly',
@@ -144,28 +142,96 @@ const useStyles = makeStyles((theme) => ({
         border: 'solid 1px black',
         alignContent:'center',
         background:'linear-gradient(to left, #2980b9, #2c3e50)',
-        color:'white'
+        color:'white',
+        [theme.breakpoints.down('xs')]:{
+            padding:'5%',
+            width:'100%',
+            display:'flex',
+            flexDirection:'column-reverse'
+        }
     },
     navTitle:{
         width: '30%',
-        padding:'0.6%'
+        padding:'0.6%',
+        [theme.breakpoints.down('xs')]:{
+            fontSize:'10px',
+            width:'100%'
+        }
     },
     navIcons:{
         width:'20%', 
         display:'flex', 
         justifyContent:'space-evenly',
+        [theme.breakpoints.down('xs')]:{
+            fontSize:'10px',
+            width:'100%',
+            display:'flex',
+            flexWrap:'wrap'
+        
+        }
+        
     },
     bn_Links:{
         width:'50%',
         display:'flex',
         justifyContent:'space-evenly',
         padding:'0.6%',
+        [theme.breakpoints.down('xs')]:{
+            
+            fontSize:'15px',
+            width:'100%',
+            display:'flex',
+        }
     },
     link:{
         textDecoration:'none',
         color:'white',
         '&:hover': {
             color:'black'
+        }
+    },
+    social: {
+        color:'white',
+        '&:hover': {
+            color: 'black'
+        },
+        [theme.breakpoints.down('xs')]:{
+            fontSize:'15px',
+            width:'100%',
+      }
+    },
+    header:{
+        fontSize: '20px',
+         background:'url('+ bg2 +')', 
+         padding: '1%' ,
+        backgroundPositionY: '50%',
+        backgroundPositionX: '10%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'filled',
+        backgroundSize: '100%',
+        height:'30vh',
+        [theme.breakpoints.down('xs')]:{
+            
+            height:'20vh',
+            backgroundPositionY: '50%',
+            backgroundPositionX: '10%',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'filled',
+            backgroundSize: '100%',
+        }
+    },
+    headerText:{
+        color:'white', 
+        border:'solid 2px white', 
+        width:'20%', 
+        margin:'5% auto',
+        [theme.breakpoints.down('xs')]:{
+            
+            width:'70%',
+            background:'rgba(27, 20, 17, 0.8)',
+            margin:'9% auto',
+            padding:'3%',
+            fontSize:'18px'
         }
     }
 }))
@@ -270,14 +336,8 @@ const Projects = () => {
         <div className='projectContainer' >
           
 
-            <div style={{fontSize: '20px', background:'url('+ bg2 +')', padding: '1%' ,
-        backgroundPositionY: '50%',
-        backgroundPositionX: '10%',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'filled',
-        backgroundSize: '100%',
-        padding:'1%', height:'30vh'}}>
-                <p style={{color:'white', border:'solid 2px white', width:'20%', margin:'5% auto' }}>Project Board</p>
+            <div className={classes.header}>
+                <p className={classes.headerText}>Project Board</p>
             </div>
 
 
@@ -354,6 +414,7 @@ const Projects = () => {
                                 </Dialog>
                 </div>
             </div>
+
             <Divider />
             <div className='mainContainer'>
 
