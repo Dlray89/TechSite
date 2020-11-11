@@ -6,7 +6,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Contactops from '../crudhandle/contact_ops'
 import { Link } from 'react-router-dom'
-import LOGO from "../images/dapthedev.gif"
+import LOGO from "../images/dave_gif.gif"
+
 import Resume from '../resume/davidray_resume_update.pdf'
 import './Welcome.css'
 
@@ -21,91 +22,24 @@ import LocationCityIcon from '@material-ui/icons/LocationCity';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
 
+//images
+
+import box1 from "../images/front_end_pic.jpg"
+import box2 from "../images/website_design.jpg"
+import box3 from "../images/server_side.jpg"
+
 
 
 const useStyles = makeStyles((theme) => ({
-    mainContiner: {
-        padding: '1%',
-        height: '100vh',
-        boxSizing: 'border-box',
-        [theme.breakpoints.down('xs')]: {
-            
-        },
-    },
-    introText: {
-        width: '20%',
-        color: 'white',
-
-    },
-    introTextLink: {
-        textDecoration: 'none'
-    },
-    intro: {
-        height: '40vh',
-        boxSizing: 'border-box',
-        display: 'flex',
-
-    },
-    skills: {
-        width: '50%',
-        display: 'flex'
-    },
+   
+  
+   
+   
     greetingContainer: {
         width: '100%',
         display: 'flex',
         background: 'lightgrey',
 
-    },
-    introTwo: {
-        height: '40vh',
-        boxSizing: 'border-box',
-        display: 'flex',
-        [theme.breakpoints.down('xs')]: {
-            flexDirection: 'reverse-column',
-            width:'100%',
-            height: '70vh'
-            
-        }
-
-    },
-    experience: {
-        width: '100%',
-        display: 'flex',
-
-    },
-
-    Nav: {
-        width: '90%',
-        margin: '0 auto',
-        boxSizing: 'border-box',
-        display: 'flex',
-        justifyContent: 'space-between',
-
-
-
-    },
-    bottomNav: {
-        width: '90%',
-        margin: ' 0 auto',
-        boxSizing: 'border-box',
-        display: 'flex',
-        justifyContent: 'space-between',
-
-    },
-    navContainer: {
-        width: '100%',
-        boxSizing: 'border-box',
-        display: 'flex',
-
-
-    },
-    navLinks: {
-        width: '40%',
-        boxSizing: 'border-box',
-        textDecoration: 'none'
-
-    },
-    socialmedia: {
     },
     modalText: {
         display: 'flex',
@@ -129,42 +63,8 @@ const useStyles = makeStyles((theme) => ({
         width:'100%'
 
     },
-    divider: {
-        background: 'white'
-    },
-    buttons: {
-        color: 'black', 
-        '&:hover': {
-            color:'red'
-        },
-        [theme.breakpoints.down('xs')]: {
-           fontSize:'12px',
-            width: '30%'
-        }
-
-    },
-    bottomLinks: {
-        textDecoration: 'none',
-        [theme.breakpoints.down('xs')]: {
-            width: '100%',
-            fontSize:'15px'
-        }
-    },
-    copyright: {
-        [theme.breakpoints.down('xs')]: {
-            width: '100%',
-            margin: '0% auto',
-            boxSizing:'border-box',
-        }
-
-    },
-    introP: {
-        padding: '2%',
-        boxSizing: 'border-box',
-        marginBottom: '5%',
-        testAlign: 'center'
-
-    },
+  
+  
     text: {
         border:'solid 1px black',
         margin:'0 auto',
@@ -183,9 +83,6 @@ const useStyles = makeStyles((theme) => ({
             margin: '0 auto'
         }
     },
-    modal: {
-
-    },
     greetingBox: {
         width: '100%',
         backgroundImage: 'url(' + LOGO + ')',
@@ -194,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundPositionX: '50%',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'filled',
-        backgroundSize: '70%',
+        backgroundSize: '100%',
         
         [theme.breakpoints.down('xs')]: {
             width:'105%',
@@ -212,56 +109,6 @@ const useStyles = makeStyles((theme) => ({
         },
 
     },
-    greeting: {
-        background: '#3a6073 ',
-        width: '10%',
-        position: 'relative',
-        top: '60%',
-        color: 'white',
-        textAlign: 'center'
-
-    },
-    aboutTextContainer: {
-        width: '50%',
-        color: 'white',
-        fontSize: '1rem',
-        padding: '',
-        boxSizing: 'border-box',
-        background: 'linear-gradient(to bottom, #16222a, #3a6073)',
-
-    },
-    aboutTitle: {
-        padding: '0.6%',
-        textAlign: 'center'
-    },
-    news: {
-        width: '50%',
-        textAlign: 'center',
-
-        background: 'white',
-        [theme.breakpoints.down('xs')]: {
-            width:'60%',
-            height:'66vh'
-        }
-
-    },
-    backendSkillList: {
-        textAlign: 'center'
-    },
-    frontEnd: {
-        width: '50%',
-        textAlign: 'center',
-        fontSize: '16px',
-        color: 'white',
-        background: 'lightgrey',
-        [theme.breakpoints.down('xs')]: {
-            width:'87.3%',
-            margin:' 0 auto',
-            position:'absolute',
-            top:"84%"
-        }
-
-    },
     Davidpicture: {
         width: '20vw'
     },
@@ -270,49 +117,11 @@ const useStyles = makeStyles((theme) => ({
         width: '80%',
         '&:hover': {
             color: 'white',
-            background: 'black'
+            background: 'linear-gradient(to left, #2980b9, #2c3e50)'
         },
         [theme.breakpoints.down('xs')]: {
             
             textAlign:'center'
-        }
-    },
-    list:{
-        height: '7vh', 
-        width: '100%', 
-        textAlign: 'center',
-        margin:'0 auto',
-        
-        '&:hover': {
-            color: 'white',
-            background: 'black'
-        },
-        [theme.breakpoints.down('xs')]: {
-            width:'100%%',
-            fontSize:'small',
-        },
-        [theme.breakpoints.down('sm')]: {//this is at 960px
-        
-            width:'100%'
-        }
-
-    },
-    line: {
-        background:'black',
-        [theme.breakpoints.down('xs')]:{
-            visibility:'hidden'
-        }
-    
-    },
-    link: {
-        textDecoration: 'none',
-        fontFamily: 'Cinzel, serif'
-       
-    },
-    Certs: {
-        '&:hover': {
-            color: 'white',
-            background: 'black'
         }
     },
     input:{
@@ -355,7 +164,106 @@ const useStyles = makeStyles((theme) => ({
         color:'red',
         textDecoration:'none',
         
+    },
+    iconContainer:{
+        display:'flex',
+        justifyContent:'space-evenly',
+        width:'100%',
+        margin:'2% 0%',
+        alignContent:'center',
+    },
+    icons: {
+    },
+    Special:{
+     
+        textAlign:'center',
+        background: 'linear-gradient(to right, #2980b9, #2c3e50)'
+    },
+    bottomNav:{
+        display:'flex',
+       
+        justifyContent:'space-between',
+    },
+    intro:{
+       
+        padding:'1%',
+        background:'linear-gradient(to right, #2980b9, #2c3e50)',
+        color:'white'
+    },
+    box_one:{
+        borderTop:'solid 1px black',
+        borderBottom:'solid 1px black',
+        padding:'3.5%',
+        backgroundImage: 'url('+ box1  +')',
+        backgroundPosition: 'start',
+        backgroundPositionY: '50%',
+        backgroundPositionX: '50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'filled',
+        backgroundSize: '100%',
+    },
+    box_one_info:{
+        background:'rgba(27, 20, 17, 0.8)', 
+        color:'white', 
+        width:'20%', 
+        padding:'1%',
+        margin: '0 auto'
+    },
+    box2:{
+        borderTop:'solid 1px black',
+        borderBottom:'solid 1px black',
+        padding:'3.5%',
+        backgroundImage: 'url('+ box2  +')',
+        backgroundPosition: 'start',
+        backgroundPositionY: '28%',
+        backgroundPositionX: '50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'filled',
+        backgroundSize: '100%',
+        margin:'1% 0%'
+    },
+    box_two_info:{
+        background:'rgba(27, 20, 17, 0.8)', 
+        color:'white', 
+        width:'20%', 
+        padding:'1%',
+        margin:'0 auto'
+    },
+    box_three:{
+        borderTop:'solid 1px black',
+        borderBottom:'solid 1px black',
+        padding:'3.5%',
+        backgroundImage: 'url('+ box3 +')',
+        backgroundPosition: 'start',
+        backgroundPositionY: '50%',
+        backgroundPositionX: '50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'filled',
+        backgroundSize: '100%',
+        
+    
+    },
+    box_three_info:{
+        background:'rgba(27, 20, 17, 0.8)', 
+        color:'white', 
+        width:'20%', 
+        padding:'1%',
+        margin:'0 auto'
+    },
+    title_special:{
+        padding:'2%',
+        color:'white',
+        fontSize:'22px'
+    },
+    socialButtonContainer:{
+        width:'30%',
+        display:'flex',
+        justifyContent:'space-between',
+        padding:'0.2%',
+        
+
     }
+    
 
 }))
 
@@ -370,6 +278,24 @@ const Welcome = () => {
         email: ''
     }
 
+    const SpecializeData = [
+        {id:1,name:'Front-End Applications'},
+        {id:2, name: 'Website Development'},
+        {id:3, name: 'Server-Side Application'},
+        {id:3, name: 'E-Commerce Platform'},
+       
+    ]
+
+    const codingLang = [
+        {id:1, icon: HTML},
+        {id:2, icon: CSS},
+        {id:3, icon: JS},
+        {id:4, icon: REACT},
+        {id:5, icon: NODE},
+        {id:6, icon: PY},
+        
+    ]
+
     const classes = useStyles()
     const [open, setOpen] = useState(false)
     const [sending, setSending] = useState(false)
@@ -382,9 +308,7 @@ const Welcome = () => {
         setToggle(true)
     }
 
-    const toggleOff = () => {
-        setToggle(false)
-    }
+  
 
     const handleOpen = () => {
         setOpen(true)
@@ -395,14 +319,7 @@ const Welcome = () => {
         setOpen(false)
     }
     
-    const handleCert = () => {
-        setOpenCerts(true)
-    }
-
-
-    const certClose = () => {
-        setOpenCerts(false)
-    }
+    
     const handleContacts = e => {
         const { name, value } = e.target
         setContacts({ ...contacts, [name]: value })
@@ -526,185 +443,58 @@ const Welcome = () => {
                         <div className={classes.greetingBox}>
                              
                            
-                           
-                            
-
                         </div>
                     </div>
+
+                    
                 </div>
-                <Divider style={{background:'black'}} />
+                <Divider />
 
+                <div className={classes.intro}> Full Stack Developer with a passion for creativity and solution seeking. My mission is to develop and design a robust, user-friendly, handicap accessible, and easy to use User Interface for all. Your vision for your business/organization is very
+                    important not only to me but to the user as well. Lets chat abour your vision and turn it into a reality because thats what I do. </div>
+                <div className={classes.iconContainer}>
+                   {codingLang.map(img => (
+                       <img className={classes.icons} width={70} src={img.icon} />
+                   ))}
+                </div>
 
-                <div className={classes.introTwo}>
-                    <div className={classes.news}>
-
-                        <p style={{ fontSize: '20px', margin: '0 0 1% 0', padding: '1%', boxSizing: 'border-box' }}>Specializations & Career</p>
-                        <Divider style={{width:'40%', margin:'0 auto', background: 'black'}} />
-
-                        
-
-                        <List className='servicesandcareer' >
-
-                            <div className='services' >
-                                <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText'> Online Portfolio's</p></ListItemText>
-                                </ListItem>
-                                <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
-
-                                <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal' ><p className='welcomeText'>E-Commerce Website's</p></ListItemText>
-                                </ListItem>
-                                <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
-
-                                <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Application development</p></ListItemText>
-                                </ListItem>
-                                <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
-
-                                <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Server-Side Applications</p></ListItemText>
-                                </ListItem>
-                                <Divider style={{margin:'0 auto', width:'100%', background:'black'}} />
-                            </div>
-
-                            <Divider style={{background: 'black', color:'black'}} orientation='vertical' />
-
-                            <div className='careers'>
-                               
-
-                                <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText'>Full-Stack Engineer</p></ListItemText>
-                                </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
-                                <ListItem button className={classes.list} >
-                                    <ListItemText className='jello-horizontal' ><p className='welcomeText'>View my <a className={classes.specButton}  href={Resume}> Resume</a></p></ListItemText>
-                                </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
-
-                                <ListItem button  className={classes.list} onClick={handleCert}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Click to see <span className={classes.specButton} >Certification</span> </p></ListItemText>
-                                </ListItem>
-                                <Dialog open={openCerts} onClose={certClose} className={classes.modal}>
-                                    <DialogTitle><p style={{fontFamily: 'Cinzel, serif', textAlign:'center'}} >Certification gained during my web development journey.</p> </DialogTitle>
-                                    <Divider  />
-                                        <DialogContent>
-                                            <DialogContentText style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
-                                            <div>
-                                            <a className={classes.link} href='https://www.sololearn.com/Certificate/1014-15919711/pdf/'><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs} >SoloLearn - HTML5 Course</Button></a>
-                                            </div>
-                                                    
-                                            <div>
-                                                <a className={classes.link}  href='https://www.sololearn.com/Certificate/1023-15919711/pdf/' ><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs}>SoloLearn - CSS Course</Button></a>
-                                            </div>
-
-                                            <div>
-                                                <a className={classes.link} href='https://www.sololearn.com/Certificate/1024-15919711/pdf/'><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs}>SoloLearn - Javascript Course</Button></a>
-
-                                            </div>
-                                            <div>
-                                                <a className={classes.link} href='https://www.sololearn.com/Certificate/1060-15919711/pdf/'><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs}>SoloLearn - SQL Course</Button></a>
-
-                                            </div>
-
-                                            <div>
-                                                <a className={classes.link}  href='https://www.udemy.com/certificate/UC-5Y7T5P6J/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button style={{fontFamily: 'Cinzel, serif'}} className={classes.Certs}>Udemy - Beginner guide to Cyber Security Courses</Button></a>
-
-                                            </div>
-
-                                            <div>
-                                                <a className={classes.link}  href='https://www.udemy.com/certificate/UC-34PB162X/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email'><Button style={{fontFamily: 'Cinzel, serif'}}className={classes.Certs}>Udemy - Ethical Hacking BootCamp Courses</Button></a>
-
-                                            </div>
-
-                                                    
-                                            </DialogContentText>
-                                        </DialogContent>
-                                        <DialogActions>
-
-                                        <Button style={{fontFamily: 'Cinzel, serif'}} onClick={certClose} >Close</Button>
-                                        </DialogActions>
-
-                                   
-                                </Dialog>
-                                <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
-
-                                <ListItem button className={classes.list}>
-                                    <ListItemText className='jello-horizontal'><p className='welcomeText' >Lambda Grad Student</p></ListItemText>
-                                </ListItem>
-                                <Divider  style={{margin:'0 auto', width:'100%', background:'black'}} />
-
-
-                            </div>
-                            
-                        </List>
-
-                    </div>
-<Divider className={classes.line}  orientation='vertical' />
-
-                    <div className='langandsocial'>
+                <div className={classes.Special} >
+                        <p class={classes.title_special}>What I specialize In:</p>
 
                         <div>
-                            <div style={{ padding: '0%', color: 'black' }}>
-                                <p>Primary Languages</p>
+
+                            <div className={classes.box_one}>
+                                <p className={classes.box_one_info}> Front-End Applications</p>
+                                </div>
+                            <div className={classes.box2}>
+                                <p className={classes.box_two_info}>Website Development</p>
                             </div>
-
-                            <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
-
-                            <div className='bounce-in-right'>
-
-                                <img className='jello-horizontal pic1'  src={HTML} />
-
-                                <img className='jello-horizontal pic1'  src={CSS} />
-                                <img className='jello-horizontal pic1'  src={JS} />
-                                <img className='jello-horizontal  pic1'  src={REACT} />
-                                <img className='jello-horizontal pic1'  src={NODE} />
-                                <img className='jello-horizontal pic1'  src={PY} />
+                            <div className={classes.box_three}>
+                                <p className={classes.box_three_info}>Server-side Applications</p>
                             </div>
                         </div>
-
-                         <Divider style={{background:'black', width:'90%', margin:'0 auto'}} />
-
-
-
-                        <div className='socialMediaContainer'>
-                            <div>
-                                <p className='socialMedialTitle'>Social Platforms</p>
-
-                            </div>
-
-                           <Divider style={{background:'black', width:'50%', margin:'0 auto'}} />
-
-                            <div>
-                                <a href='https://www.linkedin.com/in/dapperdave1914/' className={classes.bottomLinks}><Button className={classes.buttons}><LinkedInIcon style={{}} /></Button>
-                                </a>
-
-                                <a href='https://www.instagram.com/tapthedap' className={classes.bottomLinks}><Button className={classes.buttons}><InstagramIcon  /></Button></a>
-
-                                <a href='https://www.facebook.com/ImodelIspeak15?ref=bookmarks' className={classes.bottomLinks}><Button className={classes.buttons}><FacebookIcon  /></Button>
-                                </a>
-                                <a href='https://github.com/Dlray89' className={classes.bottomLinks}><Button className={classes.buttons}><GitHubIcon  /></Button></a>
-
-                            </div>
-
-
-
-                        </div> 
-                        <div className={classes.copyright}>
-                    <Link className={classes.bottomLinks}><Button className={classes.buttons}>&copy; 2020; A dapthedev development</Button></Link>
-                </div>
+                        
                     </div>
 
+                <div className={classes.bottomNav}>
+                    <p> &copy; A dapthedev Design 2020</p>
+                    <div className={classes.socialButtonContainer}>
+                           <a  href='https://github.com/Dlray89'>
+                               <Button><GitHubIcon /></Button>
+                               
+                           </a>
+                           <a href='https://www.linkedin.com/in/dapperdave1914/'>
+                               <Button><LinkedInIcon /></Button>
+                           </a>
+
+                           <a href='http://instagram.com/tapthedap'>
+                               <Button><InstagramIcon  /></Button>
+                           </a>
+
+                           <a href='https://www.facebook.com/ImodelIspeak15'><Button><FacebookIcon  /></Button></a>
+                    </div>
                 </div>
-
-
-            </div>
-
-            <div className={classes.bottomNav}>
-
-                
-
-
-
+               
             </div>
         </div>
     )
