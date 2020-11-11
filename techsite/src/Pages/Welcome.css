@@ -1,7 +1,7 @@
 .mainContainer {
     margin: 0 auto;
     box-sizing: border-box;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cormorant', serif;
     background: white;
     padding:0.2%
  
@@ -211,7 +211,7 @@
 
 .welcomeText {
     font-size: 1rem;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cormorant', serif;
     width: 100%;
 }
 @media(max-width: 375px) {
@@ -664,7 +664,7 @@
     width: 105%;
     margin: 0 auto;
     text-align: center;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cormorant', serif;
    
 }
 

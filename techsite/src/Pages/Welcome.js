@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cormorant, serif',
         color:'black',
 
         [theme.breakpoints.down('sm')]: {
@@ -157,7 +157,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign:'center',
         background:'black',
         color:'white',
-        fontFamily: 'Cinzel, serif'
+        fontFamily: 'Cormorant, serif'
     },
     specButton: {
         color:'red',
@@ -191,6 +191,7 @@ const useStyles = makeStyles((theme) => ({
         padding:'1%',
         background:'linear-gradient(to right, #2980b9, #2c3e50)',
         color:'white',
+        fontSize:'20px',
         [theme.breakpoints.down('xs')]:{
             padding:'1%',
             textAlign:'center',
@@ -477,7 +478,7 @@ const Welcome = () => {
 
                                 <Dialog open={open} onClose={handleClose} className={classes.modal}>
                                     <DialogTitle className={classes.modalTitle}  >
-                                       <p style={{fontFamily:'Cinzel, serif'}}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
+                                       <p style={{fontFamily:'Cormorant, serif'}}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
                         </DialogTitle>
                                     <DialogContent className={classes.modalInner}>
                                         <DialogContentText className={classes.modalText}>

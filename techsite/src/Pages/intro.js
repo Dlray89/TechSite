@@ -12,7 +12,7 @@ const defaultStyles = {
     justifyContent: 'center',
     alignItems: 'center',//
     fontSize: '2em',
-    fontFamily: 'Cinzel serif',
+    fontFamily: 'Cormorant, serif',
     textTransform: 'uppercase',
     position: 'absolute',
     top: '40%',
@@ -35,14 +35,14 @@ export default class TransitionsExample extends React.PureComponent {
 
         this.setState({ items: ['Welcome World!'] })
         this.t1 = setTimeout(
-            () => this.setState({ items: ['My name is Dave! Im a Developer'] }),
+            () => this.setState({ items: ["My name is Dave and I'm a Full Stack Developer"] }),
             3500
         )
         this.t2 = setTimeout(
-            () => this.setState({ items: ['Ready to make your vision come true.'] }),
+            () => this.setState({ items: ['Come take a look at what I have to offer'] }),
             7000
         )
-        this.t3 = setTimeout(() => this.setState({ items: ['Tap here to get started'] }), 10500)
+        this.t3 = setTimeout(() => this.setState({ items: ['Tap in here and lets have a chat.'] }), 10500)
     }
 
     render() {

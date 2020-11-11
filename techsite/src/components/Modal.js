@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         background:'#2980b9',
         color: 'white',
         width:'100%',
-        fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cormorant, serif',
         margin:'0 auto',
 
         '&:hover': {
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     modalButton:{
         width:'100%',
-        fontFamily:'Cinzel, serif',
+        fontFamily:'Cormorant, serif',
         '&:hover':{
             color:'white',
             background:'linear-gradient(to right, #2980b9, #2c3e50)'
@@ -59,8 +59,8 @@ const Modal = (props) => {
         <div>
             <Button className={classes.button} variant='contained' onClick={handleOpen}> View More</Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle style={{fontFamily:'Cinzel, serif', textAlign:'center', background:'linear-gradient(to right, #2980b9, #2c3e50)', color:'white'
-}} > <p style={{fontFamily:'Cinzel, serif'
+                <DialogTitle style={{fontFamily:'Cormorant, serif', textAlign:'center', background:'linear-gradient(to right, #2980b9, #2c3e50)', color:'white'
+}} > <p style={{fontFamily:'Cormorant, serif'
 }} >{props.name}<br /> {props.tech_stack}</p></DialogTitle>
                 <Divider />
                 <DialogContent>
@@ -71,7 +71,7 @@ const Modal = (props) => {
                     </DialogContentText>
                     <Divider />
                     <DialogContentText style={{background:'linear-gradient(to right, #2980b9, #2c3e50)', color:'white', padding:'1%', textAlign:'center'}}>
-                        <p style={{fontFamily:'Cinzel, serif'
+                        <p style={{fontFamily:'Cormorant, serif'
 }} >{props.details}</p>
                     </DialogContentText>
                 </DialogContent>
@@ -79,7 +79,7 @@ const Modal = (props) => {
                         <a className={classes.link} href={props.link}><Button variant='contained' className={classes.modalButton}  >Website</Button></a>
                         <a className={classes.link}  href={props.github}><Button variant='contained' className={classes.modalButton} >Code Source</Button></a>
                 </DialogActions>
-                    <Button className={classes.button} onClick={handleClose} style={{fontFamily:'Cinzel, serif'
+                    <Button className={classes.button} onClick={handleClose} style={{fontFamily:'Cormorant, serif'
 }}  >Close</Button>
             </Dialog>
         </div>

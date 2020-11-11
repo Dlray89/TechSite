@@ -21,7 +21,7 @@ import background from '../images/aboutBackground.jpg'
 
 const useStyles = makeStyles((theme) => ({
     button: {
-        fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cormorant, serif;',
         width:'95%',
 
 
@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         background: 'black',
         color: 'white',
-        fontFamily: 'Cinzel, serif'
+        fontFamily: 'Cormorant, serif;'
     },
     root: {
         display: 'flex',
@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     aboutContainer: {
         border: 'solid 1px black',
         margin: '0% auto',
-        fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cormorant, serif;',
 
     },
     aboutContainer2: {
@@ -171,6 +171,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         color: 'white',
         background: ' #2980b9',
+        fontSize:'20px',
         [theme.breakpoints.down('xs')]:{
             
             fontSize:'15px',
@@ -196,7 +197,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     careerP: {
-        fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cormorant, serif;',
     },
     status: {
         border: 'solid 1px black',
@@ -204,12 +205,12 @@ const useStyles = makeStyles((theme) => ({
         background:'black',
     },
     specText: {
-        fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cormorant, serif;',
         color: 'white'
 
     },
     specTitle: {
-        fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cormorant, serif;',
         color: 'white'
     },
     img: {
@@ -238,6 +239,7 @@ bottomNav:{
     alignContent:'center',
     background:'linear-gradient(to left, #2980b9, #2c3e50)',
     color:'white',
+    fontFamily:'Cormorant, serif',
     [theme.breakpoints.down('xs')]:{
         padding:'5%',
         width:'100%',
@@ -296,7 +298,8 @@ social: {
   }
 },
 rootContainer:{
-    overflowX:'hidden'
+    overflowX:'hidden',
+    background:'white'
 
 },
 
@@ -317,7 +320,7 @@ header: {
 
 headerText:{
     color: 'white', 
-    fontFamily: 'Cinzel, serif', 
+    fontFamily: 'Cormorant, serif;', 
     background:'rgba(27, 20, 17, 0.8)', 
     width:'20%', 
     margin:'7% auto', 
@@ -354,6 +357,8 @@ bottomtext:{
     padding:'2%', color:'white', 
     background:'#2980b9', 
     margin:'0%',
+    fontFamily:'Cormorant, serif',
+    fontSize:'20px',
     [theme.breakpoints.down('xs')]:{
         
         width:'100%',
@@ -486,7 +491,7 @@ const About = () => {
                     <Link className={classes.link}><Button variant='contained'  className={classes.button} onClick={handleOpen}>Contact</Button></Link>
                     <Dialog open={open} onClose={handleClose} className={classes.modal}>
                         <DialogTitle className={classes.modalTitle}  >
-                            <p style={{ fontFamily: 'Cinzel, serif' }}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
+                            <p style={{ fontFamily: 'Cormorant, serif;' }}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
                         </DialogTitle>
                         <DialogContent className={classes.modalInner}>
                             <DialogContentText className={classes.modalText}>
@@ -563,9 +568,7 @@ const About = () => {
             <div className={classes.aboutContainer}>
                 <h2 className={classes.aboutTitle}>Hi, Im Dave</h2>
                 <div className={classes.aboutText} >
-                    <p>I am a full-stack engineer born and rasied out of Detroit, Michigan. I’m a man of growth and I always believed in the saying 'No Struggle,No progress'. Going thrugh the struggle with any problem provides us a lesson about life and the path we are currently on.
-                    thats why im always willing to challenge my creative and technical capabilities to further my knowledge not only as a human being but as a developer too. The sky is the limit
-                            and we ourselve have the power to walk the path that will take us to the reality of our dreams. My path is simple to achieve my dreams of helping people walk the path using the latest and greatest technology. </p>
+                    <p>I am a full-stack engineer born and raised out of Detroit, Michigan. I’m a man of growth and I always believed in the saying 'No Struggle, No progress'. Going through the struggle with any problem provides us a lesson about life and the path we are currently on. That’s why im always willing to challenge my creative and technical capabilities to further my knowledge not only as a human being but as a developer too. The sky is the limit and we ourselves have the power to walk the path that will take us to the reality of our dreams. My path is simple to achieve my dreams of helping people walk the path using the latest and greatest technology. </p>
                 </div>
 
 
@@ -579,7 +582,7 @@ const About = () => {
         <div>
 
         <ListItem style={{ height: '7vh' }} button>
-            <ListItemText className={classes.careerText}><p>{item.name}</p></ListItemText>
+            <ListItemText className={classes.careerText}><p style={{fontFamily:'Cormorant, serif'}}>{item.name}</p></ListItemText>
         </ListItem>
         </div>
     ))}
@@ -591,9 +594,7 @@ const About = () => {
            
 
             <div className={classes.bottomtext}>
-               Soon ill be starting a blog series on my journey into software development in hopes to inspire other newcoming developers
-               that anything is possible. You just have to put the time and dedication towards it and have a strong WHY in order to keep going
-               through the hard times.
+            Soon will be starting a blog series on my journey into software development in hopes to inspire other newcomer developers that anything is possible. You just have to put the time and dedication towards it and have a strong WHY in order to keep going through the hard times.
            </div>
             <div className={classes.bottomNav}>
                 <div className={classes.navTitle}>

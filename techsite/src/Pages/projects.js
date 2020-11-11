@@ -40,7 +40,7 @@ const projects = [
 
 const useStyles = makeStyles((theme) => ({
     button: {
-        fontFamily: 'Cinzel, serif',
+        fontFamily: 'Cormorant, serif',
         width:'98%',
         [theme.breakpoints.down('xs')]:{
             width:'100%'
@@ -132,7 +132,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign:'center',
         background:'linear-gradient(to right, #2980b9, #2c3e50);',
         color:'white',
-        fontFamily: 'Cinzel, serif'
+        fontFamily: 'Cormorant, serif'
     },
     bottomNav:{
         display:'flex', 
@@ -349,7 +349,7 @@ const Projects = () => {
                     <Link className={classes.links}><Button variant='contained' className={classes.button} onClick={handleOpen}>Contact</Button></Link>
                     <Dialog open={open} onClose={handleClose} className={classes.modal}>
                                    <DialogTitle className={classes.modalTitle}  >
-                                       <p style={{fontFamily:'Cinzel, serif'}}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
+                                       <p style={{fontFamily:'Cormorant, serif'}}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
                         </DialogTitle>
                                     <DialogContent className={classes.modalInner}>
                                          <DialogContentText className={classes.modalText}>
