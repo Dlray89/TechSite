@@ -179,11 +179,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign:'center',
         background: 'linear-gradient(to right, #2980b9, #2c3e50)'
     },
-    bottomNav:{
-        display:'flex',
-       
-        justifyContent:'space-between',
-    },
     intro:{
        
         padding:'1%',
@@ -262,7 +257,45 @@ const useStyles = makeStyles((theme) => ({
         padding:'0.2%',
         
 
-    }
+    },
+    bottomNav:{
+        display:'flex', 
+        justifyContent:'space-between', 
+        width:'100%',  
+        margin:' 0% auto',
+        border: 'solid 1px black',
+        alignContent:'center',
+        background:'linear-gradient(to left, #2980b9, #2c3e50)',
+        color:'white'
+    },
+    navTitle:{
+        width: '30%',
+        padding:'0.6%'
+    },
+    navIcons:{
+        width:'20%', 
+        display:'flex', 
+        justifyContent:'space-evenly',
+    },
+    bn_Links:{
+        width:'50%',
+        display:'flex',
+        justifyContent:'space-evenly',
+        padding:'0.6%',
+    },
+    link:{
+        textDecoration:'none',
+        color:'white',
+        '&:hover': {
+            color:'black'
+        }
+    },
+    social: {
+        color:'white',
+        '&:hover': {
+            color: 'black'
+        }
+    },
     
 
 }))
@@ -476,24 +509,23 @@ const Welcome = () => {
                         
                     </div>
 
-                <div className={classes.bottomNav}>
-                    <p> &copy; A dapthedev Design 2020</p>
-                    <div className={classes.socialButtonContainer}>
-                           <a  href='https://github.com/Dlray89'>
-                               <Button><GitHubIcon /></Button>
-                               
-                           </a>
-                           <a href='https://www.linkedin.com/in/dapperdave1914/'>
-                               <Button><LinkedInIcon /></Button>
-                           </a>
-
-                           <a href='http://instagram.com/tapthedap'>
-                               <Button><InstagramIcon  /></Button>
-                           </a>
-
-                           <a href='https://www.facebook.com/ImodelIspeak15'><Button><FacebookIcon  /></Button></a>
-                    </div>
+                    <div className={classes.bottomNav}>
+                <div className={classes.navTitle}>
+                    &copy; A dapthedev Design 2020
                 </div>
+
+                <div className={classes.bn_Links}>
+                    <Link to='/welcome' className={classes.link}>Home</Link>
+                    <Link to='/projects' className={classes.link}>Projects</Link>
+                </div>
+
+                <div className={classes.navIcons}>
+                    <a href='https://www.linkedin.com/in/dapperdave1914/'><Button className={classes.social} ><LinkedInIcon /> </Button></a>
+                    <a href='https://github.com/Dlray89'><Button className={classes.social} ><GitHubIcon /></Button></a>
+                    <a href='https://www.instagram.com/tapthedap'><Button className={classes.social} ><InstagramIcon /></Button></a>
+                    <a href='https://www.facebook.com/ImodelIspeak15?ref=bookmarks'><Button className={classes.social}><FacebookIcon /></Button></a>
+                </div>
+            </div>
                
             </div>
         </div>

@@ -17,13 +17,16 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import { pictureData } from '../container/aboutpicdata'
 import './about.css'
 
+import background from '../images/aboutBackground.jpg'
+
 const useStyles = makeStyles((theme) => ({
     button: {
         fontFamily: 'Cinzel, serif',
+        width:'95%',
 
 
         '&:hover': {
-            background: 'black',
+            background: 'linear-gradient(to right, #2980b9, #2c3e50)',
             color: 'white'
         }
     },
@@ -108,11 +111,20 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around',
         overflow: 'hidden',
         backgroundColor: theme.palette.background.paper,
+        margin:'1% auto',
+        textAlign:'center',
+        border:'solid 1px black',
+        width:'100%',
+        background:'linear-gradient(to right, #2980b9, #2c3e50)',
     },
     gridList: {
         flexWrap: 'nowrap',
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
+        border:'solid 2px blue',
+        textAlign:'center',
+        margin:'0 auto',
+        padding:'1%'
     },
     title: {
         color: theme.palette.primary.light,
@@ -123,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
     },
     aboutContainer: {
         border: 'solid 1px black',
-        margin: '1% auto',
+        margin: '0% auto',
         fontFamily: 'Cinzel, serif',
 
     },
@@ -131,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-evenly',
         display: 'flex',
         width: '80%',
-        margin: '1% auto',
+        margin: '0% auto',
         
         color:'white'
     },
@@ -152,12 +164,13 @@ const useStyles = makeStyles((theme) => ({
         padding: '1%',
         textAlign: 'center',
         color: 'white',
-        background: 'grey'
+        background: ' #2980b9'
     },
     pastcareers: {
         border: 'solid 1px black',
-        width: '45%',
-        background:'black',
+        width: '55%',
+        background:'linear-gradient(to right, #2980b9, #2c3e50)',
+        margin:'2% 0'
     },
     careerText: {
         color: 'white',
@@ -193,29 +206,72 @@ const useStyles = makeStyles((theme) => ({
             zIndex: '999'
 
     }
-}
+},
+link:{
+    width:'100%',
+    textDecoration:'none'
+},
+bottomNav:{
+    display:'flex', 
+    justifyContent:'space-between', 
+    width:'100%',  
+    margin:' 0% auto',
+    border: 'solid 1px black',
+    alignContent:'center',
+    background:'linear-gradient(to left, #2980b9, #2c3e50)',
+    color:'white',
+    padding:'1%'
+},
+navTitle:{
+    width: '30%',
+    padding:'0.6%'
+},
+navIcons:{
+    width:'20%', 
+    display:'flex', 
+    justifyContent:'space-evenly',
+},
+bn_Links:{
+    width:'50%',
+    display:'flex',
+    justifyContent:'space-evenly',
+    padding:'0.6%',
+},
+BN_link:{
+    textDecoration:'none',
+    color:'white',
+    '&:hover': {
+        color:'black'
+    },
+},
+social: {
+    color:'white',
+    '&:hover': {
+        color: 'black'
+    }
+},
 }))
 
-const pastCareers = [
+const interest = [
     {
         id: 1,
-        name: 'Professional Model'
+        name: 'Comedy'
     },
     {
         id: 2,
-        name: 'Sales Professional'
+        name: 'Anime'
     },
     {
         id: 3,
-        name: 'Sales Assistant Manger'
+        name: 'Nature Walking'
     },
     {
         id: 4,
-        name: 'Sales Manager'
+        name: 'Hoodies and Cardigans'
     },
     {
         id: 5,
-        name: 'Associate Banker'
+        name: 'Reading'
     },
 
 ]
@@ -303,9 +359,15 @@ const About = () => {
 
 
     return (
-        <div>
-            <div style={{ fontSize: '20px', background: 'black', padding: '1%' }}>
-                <p style={{ color: 'white', fontFamily: 'Cinzel, serif' }}>About Me</p>
+        <div style={{overflowX: 'hidden'
+        }}>
+            <div style={{ fontSize: '20px', background: 'black', padding: '1%', backgroundImage:'url('+ background +')',  backgroundPosition: 'start',
+        backgroundPositionY: '50%',
+        backgroundPositionX: '50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'filled',
+        backgroundSize: '100%', height:'30vh'}}>
+                <p style={{ color: 'white', fontFamily: 'Cinzel, serif', background:'rgba(27, 20, 17, 0.8)', width:'20%', margin:'7% auto', padding:'1%' }}>About Me</p>
             </div>
 
 
@@ -313,9 +375,9 @@ const About = () => {
 
             <div className='navbar'>
                 <div className='linksContainer' >
-                    <Link to='/welcome'><Button className={classes.button} >Home</Button></Link>
-                    <Link to='/projects' ><Button className={classes.button} >Projects</Button></Link>
-                    <Link><Button className={classes.button} onClick={handleOpen}>Contact</Button></Link>
+                    <Link className={classes.link} to='/welcome'><Button variant='contained' className={classes.button} >Home</Button></Link>
+                    <Link className={classes.link} to='/projects' ><Button variant='contained'  className={classes.button} >Projects</Button></Link>
+                    <Link className={classes.link}><Button variant='contained'  className={classes.button} onClick={handleOpen}>Contact</Button></Link>
                     <Dialog open={open} onClose={handleClose} className={classes.modal}>
                         <DialogTitle className={classes.modalTitle}  >
                             <p style={{ fontFamily: 'Cinzel, serif' }}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
@@ -387,34 +449,25 @@ const About = () => {
             <div className={classes.root}>
                 <GridList className={classes.gridList} cols={6.0}>
                     {pictureData.map((tile) => (
-                        <GridListTile  key={tile.img}>
-                            <img  src={tile.img} alt={tile.title} width='50%' />
+                        <GridListTile style={{width:'15%', margin:'0 auto', border:'solid 1px white'}}  key={tile.img}>
+                            <img src={tile.img} alt={tile.title} width='60%' />
                             <GridListTileBar
                                 title={tile.title}
                                 classes={{
                                     root: classes.titleBar,
                                     title: classes.title,
                                 }}
-                                actionIcon={
-                                    <IconButton onClick={handleLikes} aria-label={`star ${tile.title}`} >
-                                        <Badge badgeContent={tile.likes} color="secondary">
-
-                                            <StarBorderIcon className={classes.title} />
-                                        </Badge>
-
-                                    </IconButton>
-                                }
+                                
                             />
                         </GridListTile>
                     ))}
                 </GridList>
             </div>
-            <Divider />
 
             <div className={classes.aboutContainer}>
-                <h2 className={classes.aboutTitle}>Hi, Im Dave and I am a Full-Stack Engineer</h2>
+                <h2 className={classes.aboutTitle}>Hi, Im Dave</h2>
                 <div className={classes.aboutText} >
-                    <p>I'm born and rasied out of Detroit, Michigan. I’m a man of growth and I always believed in the saying 'No Struggle,No progress'. Going thrugh the struggle with any problem provides us a lesson about life and the path we are currently on.
+                    <p>I am a full-stack engineer born and rasied out of Detroit, Michigan. I’m a man of growth and I always believed in the saying 'No Struggle,No progress'. Going thrugh the struggle with any problem provides us a lesson about life and the path we are currently on.
                     thats why im always willing to challenge my creative and technical capabilities to further my knowledge not only as a human being but as a developer too. The sky is the limit
                             and we ourselve have the power to walk the path that will take us to the reality of our dreams. My path is simple to achieve my dreams of helping people walk the path using the latest and greatest technology. </p>
                 </div>
@@ -423,92 +476,41 @@ const About = () => {
                 <div className={classes.aboutContainer2} >
                     <div className={classes.pastcareers} >
 
-                        <List>
-                            <h4 style={{ margin:'-1.5% auto', padding:'3%', background:'grey', borderBottom:'solid 1px grey'}}>Past career</h4>
-                      
-                            {pastCareers.map(item => (
-                                <div>
+<List>
+    <h4 style={{ margin:'0% auto', padding:'3%',  borderBottom:'solid 1px white'}}>Interest</h4>
 
-                                <ListItem style={{ height: '7vh' }} button>
-                                    <ListItemText className={classes.careerText}><p c>{item.name}</p></ListItemText>
-                                </ListItem>
-                                <Divider style={{background:'white'}} />
-                                </div>
-                            ))}
+    {interest.map(item => (
+        <div>
 
-
-
-                        </List>
-                    </div>
-
-                    <div className={classes.status} >
-
-                        <List>
-                            <h4 style={{ margin:'-1.5% auto', padding:'3%', background:'grey', borderBottom:'solid 1px grey'}}>Stats</h4>
-                          
-                            <ListItem style={{ height: '7vh' }} button>
-                                <ListItemText className={classes.careerText}> <p className={classes.careerP}>Orgin: Detroit, MI</p></ListItemText>
-                            </ListItem>
-                            <Divider style={{background:'white'}} />
-                            <ListItem style={{ height: '7vh' }} button>
-                                <ListItemText className={classes.careerText}><p className={classes.careerP}>Nickname: Dap</p></ListItemText>
-                            </ListItem>
-                            <Divider style={{background:'white'}} />
-                            <ListItem style={{ height: '7vh' }} button>
-                                <ListItemText className={classes.careerText}><p className={classes.careerP}>Brand: dapthedev</p></ListItemText>
-                            </ListItem>
-                            <Divider style={{background:'white'}} />
-                            <ListItem style={{ height: '7vh' }} button>
-                                <ListItemText className={classes.careerText}><p className={classes.careerP}>birthday: 11/28/89</p></ListItemText>
-                            </ListItem>
-                            <Divider style={{background:'white'}} />
-                                 <ListItem style={{ height: '7vh' }} button>
-                                <ListItemText className={classes.careerText}><p className={classes.careerP}>Interest: Steak, Anime, Nature, Coffee, Comedy, Movies, and pumpkin spicy pastries</p></ListItemText>
-                            </ListItem>
-
-
-                        </List>
-
-                    </div>
-
-
-                </div>
+        <ListItem style={{ height: '7vh' }} button>
+            <ListItemText className={classes.careerText}><p>{item.name}</p></ListItemText>
+        </ListItem>
+        </div>
+    ))}
+</List>
+</div>
+  </div>
             </div>
 
-            <div className={classes.aboutContainer3} >
-                <h4 className={classes.specTitle}>Specialization</h4>
-                <p className={classes.specText}>I specialized in both front-end, back-end development and solution making. The skiils I have acquired will provide great results and user satisfication. My goals is to
-                provide a steamless yet user-friendly enviroment for all clients. Understanding the user needs and providing a solution I can develop products such as but not limited to
-                    <List>
-                        <ListItem style={{ height: '7vh' }} button>
-                            <ListItemText className={classes.careerText}><p className={classes.careerP}>Websites</p></ListItemText>
-                        </ListItem>
-                        <ListItem style={{ height: '7vh' }} button>
-                            <ListItemText className={classes.careerText}><p className={classes.careerP}>e-commerce platforms</p></ListItemText>
-                        </ListItem>
-                        <ListItem style={{ height: '7vh' }} button>
-                            <ListItemText className={classes.careerText}><p className={classes.careerP}>front-end applications</p></ListItemText>
-                        </ListItem>
-                        <ListItem style={{ height: '7vh' }} button>
-                            <ListItemText className={classes.careerText}><p className={classes.careerP}>Server-Side Apllications</p></ListItemText>
-                        </ListItem>
-                        <ListItem style={{ height: '7vh' }} button>
-                            <ListItemText className={classes.careerText}><p className={classes.careerP}>Database Development</p></ListItemText>
-                        </ListItem>
+           
 
-                    </List>
-                    I am passionate about what I do and very confident in my skills. Need a developer with that thinks outside the box, well you came to the right place. Go up to the contact and leave me a message.
-                </p>
-            </div>
-
-            <Divider />
-
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '98%', margin: ' 0% auto' }}>
-                <div style={{}}>
-                    &copy; 2020 DAPTHEDEV
+            <div style={{borderBottom:'solid 1px black',borderTop:'solid 1px black', padding:'2%', color:'white', background:'#2980b9', margin:'0%'}}>
+               Soon ill be starting a blog series on my journey into software development in hopes to inspire other newcoming developers
+               that anything is possible. You just have to put the time and dedication towards it and have a strong WHY in order to keep going
+               through the hard times.
+           </div>
+            <div className={classes.bottomNav}>
+                <div className={classes.navTitle}>
+                    &copy; A dapthedev Design 2020
                 </div>
 
-                <div style={{ width: '50%', display: 'flex', justifyContent: 'space-evenly' }}>
+                <div className={classes.bn_Links}>
+                    <Link className={classes.BN_link}>Home</Link>
+                    <Link className={classes.BN_link}>About</Link>
+                    <Link className={classes.BN_link}>Contact</Link>
+                </div>
+
+                <div className={classes.navIcons}>
                     <a href='https://www.linkedin.com/in/dapperdave1914/'><Button className={classes.social} ><LinkedInIcon /> </Button></a>
                     <a href='https://github.com/Dlray89'><Button className={classes.social} ><GitHubIcon /></Button></a>
                     <a href='https://www.instagram.com/tapthedap'><Button className={classes.social} ><InstagramIcon /></Button></a>

@@ -18,6 +18,9 @@ import LocationCityIcon from '@material-ui/icons/LocationCity';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
 
+import bg from '../images/backgroud.jpg'
+import bg2 from '../images/background2.jpg'
+
 const projects = [
 
     { "id": 1, name: 'Sauti', details: "Sauti is a Mobile-based trade and market information platform to trade legally and safely across borders. Empowering East Africa's women to make a better life for themselves and their families. Sauti provides tools for simplifying access to information on trading procedures, market information, and voicing incidents of corruption and harassment.", link: "https://dlray89.github.io/SautiAfrica/", githublink: "https://github.com/Dlray89/SautiAfrica", tech_stack: "HTML - LESS", img: Sauti },
@@ -38,17 +41,24 @@ const projects = [
 const useStyles = makeStyles((theme) => ({
     button: {
         fontFamily: 'Cinzel, serif',
+        width:'98%',
+      
 
 
         '&:hover': {
-            background: 'black',
-            color:'white'
+            background: 'linear-gradient(to right, #2980b9, #2c3e50)',
+            color:'white',
+            
         }
     },
+    links:{
+        width:'100%',
+        textDecoration:'none'
+    },
     social: {
+        color:'white',
         '&:hover': {
-            
-            color: 'red'
+            color: 'black'
         }
     },
     modalText: {
@@ -101,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection:'column'
     },
     modalButton: {
-        background:'black',
+        background:'linear-gradient(to right, #2980b9, #2c3e50)',
         color:'white',
         width:'100%',
         margin:'1% auto',
@@ -122,9 +132,41 @@ const useStyles = makeStyles((theme) => ({
     },
     modalTitle: {
         textAlign:'center',
-        background:'black',
+        background:'linear-gradient(to right, #2980b9, #2c3e50);',
         color:'white',
         fontFamily: 'Cinzel, serif'
+    },
+    bottomNav:{
+        display:'flex', 
+        justifyContent:'space-between', 
+        width:'100%',  
+        margin:' 0% auto',
+        border: 'solid 1px black',
+        alignContent:'center',
+        background:'linear-gradient(to left, #2980b9, #2c3e50)',
+        color:'white'
+    },
+    navTitle:{
+        width: '30%',
+        padding:'0.6%'
+    },
+    navIcons:{
+        width:'20%', 
+        display:'flex', 
+        justifyContent:'space-evenly',
+    },
+    bn_Links:{
+        width:'50%',
+        display:'flex',
+        justifyContent:'space-evenly',
+        padding:'0.6%',
+    },
+    link:{
+        textDecoration:'none',
+        color:'white',
+        '&:hover': {
+            color:'black'
+        }
     }
 }))
 
@@ -226,19 +268,25 @@ const Projects = () => {
 
     return (
         <div className='projectContainer' >
+          
 
-            <div style={{fontSize: '20px', background: 'black', padding: '1%'}}>
-                <p style={{color:'white'}}>Project Board</p>
+            <div style={{fontSize: '20px', background:'url('+ bg2 +')', padding: '1%' ,
+        backgroundPositionY: '50%',
+        backgroundPositionX: '10%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'filled',
+        backgroundSize: '100%',
+        padding:'1%', height:'30vh'}}>
+                <p style={{color:'white', border:'solid 2px white', width:'20%', margin:'5% auto' }}>Project Board</p>
             </div>
 
 
-            <Divider />
 
             <div className='navbar'>
                 <div className='linksContainer' >
-                    <Link to='/welcome'><Button className={classes.button} >Home</Button></Link>
-                    <Link to='/aboutme' ><Button className={classes.button} >About</Button></Link>
-                    <Link><Button className={classes.button} onClick={handleOpen}>Contact</Button></Link>
+                    <Link className={classes.links} to='/welcome'><Button variant='contained' className={classes.button} >Home</Button></Link>
+                    <Link className={classes.links} to='/aboutme' ><Button variant='contained' className={classes.button} >About</Button></Link>
+                    <Link className={classes.links}><Button variant='contained' className={classes.button} onClick={handleOpen}>Contact</Button></Link>
                     <Dialog open={open} onClose={handleClose} className={classes.modal}>
                                    <DialogTitle className={classes.modalTitle}  >
                                        <p style={{fontFamily:'Cinzel, serif'}}>Need a website? or Do you want to network? Drop your information in the form below and lets network. Look forward to speaking with you.</p>
@@ -305,16 +353,13 @@ const Projects = () => {
                                     </DialogActions>
                                 </Dialog>
                 </div>
-
-                
-
-
             </div>
             <Divider />
+            <div className='mainContainer'>
 
             <div className='projects'  >
                 {searchResults.map(result => (
-                    <div className='roll-in-left' variant="outlined">
+                    <div className='tilt-in-fwd-tr' variant="outlined">
                         <Divider />
                         <div className='projectContent' >
                             
@@ -336,13 +381,20 @@ const Projects = () => {
                     </div>
                 ))}
             </div>
-            <Divider style={{margin:' 2% 0% 0% 0%'}} />
-            <div style={{display:'flex', justifyContent:'space-between', width:'98%',  margin:' 0% auto'}}>
-                <div style={{}}>
-                    &copy; 2020 DAPTHEDEV
+
+            </div>
+
+            <div className={classes.bottomNav}>
+                <div className={classes.navTitle}>
+                    &copy; A dapthedev Design 2020
                 </div>
 
-                <div style={{width:'50%', display:'flex', justifyContent:'space-evenly'}}>
+                <div className={classes.bn_Links}>
+                    <Link to='/welcome' className={classes.link}>Home</Link>
+                    <Link to='/aboutme' className={classes.link}>About</Link>
+                </div>
+
+                <div className={classes.navIcons}>
                     <a href='https://www.linkedin.com/in/dapperdave1914/'><Button className={classes.social} ><LinkedInIcon /> </Button></a>
                     <a href='https://github.com/Dlray89'><Button className={classes.social} ><GitHubIcon /></Button></a>
                     <a href='https://www.instagram.com/tapthedap'><Button className={classes.social} ><InstagramIcon /></Button></a>

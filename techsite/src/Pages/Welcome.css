@@ -2,13 +2,13 @@
     margin: 0 auto;
     box-sizing: border-box;
     font-family: 'Cinzel', serif;
+    background: white;
+    padding:0.2%
 
     
 }
 @media(max-width: 600px){
     .mainContainer{
-        background: rgb(248, 248, 248);
-        height: 130vh;
         padding: 1%;
     }
 }
@@ -24,7 +24,6 @@
 @media(max-width: 375px){
     .introBox {
       
-        height: 118vh;
     }
 }
 
@@ -32,7 +31,6 @@
 
 
 .intro {
-    height: 40vh;
     box-sizing: border-box;
     display: flex; 
 }
@@ -42,7 +40,6 @@
 .greetingContainer {
     width: 100%;
     display: flex;
-    background: lightgrey;
     
     
 }
@@ -158,7 +155,7 @@
     width: 50%;
     text-align: center;
     color: white;
-    background: lightgray;
+
     margin:0 auto;
     box-sizing: border-box
     
@@ -582,11 +579,7 @@
     }
 }
 
-.
 
-@media(max-width: 600px) {
-
-}
 
 
 

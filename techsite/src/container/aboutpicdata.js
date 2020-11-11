@@ -35,11 +35,7 @@ export const pictureData = [
         img:pic_six,
         likes: 0
     },
-    {
-        id: 7,
-        img:pic_seven,
-        likes: 0
-    },
+    
     
 
 ]
