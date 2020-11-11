@@ -35,14 +35,14 @@ export default class TransitionsExample extends React.PureComponent {
 
         this.setState({ items: ['Welcome World!'] })
         this.t1 = setTimeout(
-            () => this.setState({ items: ["My name is Dave and I'm a Full Stack Developer"] }),
+            () => this.setState({ items: ["My name is Dave and I'm a Full Stack Developer."] }),
             3500
         )
         this.t2 = setTimeout(
-            () => this.setState({ items: ['Come take a look at what I have to offer'] }),
+            () => this.setState({ items: ['Come take a look at what I have to offer The world!'] }),
             7000
         )
-        this.t3 = setTimeout(() => this.setState({ items: ['Tap in here and lets have a chat.'] }), 10500)
+        this.t3 = setTimeout(() => this.setState({ items: ['Tap in here to see what the craze is about.'] }), 10500)
     }
 
     render() {
