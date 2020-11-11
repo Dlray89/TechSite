@@ -116,16 +116,13 @@ const useStyles = makeStyles((theme) => ({
         border:'solid 1px black',
         width:'100%',
         background:'linear-gradient(to right, #2980b9, #2c3e50)',
+        [theme.breakpoints.down('xs')]:{
+            width:'100%',
+            height:'100%'
+
+        }
     },
-    gridList: {
-        flexWrap: 'nowrap',
-        // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-        transform: 'translateZ(0)',
-        border:'solid 2px blue',
-        textAlign:'center',
-        margin:'0 auto',
-        padding:'1%'
-    },
+    
     title: {
         color: theme.palette.primary.light,
     },
@@ -145,7 +142,12 @@ const useStyles = makeStyles((theme) => ({
         width: '80%',
         margin: '0% auto',
         
-        color:'white'
+        color:'white',
+        [theme.breakpoints.down('xs')]:{
+            
+            fontSize:'18px',
+            width:'100%'
+        }
     },
     aboutContainer3: {
         border: 'solid 1px black',
@@ -155,6 +157,10 @@ const useStyles = makeStyles((theme) => ({
     },
     aboutTitle: {
         color: 'black',
+        [theme.breakpoints.down('xs')]:{
+            
+            fontSize:'18px'
+        }
 
 
     },
@@ -164,13 +170,25 @@ const useStyles = makeStyles((theme) => ({
         padding: '1%',
         textAlign: 'center',
         color: 'white',
-        background: ' #2980b9'
+        background: ' #2980b9',
+        [theme.breakpoints.down('xs')]:{
+            
+            fontSize:'18px',
+            padding:'3%',
+            textAlign:'center'
+        }
     },
     pastcareers: {
         border: 'solid 1px black',
         width: '55%',
         background:'linear-gradient(to right, #2980b9, #2c3e50)',
-        margin:'2% 0'
+        margin:'2% 0',
+        [theme.breakpoints.down('xs')]:{
+            
+            fontSize:'18px',
+            width:'95%',
+            margin:'2% auto'
+        }
     },
     careerText: {
         color: 'white',
@@ -220,36 +238,130 @@ bottomNav:{
     alignContent:'center',
     background:'linear-gradient(to left, #2980b9, #2c3e50)',
     color:'white',
-    padding:'1%'
+    [theme.breakpoints.down('xs')]:{
+        padding:'5%',
+        width:'100%',
+        display:'flex',
+        flexDirection:'column-reverse'
+    }
 },
 navTitle:{
     width: '30%',
-    padding:'0.6%'
+    padding:'0.6%',
+    [theme.breakpoints.down('xs')]:{
+        fontSize:'10px',
+        width:'100%'
+    }
 },
 navIcons:{
     width:'20%', 
     display:'flex', 
     justifyContent:'space-evenly',
+    [theme.breakpoints.down('xs')]:{
+        fontSize:'10px',
+        width:'100%',
+        display:'flex',
+        flexWrap:'wrap'
+    
+    }
+    
 },
 bn_Links:{
     width:'50%',
     display:'flex',
     justifyContent:'space-evenly',
     padding:'0.6%',
+    [theme.breakpoints.down('xs')]:{
+        
+        fontSize:'15px',
+        width:'100%',
+        display:'flex',
+    }
 },
 BN_link:{
     textDecoration:'none',
     color:'white',
     '&:hover': {
         color:'black'
-    },
+    }
 },
 social: {
     color:'white',
     '&:hover': {
         color: 'black'
+    },
+    [theme.breakpoints.down('xs')]:{
+        fontSize:'15px',
+        width:'100%',
+  }
+},
+rootContainer:{
+    overflowX:'hidden'
+
+},
+
+header: {
+    fontSize: '20px', 
+    background: 'black', 
+    padding: '1%', 
+    backgroundImage:'url('+ background +')',  backgroundPosition: 'start',
+        backgroundPositionY: '50%',
+        backgroundPositionX: '50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'filled',
+        backgroundSize: '100%', height:'30vh',
+        [theme.breakpoints.down('xs')]:{
+        }
+
+},
+
+headerText:{
+    color: 'white', 
+    fontFamily: 'Cinzel, serif', 
+    background:'rgba(27, 20, 17, 0.8)', 
+    width:'20%', 
+    margin:'7% auto', 
+    padding:'1%' ,
+    [theme.breakpoints.down('xs')]:{
+        
+        width:'50%',
+        margin:'15% auto'
     }
 },
+GL_content:{
+    width:'20%', 
+    margin:'0 auto', 
+    border:'solid 1px white',
+    height:'50vh',
+    [theme.breakpoints.down('xs')]:{
+        display:'flex',
+        width:'18%',
+        height:'20vh'
+      
+    }
+},
+pic:{
+    width:'100%',
+    [theme.breakpoints.down('xs')]:{
+        
+        width:'100%',
+        height:'100%'
+    }
+},
+bottomtext:{
+    borderBottom:'solid 1px black',
+    borderTop:'solid 1px black', 
+    padding:'2%', color:'white', 
+    background:'#2980b9', 
+    margin:'0%',
+    [theme.breakpoints.down('xs')]:{
+        
+        width:'100%',
+        fontSize:'18px',
+        textAlign:'center'
+        
+    }
+}
 }))
 
 const interest = [
@@ -359,15 +471,9 @@ const About = () => {
 
 
     return (
-        <div style={{overflowX: 'hidden'
-        }}>
-            <div style={{ fontSize: '20px', background: 'black', padding: '1%', backgroundImage:'url('+ background +')',  backgroundPosition: 'start',
-        backgroundPositionY: '50%',
-        backgroundPositionX: '50%',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'filled',
-        backgroundSize: '100%', height:'30vh'}}>
-                <p style={{ color: 'white', fontFamily: 'Cinzel, serif', background:'rgba(27, 20, 17, 0.8)', width:'20%', margin:'7% auto', padding:'1%' }}>About Me</p>
+        <div className={classes.rootContainer} >
+            <div className={classes.header}>
+                <p className={classes.headerText}>About Me</p>
             </div>
 
 
@@ -447,21 +553,11 @@ const About = () => {
             </div>
 
             <div className={classes.root}>
-                <GridList className={classes.gridList} cols={6.0}>
                     {pictureData.map((tile) => (
-                        <GridListTile style={{width:'15%', margin:'0 auto', border:'solid 1px white'}}  key={tile.img}>
-                            <img src={tile.img} alt={tile.title} width='60%' />
-                            <GridListTileBar
-                                title={tile.title}
-                                classes={{
-                                    root: classes.titleBar,
-                                    title: classes.title,
-                                }}
-                                
-                            />
-                        </GridListTile>
+                        <div className={classes.GL_content} key={tile.img}>
+                            <img className={classes.pic}  src={tile.img} alt={tile.title} />
+                        </div>
                     ))}
-                </GridList>
             </div>
 
             <div className={classes.aboutContainer}>
@@ -494,7 +590,7 @@ const About = () => {
 
            
 
-            <div style={{borderBottom:'solid 1px black',borderTop:'solid 1px black', padding:'2%', color:'white', background:'#2980b9', margin:'0%'}}>
+            <div className={classes.bottomtext}>
                Soon ill be starting a blog series on my journey into software development in hopes to inspire other newcoming developers
                that anything is possible. You just have to put the time and dedication towards it and have a strong WHY in order to keep going
                through the hard times.
@@ -507,7 +603,6 @@ const About = () => {
                 <div className={classes.bn_Links}>
                     <Link className={classes.BN_link}>Home</Link>
                     <Link className={classes.BN_link}>About</Link>
-                    <Link className={classes.BN_link}>Contact</Link>
                 </div>
 
                 <div className={classes.navIcons}>

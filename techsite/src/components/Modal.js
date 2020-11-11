@@ -59,7 +59,7 @@ const Modal = (props) => {
         <div>
             <Button className={classes.button} variant='contained' onClick={handleOpen}> View More</Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle style={{fontFamily:'Cinzel, serif', textAlign:'center', border:'solid 2px red', background:'linear-gradient(to right, #2980b9, #2c3e50)', color:'white'
+                <DialogTitle style={{fontFamily:'Cinzel, serif', textAlign:'center', background:'linear-gradient(to right, #2980b9, #2c3e50)', color:'white'
 }} > <p style={{fontFamily:'Cinzel, serif'
 }} >{props.name}<br /> {props.tech_stack}</p></DialogTitle>
                 <Divider />
