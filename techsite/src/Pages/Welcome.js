@@ -182,6 +182,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     icons: {
+        width:'6%',
         [theme.breakpoints.down('xs')]:{
             width:'15%'
         }
@@ -596,7 +597,7 @@ const Welcome = () => {
                 <div className={classes.intro}> Full Stack Developer with a passion for creativity and solution-seeking. My mission is to develop and design a robust, user-friendly, handicap accessible, and easy to use User Interface for all. Your vision for your business/organization is very important not only to me but to the user as well. Let’s chat about your vision and turn it into a reality because that’s what I do. </div>
                 <div className={classes.iconContainer}>
                    {codingLang.map(img => (
-                       <img className={classes.icons} width={70} src={img.icon} />
+                       <img className={classes.icons}  src={img.icon} />
                    ))}
                 </div>
 
