@@ -103,10 +103,13 @@ const useStyles = makeStyles((theme) => ({
             backgroundSize: 'filled',
             height:'20vh'
         },
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xm')]: {
             width:'100%',
-            backgroundPositionX: '50%'
+            backgroundPositionX: '50%',
         },
+        [theme.breakpoints.down('sm')]:{
+            height:'20vh'
+        }
 
     },
     Davidpicture: {
@@ -121,7 +124,12 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             width:'100%'
-        }
+        },
+        [theme.breakpoints.down('sm')]:{
+            width:'100%',
+            padding:'6%',
+            fontSize:'18px'
+        },
     },
     input:{
         margin:'2% auto',
@@ -195,7 +203,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]:{
             padding:'1%',
             textAlign:'center',
-            fontSize:'15px'
+            fontSize:'15px'   
+        },
+        [theme.breakpoints.down('sm')]:{
+            fontSize:'22px'
         }
     },
     box_one:{
@@ -212,7 +223,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]:{
             width:'100%',
             padding:'5%'
-        }
+        },
+        [theme.breakpoints.down('sm')]:{
+            width:'100%',
+            padding:'6%'
+        },
     },
     box_one_info:{
         background:'rgba(27, 20, 17, 0.8)', 
@@ -223,7 +238,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]:{
             width:'70%',
             fontSize:'14px'
-        }
+        },
+        [theme.breakpoints.down('sm')]:{
+           fontSize:'20px'
+        },
     },
     box2:{
         borderTop:'solid 1px black',
@@ -240,7 +258,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]:{
             width:'100%',
             padding:'5%'
-        }
+        },
+        [theme.breakpoints.down('sm')]:{
+            width:'100%',
+            padding:'6%'
+        },
     },
     box_two_info:{
         background:'rgba(27, 20, 17, 0.8)', 
@@ -252,7 +274,10 @@ const useStyles = makeStyles((theme) => ({
             width:'70%',
             fontSize:'14px'
 
-        }
+        },
+        [theme.breakpoints.down('sm')]:{
+            fontSize:'20px'
+         },
     },
     box_three:{
         borderTop:'solid 1px black',
@@ -268,7 +293,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]:{
             width:'100%',
             padding:'5%'
-        }
+        },
+        [theme.breakpoints.down('sm')]:{
+            width:'100%',
+            padding:'6%'
+        },
         
     
     },
@@ -282,7 +311,10 @@ const useStyles = makeStyles((theme) => ({
             width:'70%',
             fontSize:'14px'
 
-        }
+        },
+        [theme.breakpoints.down('sm')]:{
+            fontSize:'20px'
+         },
     },
     title_special:{
         padding:'2%',
@@ -290,6 +322,9 @@ const useStyles = makeStyles((theme) => ({
         fontSize:'22px',
         [theme.breakpoints.down('xs')]:{
             fontSize:'18px'
+        },
+        [theme.breakpoints.down('sm')]:{
+            fontSize:'23px'
         }
     },
     socialButtonContainer:{
@@ -314,7 +349,12 @@ const useStyles = makeStyles((theme) => ({
             width:'100%',
             display:'flex',
             flexDirection:'column-reverse'
-        }
+        },
+        [theme.breakpoints.down('sm')]:{
+            width:'100%',
+            padding:'6%',
+            fontSize:'17px'
+        },
     },
     navTitle:{
         width: '30%',
