@@ -132,6 +132,13 @@
   }
 }
 
+@media(max-width: 500px){
+  .greetingBoxLinks{
+      display: flex;
+      flex-direction: column;
+  }
+}
+
 
 
 .servicesandcareer {
@@ -344,6 +351,12 @@
   }
 }
 
+@media (max-width: 500px){
+  .flip-in-hor-top {
+      width:100%
+  }
+}
+
 
 
 
@@ -420,6 +433,12 @@
   }
 }
 
+@media(max-width: 500px) {
+  .flip-in-ver-right {
+     width:100%;
+  }
+}
+
 
 
 
@@ -490,6 +509,13 @@
 @media(max-width: 480px) {
   .flip-in-ver-left {
     width:100%;
+  }
+}
+
+@media(max-width: 500px) {
+  .flip-in-ver-left {
+    width:100%;
+    
   }
 }
 

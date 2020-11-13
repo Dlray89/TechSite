@@ -185,6 +185,9 @@ const useStyles = makeStyles((theme) => ({
         width:'6%',
         [theme.breakpoints.down('xs')]:{
             width:'15%'
+        },
+        [theme.breakpoints.down('sm')]:{
+            width:'13%'
         }
     },
     Special:{
@@ -207,7 +210,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize:'15px'   
         },
         [theme.breakpoints.down('sm')]:{
-            fontSize:'22px'
+            fontSize:'25px'
         }
     },
     box_one:{
@@ -241,7 +244,9 @@ const useStyles = makeStyles((theme) => ({
             fontSize:'14px'
         },
         [theme.breakpoints.down('sm')]:{
-           fontSize:'20px'
+           fontSize:'18px',
+           width:'45%',
+           padding:'2%'
         },
     },
     box2:{
@@ -277,7 +282,9 @@ const useStyles = makeStyles((theme) => ({
 
         },
         [theme.breakpoints.down('sm')]:{
-            fontSize:'20px'
+            fontSize:'18px',
+            width:'45%',
+            padding:'2%'
          },
     },
     box_three:{
@@ -314,7 +321,9 @@ const useStyles = makeStyles((theme) => ({
 
         },
         [theme.breakpoints.down('sm')]:{
-            fontSize:'20px'
+            fontSize:'18px',
+            width:'45%',
+            padding:'2%'
          },
     },
     title_special:{
@@ -325,7 +334,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize:'18px'
         },
         [theme.breakpoints.down('sm')]:{
-            fontSize:'23px'
+            fontSize:'30px'
         }
     },
     socialButtonContainer:{
