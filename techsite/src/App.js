@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
-import Intro from "../src/Pages/intro"
-import IntroBG from './Pages/introBG'
-import Welcome from "./Pages/Welcome"
-import Projects from "./Pages/projects"
-import About from './Pages/About'
+import Intro from "../src/components/Intro_page/intro"
+import IntroBG from './components/Intro_page/Intro_BG/introBG'
+import Welcome from "./components/Welcome_page/Welcome"
+import Projects from "./components/Project_page/projects"
+import About from './components/About_page/About'
 import './App.css';
 
 function App() {

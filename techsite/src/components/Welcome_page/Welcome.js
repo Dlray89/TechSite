@@ -4,29 +4,28 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import Contactops from '../crudhandle/contact_ops'
+import Contactops from '../../container/AJAX_Handling/contact_ops'
 import { Link } from 'react-router-dom'
-import LOGO from "../images/dave_gif.gif"
+import LOGO from "../../images/dave_gif.gif"
 
-import Resume from '../resume/davidray_resume_update.pdf'
 import './Welcome.css'
 
 //icons
-import HTML from '../icons/html-5.png'
-import CSS from '../icons/css.png'
-import JS from '../icons/javascript.png'
-import NODE from '../icons/nodejs.png'
-import REACT from '../icons/react.png'
-import PY from '../icons/python.png'
+import HTML from '../../icons/html-5.png'
+import CSS from '../../icons/css.png'
+import JS from '../../icons/javascript.png'
+import NODE from '../../icons/nodejs.png'
+import REACT from '../../icons/react.png'
+import PY from '../../icons/python.png'
 import LocationCityIcon from '@material-ui/icons/LocationCity';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
 
 //images
 
-import box1 from "../images/front_end_pic.jpg"
-import box2 from "../images/website_design.jpg"
-import box3 from "../images/server_side.jpg"
+import box1 from "../../images/front_end_pic.jpg"
+import box2 from "../../images/website_design.jpg"
+import box3 from "../../images/server_side.jpg"
 
 
 

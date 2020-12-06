@@ -1,6 +1,6 @@
 import React from "react"
 import { useSpring, animated} from 'react-spring'
-import Intro_Transition from './intro'
+import Intro_Transition from '../intro'
 import './introBG.css'
 
 export default function App() {

@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { makeStyles, Badge, Button, Dialog, DialogContent, DialogActions, DialogContentText, DialogTitle, TextField, Divider, List, ListItem, ListItemText } from "@material-ui/core"
-import Contactops from '../crudhandle/contact_ops.js'
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
+import Contactops from '../../container/AJAX_Handling/contact_ops'
+
 import LocationCityIcon from '@material-ui/icons/LocationCity';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -14,10 +10,10 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import { pictureData } from '../container/aboutpicdata'
+import { pictureData } from '../../container/aboutpicdata'
 import './about.css'
 
-import background from '../images/aboutBackground.jpg'
+import background from '../../images/aboutBackground.jpg'
 
 const useStyles = makeStyles((theme) => ({
     button: {
